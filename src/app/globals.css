@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: var(--font-playfair), 'Playfair Display', Georgia, serif;
+  --font-sans: var(--font-inter), 'Inter', system-ui, sans-serif;
+
+  /* Logo-abgestimmte Farbpalette: Ring = #9B71B8, Text = #3D2645 */
+  --color-melyla-cream: #FAF7FF;
+  --color-melyla-cream-warm: #F2E8F8;
+  --color-melyla-navy: #3D2645;
+  --color-melyla-stone: #5D3E6E;
+  --color-melyla-gold: #9B71B8;
+  --color-melyla-gold-light: #B08AC8;
+  --color-melyla-rose: #EDE0F5;
+  --color-melyla-muted: #9175A2;
+  --color-melyla-border: #D5C0E8;
+  --color-melyla-dark: #2A1835;
+  --color-melyla-cta: #C9973E;
+  --color-melyla-cta-dark: #A87B2E;
+
+  --shadow-luxury: 0 20px 60px rgba(61, 38, 69, 0.12);
+  --shadow-gold: 0 4px 20px rgba(155, 113, 184, 0.30);
+  --shadow-card: 0 4px 24px rgba(61, 38, 69, 0.08);
+  --shadow-cta: 0 6px 28px rgba(201, 151, 62, 0.45);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  body {
+    background-color: #FAF7FF;
+    color: #3D2645;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+
+  :focus-visible {
+    outline: 2px solid #9B71B8;
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  .section-padding {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .container-luxury {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .glass-card {
+    background: rgba(250, 250, 249, 0.80);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(214, 211, 209, 0.50);
+  }
+}
