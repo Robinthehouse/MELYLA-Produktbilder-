@@ -1,0 +1,31 @@
+Baue einen Abschnitt mit dunklem Hintergrund (#3D2645), abgerundeten Ecken und großzügigem Innenabstand.
+
+OBEN, zentriert, max. 660px breit:
+- Kleine Überschrift, Großbuchstaben, gesperrt, Farbe #B08AC8: "Das Problem"
+- Große Serifen-Überschrift in Weiß: "Was in acht Stunden Schlaf mit deinem Dekolleté passiert"
+- Fließtext in #C9B8D4: "Du siehst es morgens im Spiegel — und bis mittags ist es wieder weg. Noch."
+
+DARUNTER: vier gleich breite Karten nebeneinander (4 Spalten auf dem Desktop, 2 auf Tablets, 1 auf dem Handy). Jede Karte hat einen leicht helleren Hintergrund (weiß mit 6% Deckkraft), einen feinen Rahmen (weiß mit 12% Deckkraft) und abgerundete Ecken. Aufbau je Karte:
+- Oben ein Bild über die volle Kartenbreite
+- Auf dem Bild unten links ein kleines dunkles Feld mit einer fetten Kennzahl in Weiß und einer kleinen Unterzeile in #C9B8D4
+- Darunter eine Serifen-Überschrift in Weiß und ein Fließtext in #C9B8D4
+
+Inhalte der vier Karten:
+1) Kennzahl "6–8 Std." / "gefaltet pro Nacht" — Überschrift "Nacht für Nacht in Seitenlage" — Text: "In Seitenlage legt sich die eine Brust auf die andere. Die Haut am Dekolleté wird gefaltet — und in genau dieser Position stundenlang gehalten. Nicht einmal, sondern jede Nacht."
+2) Kennzahl "ab 25" / "lässt Kollagen nach" — Überschrift "Aus dem Knick wird eine Falte" — Text: "Mit Anfang 20 glättet sich die Haut morgens von allein. Weil die Kollagenproduktion nachlässt, dauert das jedes Jahr etwas länger — bis die Linie irgendwann bleibt."
+3) Kennzahl "Zone 2" / "nach dem Gesicht" — Überschrift "Die Sonne macht es schlimmer" — Text: "Das Dekolleté bekommt fast so viel Sonne ab wie dein Gesicht — wird aber selten so gepflegt. UV-Strahlung schwächt genau die Fasern, die die Haut nachts zurückfedern lassen."
+4) Kennzahl "Leise" / "aber jeden Tag" — Überschrift "Und irgendwann fällt es dir auf" — Text: "Nicht durch einen Schock im Spiegel. Sondern daran, dass der Ausschnitt, den du jahrelang geliebt hast, seit Monaten hinten im Schrank hängt."
+
+DARUNTER, zentriert, max. 640px breit: ein Kasten im gleichen Stil wie die Karten mit
+- Serifen-Überschrift in Weiß, zentriert: "Erkennst du dich wieder?"
+- Einer Liste ohne Aufzählungspunkte, stattdessen je ein Häkchen in #B08AC8 links, Text in Weiß mit 90% Deckkraft:
+  • "Morgens siehst du Linien im Dekolleté, die abends noch nicht da waren."
+  • "Du schläfst auf der Seite — und hast schon erfolglos versucht, es dir abzugewöhnen."
+  • "Dein Gesicht cremst du täglich. Dein Dekolleté praktisch nie."
+  • "Du greifst inzwischen öfter zum höher geschlossenen Oberteil."
+  • "Cremes hast du probiert. Die Linien sind geblieben."
+- Darunter eine feine Trennlinie und ein zentrierter Serifen-Satz in #B08AC8: "Drei oder mehr Haken? Dann liegt es nicht an deiner Pflege — sondern an deiner Schlafposition."
+
+EINSTELLUNGEN: Jede Karte soll ein eigener Block sein, mit Bildauswahl, Kennzahl, Kennzahl-Unterzeile, Überschrift und Text als bearbeitbare Felder. Überschrift, Unterzeile und der Text der Checkliste sollen ebenfalls im Theme-Editor änderbar sein. Bitte alle Texte als Standardwerte vorbelegen.
+
+WICHTIG: Fließtext niemals in #9B71B8 oder einem dunkleren Violett auf dem dunklen Hintergrund — das ist zu kontrastarm. Für Fließtext #C9B8D4 verwenden, für Akzente #B08AC8. Jedes Bild braucht ein Alt-Text-Feld.

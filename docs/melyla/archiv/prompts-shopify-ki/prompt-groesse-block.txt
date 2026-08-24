@@ -1,0 +1,28 @@
+Baue einen Abschnitt mit hellem Hintergrund (#FAF7FF), abgerundeten Ecken und großzügigem Innenabstand. Der Inhalt ist mittig, maximal 780px breit.
+
+OBEN, zentriert:
+- Kleine Überschrift, Großbuchstaben, gesperrt, Farbe #8151A3: "Deine Größe"
+- Große Serifen-Überschrift in #3D2645: "In 30 Sekunden zur richtigen Größe"
+- Fließtext in #775C88: "Maßgeblich ist dein Unterbrustumfang — nicht deine Körbchengröße. Miss direkt unter der Brust, das Maßband liegt locker an."
+
+DARUNTER eine weiße Karte (#FFFFFF) mit abgerundeten Ecken, weichem Schatten und ohne Innenabstand an den Rändern, dreigeteilt von oben nach unten:
+
+1. KOPFZEILE der Karte: Hintergrund #F2E8F8, unten eine feine Trennlinie in #D5C0E8, Innenabstand ringsum. Darin nebeneinander ein kleines Lineal-Symbol in #8151A3 und ein fetter Text in #3D2645: "Unterbrustumfang messen — direkt unter der Brust, Maßband locker anlegen"
+
+2. TABELLE mit drei Spalten und vier Zeilen. Die Spaltenüberschriften in Großbuchstaben, gesperrt, klein, in #775C88: "Größe" / "Unterbrustumfang" / "Konfektion". Unter jeder Zeile eine feine Trennlinie in #D5C0E8, die letzte Zeile ohne Linie.
+   - Spalte 1 zeigt die Größe als abgerundete Pille mit Hintergrund #EDE0F5 und fettem Text in #3D2645
+   - Spalte 2 in #3D2645, halbfett
+   - Spalte 3 in #775C88, normal
+   Zeilen:
+   S | 60–70 cm | entspricht etwa 65 / 70
+   M | 70–80 cm | entspricht etwa 70 / 75
+   L | 80–90 cm | entspricht etwa 80 / 85
+   XL | 90–100 cm | entspricht etwa 85 / 90
+
+3. HINWEIS unten in der Karte: Hintergrund in ganz hellem Violett (#8151A3 mit 8% Deckkraft), oben eine feine Trennlinie, Innenabstand ringsum. Links ein kleines Info-Symbol in #8151A3, daneben der Text in #5D3E6E: "Du liegst genau zwischen zwei Größen? Nimm die größere. Der BH soll nachts halten, nicht einschnüren — zu eng ist der häufigste Grund, warum ein Schlaf-BH im Schrank landet."
+
+WICHTIG ZUM HANDY: Die Tabelle darf das Layout auf schmalen Bildschirmen nicht sprengen. Setze sie in einen eigenen Bereich, der bei Bedarf waagerecht scrollt, während der Rest der Seite normal bleibt. Die Tabelle selbst behält eine Mindestbreite von etwa 420px. Die Seite darf niemals insgesamt waagerecht scrollen.
+
+EINSTELLUNGEN: Jede Tabellenzeile soll ein eigener Block mit drei Feldern sein (Größe, Unterbrustumfang, Konfektion), damit Zeilen ergänzt oder umsortiert werden können. Die drei Spaltenüberschriften, die Kopfzeile der Karte, der Hinweistext unten sowie die Überschriften ganz oben sollen im Theme-Editor änderbar sein. Bitte alle Texte als Standardwerte vorbelegen.
+
+WICHTIG ZUM KONTRAST: Auf hellem Hintergrund niemals #9B71B8 oder ein helleres Violett für Text verwenden — zu kontrastarm. Für Fließtext #775C88, für Akzente und Symbole #8151A3, für große Überschriften und Tabellenwerte #3D2645, für den Hinweistext unten #5D3E6E. #EDE0F5 und #D5C0E8 sind ausschließlich Flächen- und Linienfarben, niemals Textfarben.

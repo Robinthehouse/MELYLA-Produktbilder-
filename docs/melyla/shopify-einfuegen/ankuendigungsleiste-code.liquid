@@ -1,0 +1,179 @@
+{%- liquid
+  assign bg = section.settings.bg_color | default: '#3D2645'
+  assign fg = section.settings.text_color | default: '#FFFFFF'
+-%}
+
+{%- if section.blocks.size > 0 -%}
+  <div class="mel-ab" id="mel-ab-{{ section.id }}">
+    <div class="mel-ab__inner">
+      {%- for block in section.blocks -%}
+        <span class="mel-ab__item" data-mel-ab-item {{ block.shopify_attributes }}>
+          {%- if section.settings.show_check -%}
+            <span class="mel-ab__check" aria-hidden="true">&#10003;</span>
+          {%- endif -%}
+          {%- if block.settings.link != blank -%}
+            <a class="mel-ab__link" href="{{ block.settings.link }}">{{ block.settings.text }}</a>
+          {%- else -%}
+            {{ block.settings.text }}
+          {%- endif -%}
+        </span>
+        {%- unless forloop.last -%}
+          <span class="mel-ab__dot" aria-hidden="true">&middot;</span>
+        {%- endunless -%}
+      {%- endfor -%}
+    </div>
+  </div>
+
+  {%- style -%}
+    #shopify-section-{{ section.id }} { margin: 0; padding: 0; }
+    #mel-ab-{{ section.id }} {
+      background: {{ bg }};
+      color: {{ fg }};
+      padding: 10px 16px;
+      font-size: 13px;
+      line-height: 1.4;
+      text-align: {{ section.settings.align | default: 'center' }};
+    }
+    #mel-ab-{{ section.id }} .mel-ab__inner {
+      display: flex; flex-wrap: wrap; align-items: center;
+      justify-content: {% if section.settings.align == 'left' %}flex-start{% else %}center{% endif %}; gap: 8px 14px;
+      max-width: 80rem; margin-inline: auto;
+    }
+    #mel-ab-{{ section.id }} .mel-ab__item { display: inline-flex; align-items: center; gap: 6px; }
+    #mel-ab-{{ section.id }} .mel-ab__check { color: {{ fg }}; font-weight: 700; }
+    #mel-ab-{{ section.id }} .mel-ab__dot { color: #B08AC8; }
+    #mel-ab-{{ section.id }} .mel-ab__link { color: {{ fg }}; text-decoration: underline; text-underline-offset: 2px; }
+
+    /* Auf schmalen Bildschirmen laeuft immer nur eine Angabe, die Trennpunkte entfallen. */
+    @media screen and (max-width: 749px) {
+      #mel-ab-{{ section.id }} .mel-ab__dot { display: none; }
+      #mel-ab-{{ section.id }}.mel-ab--rotate .mel-ab__item { display: none; }
+      #mel-ab-{{ section.id }}.mel-ab--rotate .mel-ab__item.is-active {
+        display: inline-flex; animation: mel-ab-fade .4s ease;
+      }
+    }
+    @keyframes mel-ab-fade { from { opacity: 0 } to { opacity: 1 } }
+    @media (prefers-reduced-motion: reduce) {
+      #mel-ab-{{ section.id }}.mel-ab--rotate .mel-ab__item.is-active { animation: none; }
+    }
+  {%- endstyle -%}
+
+  {%- if section.settings.rotate and section.blocks.size > 1 -%}
+    <script>
+      (function () {
+        var root = document.getElementById('mel-ab-{{ section.id }}');
+        if (!root) return;
+        var items = root.querySelectorAll('[data-mel-ab-item]');
+        if (items.length < 2) return;
+
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var narrow = window.matchMedia('(max-width: 749px)');
+        var i = 0, timer = null;
+
+        function show(n) {
+          for (var k = 0; k < items.length; k++) items[k].classList.toggle('is-active', k === n);
+        }
+        function start() {
+          root.classList.add('mel-ab--rotate');
+          show(0);
+          if (reduce) return;
+          timer = setInterval(function () { i = (i + 1) % items.length; show(i); },
+                              {{ section.settings.interval | default: 4 | times: 1000 }});
+        }
+        function stop() {
+          root.classList.remove('mel-ab--rotate');
+          if (timer) { clearInterval(timer); timer = null; }
+        }
+        function sync() { narrow.matches ? start() : stop(); }
+
+        sync();
+        narrow.addEventListener ? narrow.addEventListener('change', sync) : narrow.addListener(sync);
+      })();
+    </script>
+  {%- endif -%}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Ankündigungsleiste",
+  "tag": "section",
+  "class": "melyla-announcement",
+  "max_blocks": 5,
+  "settings": [
+    {
+      "type": "select",
+      "id": "align",
+      "label": "Ausrichtung",
+      "default": "center",
+      "options": [
+        {
+          "value": "center",
+          "label": "Mittig"
+        },
+        {
+          "value": "left",
+          "label": "Linksbündig"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Hintergrundfarbe",
+      "default": "#3D2645"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Schriftfarbe",
+      "default": "#FFFFFF",
+      "info": "Auf dunklem Hintergrund weiße Schrift verwenden. Violett oder Gold ist dort zu kontrastarm."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_check",
+      "label": "Häkchen vor jeder Angabe",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Verhalten auf dem Handy"
+    },
+    {
+      "type": "checkbox",
+      "id": "rotate",
+      "label": "Angaben nacheinander einblenden",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "interval",
+      "label": "Anzeigedauer",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "default": 4,
+      "unit": "s"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "announcement",
+      "name": "Angabe",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Gratis Versand"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link (optional)"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

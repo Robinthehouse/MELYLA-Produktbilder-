@@ -1,0 +1,18 @@
+Bitte die Reihenfolge im Hero-Abschnitt NUR auf schmalen Bildschirmen ändern. Das Video steht dort aktuell ganz unten; es soll direkt unter die große Überschrift rücken.
+
+Gewünschte Reihenfolge auf dem Handy, von oben nach unten:
+1. Die kleine Überschrift "Designed in Germany · Anti-Aging · Schlafpflege"
+2. Die große Überschrift "Weniger Falten, mehr Lächeln"
+3. DAS VIDEO
+4. Der Fließtext "Schlaf dich jung. Mit dem MELYLA Anti-Falten Schlaf BH ..."
+5. Die Schaltfläche "Jetzt entdecken"
+6. Die Schaltfläche "Wie funktioniert's?"
+7. Die drei Angaben (4,79 Sterne im Schnitt / 52 Bewertungen / 30 Tage Geld-zurück-Garantie)
+
+Setze das über die Anzeigereihenfolge der Elemente um (CSS-Eigenschaft order innerhalb eines Flex-Containers), nicht indem du das Video ein zweites Mal einbaust. Es darf nur ein einziges Video-Element im Abschnitt geben, sonst wird es doppelt geladen.
+
+Auf dem Desktop bleibt alles genau wie jetzt: links der komplette Text mit Schaltflächen und Angaben, rechts das Video daneben. Dort darf sich nichts verschieben.
+
+Die Umschaltung soll bei der üblichen Tablet-Breite greifen — also einspaltig mit der neuen Reihenfolge unterhalb, zweispaltig wie bisher oberhalb.
+
+Zusätzlich auf dem Handy: Gib dem Video etwas Abstand nach oben und unten, damit es nicht direkt an der Überschrift klebt. Die abgerundeten Ecken, der Schatten, die Pille "Nr. 1 Bestseller" und die kleine Bewertungskarte bleiben unverändert.

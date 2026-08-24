@@ -1,0 +1,24 @@
+Baue einen Hero-Abschnitt ganz oben auf der Seite, zweispaltig: links der Text, rechts ein Video. Der Hintergrund ist ein weicher Verlauf von #F2E8F8 oben nach #FAF7FF unten, mit abgerundeten Ecken und großzügigem Innenabstand. Auf dem Handy stehen die Spalten untereinander, der Text zuerst, das Video darunter.
+
+LINKE SPALTE, von oben nach unten:
+- Kleine Überschrift, Großbuchstaben, gesperrt, Farbe #8151A3: "Designed in Germany · Anti-Aging · Schlafpflege"
+- Sehr große Serifen-Überschrift in #3D2645, zweizeilig: "Weniger Falten," in der ersten Zeile, "mehr Lächeln" in der zweiten Zeile in #8151A3
+- Fließtext in #775C88: "Schlaf dich jung. Mit dem MELYLA Anti-Falten Schlaf BH pflegst du dein Dekolleté sanft und effektiv — Nacht für Nacht."
+- Zwei Schaltflächen nebeneinander, auf dem Handy untereinander und über die volle Breite:
+  Erste: Hintergrund #C9973E, Schrift in #3D2645, fett, abgerundet, Text "Jetzt entdecken", verlinkt auf #angebot. Beim Überfahren wird sie heller (#E0AF5C), die Schrift bleibt dunkel.
+  Zweite: durchsichtiger Hintergrund, 1px Rahmen in #8151A3, Schrift in #8151A3, abgerundet, Text "Wie funktioniert's?"
+- Darunter eine Reihe mit drei kurzen Angaben nebeneinander, getrennt durch feine senkrechte Linien in #D5C0E8, auf dem Handy umbrechend. Je Angabe oben ein fetter Wert in #3D2645 und darunter eine kleine Beschriftung in #775C88:
+  "4,79" / "Sterne im Schnitt" — "52" / "Bewertungen" — "30 Tage" / "Geld-zurück-Garantie"
+
+RECHTE SPALTE:
+Ein Video im Seitenverhältnis 16:9, abgerundete Ecken, weicher Schatten, füllt die Spaltenbreite.
+- Das Video läuft automatisch, stumm, in Endlosschleife und ohne Bedienelemente.
+- Es muss auf dem iPhone im Seitenlayout abspielen und darf nicht in den Vollbildmodus springen.
+- Es braucht ein Vorschaubild, das sofort angezeigt wird, solange das Video lädt.
+- Wenn im Betriebssystem "Bewegung reduzieren" eingeschaltet ist, wird nur das Vorschaubild gezeigt und das Video gar nicht erst geladen.
+- Oben links auf dem Video eine kleine abgerundete Pille: Hintergrund #8151A3, Text in Weiß, klein und fett: "Nr. 1 Bestseller"
+- Unten rechts auf dem Video eine kleine weiße Karte mit abgerundeten Ecken und leichtem Schatten: darin fünf kleine Sterne in #8151A3, daneben "4,79" fett in #3D2645 und darunter klein in #775C88: "52 Bewertungen"
+
+EINSTELLUNGEN: Videoauswahl und Vorschaubild als eigene Felder, dazu ein Alt-Text-Feld für das Vorschaubild. Beide Überschriften, der Fließtext, die Beschriftungen und Ziele beider Schaltflächen, die Pille auf dem Video, die Bewertungskarte sowie die drei Angaben unten sollen im Theme-Editor änderbar sein. Die drei Angaben sind je ein eigener Block mit Wert und Beschriftung. Bitte alle Texte als Standardwerte vorbelegen. Ist kein Video hinterlegt, wird stattdessen das Vorschaubild angezeigt; fehlt auch das, bleibt die rechte Spalte leer und der Text nimmt die volle Breite ein.
+
+WICHTIG ZUM KONTRAST: Auf der goldenen Schaltfläche immer dunkle Schrift (#3D2645), niemals weiße — weiß auf Gold ist zu kontrastarm. Auf dem hellen Hintergrund niemals #9B71B8 für Text. Fließtext #775C88, Akzente und Rahmen #8151A3, Überschriften und Werte #3D2645. Die Pille auf dem Video hat weiße Schrift auf #8151A3, das ist geprüft.

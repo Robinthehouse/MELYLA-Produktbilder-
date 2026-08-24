@@ -1,0 +1,31 @@
+Baue einen Abschnitt mit hellem Hintergrund (#F2E8F8), abgerundeten Ecken und großzügigem Innenabstand.
+
+OBEN, zentriert, max. 660px breit:
+- Kleine Überschrift, Großbuchstaben, gesperrt, Farbe #8151A3: "Bewertungen"
+- Große Serifen-Überschrift in #3D2645: "Was Kundinnen nach der ersten Woche sagen"
+
+DARUNTER eine zweigeteilte Übersicht (links schmal, rechts breit; auf dem Handy untereinander), beide Teile weiße Karten mit abgerundeten Ecken und weichem Schatten:
+
+LINKS, zentriert: eine sehr große Zahl in Serifenschrift, fett, #3D2645 — darunter eine Reihe von fünf Sternen in #8151A3 — darunter eine kleine Zeile in #775C88 mit der Gesamtzahl der Bewertungen.
+
+RECHTS: fünf Balkenzeilen untereinander, je Zeile nebeneinander die Beschriftung ("5 Sterne" bis "1 Stern") klein in #775C88, dann ein schmaler abgerundeter Balken mit Hintergrund #EDE0F5, in dem der gefüllte Anteil in #8151A3 dargestellt wird, dann rechtsbündig die Anzahl klein in #775C88. Die Balkenlänge ergibt sich automatisch aus dem Anteil an der Gesamtzahl.
+
+DARUNTER die einzelnen Bewertungen als Karten in drei Spalten (3 auf dem Desktop, 2 auf Tablets, 1 auf dem Handy), gleiche Höhe, weißer Hintergrund, abgerundet, weicher Schatten. Aufbau je Karte:
+- Oben eine Reihe kleiner Sterne in #8151A3, entsprechend der Bewertung; nicht vergebene Sterne in #D5C0E8
+- Optional rechts daneben ein kleiner Hinweis in #8151A3 (nur anzeigen, wenn im Block aktiviert)
+- Eine halbfette Überschrift in #3D2645
+- Der Bewertungstext in #5D3E6E
+- Unten, abgetrennt durch eine feine Linie in #D5C0E8: links Name und Alter in #3D2645, rechts eine kleine Zusatzangabe in #775C88
+
+GANZ UNTEN ein breiter weißer Kasten, zweigeteilt: links ein quadratisches Bild mit abgerundeten Ecken (etwa 220px breit), rechts der Text. Auf dem Handy untereinander, Bild zuerst. Rechts stehen:
+- Kleine Überschrift, Großbuchstaben, gesperrt, in #8151A3: "Bekannt aus"
+- Ein Zitat in großer Serifenschrift, #3D2645, in typografischen Anführungszeichen
+- Darunter die Quelle klein in #775C88
+
+Vorbelegung: Durchschnitt "4,79", Gesamtzahl-Zeile "52 Bewertungen", Balken 5 Sterne = 44, 4 Sterne = 6, 3 Sterne = 1, 2 Sterne = 1, 1 Stern = 0. Zitat: "Anti-Falten Schlaf BH von Melyla, um 50 Euro" — Quelle: "BARBARA Magazin — Ausgabe Nr. 61".
+
+Für die Bewertungskarten lege sechs leere Blöcke an, jeweils mit Sternezahl 5 und leeren Textfeldern, damit echte Kundenstimmen eingetragen werden können.
+
+EINSTELLUNGEN: Jede Bewertung ist ein eigener Block mit Feldern für Sternezahl, Überschrift, Text, Name mit Alter, Zusatzangabe und einem Schalter für den kleinen Hinweis rechts oben samt zugehörigem Text. Auch jede Balkenzeile ist ein eigener Block mit Sternezahl und Anzahl. Durchschnittsnote, Gesamtzahl-Zeile, die Überschriften oben sowie Bild, Zitat und Quelle des Presse-Kastens sollen im Theme-Editor änderbar sein. Das Bild braucht ein Alt-Text-Feld. Bleibt das Bild leer, muss der Presse-Kasten trotzdem sauber aussehen.
+
+WICHTIG ZUM KONTRAST: Auf hellem Hintergrund niemals #9B71B8 oder ein helleres Violett für Text. Überschriften, Namen und die große Durchschnittszahl in #3D2645, Bewertungstexte in #5D3E6E, kleine Begleittexte in #775C88, Sterne und Akzente in #8151A3. #EDE0F5 und #D5C0E8 sind reine Flächen- und Linienfarben.

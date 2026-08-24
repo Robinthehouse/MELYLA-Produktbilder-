@@ -1,0 +1,46 @@
+Baue einen Abschnitt mit hellem Hintergrund (#FAF7FF), abgerundeten Ecken und großzügigem Innenabstand. Der Inhalt ist mittig, maximal 760px breit.
+
+OBEN, zentriert:
+- Kleine Überschrift, Großbuchstaben, gesperrt, Farbe #8151A3: "Häufige Fragen"
+- Große Serifen-Überschrift in #3D2645: "Was Kundinnen vor dem Kauf wissen wollen"
+
+DARUNTER eine Liste aufklappbarer Fragen mit kleinem Abstand zwischen den Einträgen. Jeder Eintrag ist eine weiße Karte (#FFFFFF) mit abgerundeten Ecken, feinem Rahmen in #D5C0E8 und weichem Schatten.
+
+Aufbau je Eintrag:
+- Die Frage als anklickbare Zeile: Text links in #3D2645, halbfett, daneben rechts ein kleiner nach unten zeigender Pfeil in #8151A3. Beim Überfahren wird die Zeile leicht hell hinterlegt (#FAF7FF).
+- Beim Aufklappen dreht sich der Pfeil um 180 Grad, und darunter erscheint die Antwort: Hintergrund #FAF7FF, oben eine feine Trennlinie in #D5C0E8, Text in #5D3E6E mit lockerem Zeilenabstand.
+- Die erste Frage ist beim Laden der Seite bereits geöffnet, alle anderen zugeklappt.
+
+WICHTIG ZUR TECHNIK: Nutze die eingebauten HTML-Elemente für Aufklappbereiche (details und summary), damit das Aufklappen auch ohne JavaScript funktioniert und für Screenreader bedienbar ist. Blende die vom Browser vorgegebene Dreiecksmarkierung aus. Die Frage muss per Tastatur erreichbar sein und einen sichtbaren Fokusrahmen bekommen.
+
+Die acht Fragen und Antworten:
+
+1) "Ich schlafe auf der Seite — funktioniert das überhaupt?"
+"Gerade dann. Der Schlaf BH ist genau für Seitenschläferinnen gemacht: Er hält die Brüste sanft auf Abstand, sodass die Haut am Dekolleté nicht gefaltet wird, wenn du dich zur Seite drehst. Auf dem Rücken funktioniert er ebenfalls, nur ist der Effekt dort kleiner — weil das Problem dort kleiner ist."
+
+2) "Ist das nachts nicht unbequem?"
+"Er hat keine Bügel, keinen Haken im Rücken und flache Nähte. Die meisten Kundinnen berichten, dass sie ihn nach zwei bis drei Nächten nicht mehr bewusst wahrnehmen. Wenn du sonst ohne BH schläfst, sind die ersten Nächte eine Umstellung — danach gehört er zur Abendroutine wie das Zähneputzen."
+
+3) "Welche Größe soll ich nehmen?"
+"Entscheidend ist dein Unterbrustumfang, nicht die Körbchengröße: S 60–70 cm, M 70–80 cm, L 80–90 cm, XL 90–100 cm. Wenn du zwischen zwei Größen liegst, nimm die größere — nachts soll nichts einschnüren."
+
+4) "Wie lange dauert es, bis ich etwas sehe?"
+"Der Effekt gegen neue Knicklinien beginnt in der ersten Nacht. Sichtbare Veränderungen an der Haut brauchen Zeit: Kundinnen berichten typischerweise nach zwei bis vier Wochen von ersten Unterschieden. Trag ihn die ersten 30 Tage konsequent jede Nacht — dafür gibt es die Garantie."
+
+5) "Ich habe schon tiefe Falten. Ist es zu spät?"
+"Nein. Der BH kann tiefe, über Jahre entstandene Falten nicht wegzaubern — das verspricht dir seriös niemand. Was er tut: verhindern, dass jede weitere Nacht neue dazulegt. Viele unserer Kundinnen sind über 55 und berichten trotzdem von einem entspannteren Hautbild am Morgen."
+
+6) "Kann ich ihn jede Nacht tragen? Wie wasche ich ihn?"
+"Ja, er ist für den täglichen Gebrauch gemacht — deshalb bestellen viele gleich zwei. Waschen per Hand oder im Schonprogramm bei 30 °C, nicht in den Trockner. So bleibt das Material dauerhaft weich und elastisch."
+
+7) "Was, wenn er mir nicht passt?"
+"Dann schickst du ihn zurück und bekommst dein Geld erstattet — 30 Tage lang, ohne dass wir nach einem Grund fragen. Du gehst also kein Risiko ein außer dem, dass er dir gefällt."
+
+8) "Wie schnell ist er da?"
+"Versand aus Deutschland, in der Regel 2–4 Werktage. Der Versand ist kostenlos und CO₂-neutral."
+
+ZUSÄTZLICH FÜR GOOGLE: Gib zu diesem Abschnitt strukturierte Daten im Format JSON-LD als FAQPage aus, die genau die oben genannten Fragen und Antworten enthalten. Erzeuge sie automatisch aus den eingetragenen Fragen, damit sie bei Textänderungen mitwandern.
+
+EINSTELLUNGEN: Jede Frage ist ein eigener Block mit zwei Feldern (Frage und Antwort), damit Fragen ergänzt, gelöscht und umsortiert werden können. Die beiden Überschriften oben sollen ebenfalls im Theme-Editor änderbar sein. Bitte alle Texte als Standardwerte vorbelegen.
+
+WICHTIG ZUM KONTRAST: Auf hellem Hintergrund niemals #9B71B8 oder ein helleres Violett für Text verwenden. Fragen und Überschriften in #3D2645, Antworten in #5D3E6E, kleine Überschrift und Pfeil in #8151A3, Rahmen und Linien in #D5C0E8.

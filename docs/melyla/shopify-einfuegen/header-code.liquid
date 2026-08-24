@@ -1,0 +1,383 @@
+{%- liquid
+  assign bg = section.settings.bg_color | default: '#FAF7FF'
+  assign fg = section.settings.text_color | default: '#3D2645'
+  assign cta_bg = section.settings.cta_bg_color | default: '#8151A3'
+  assign cta_fg = section.settings.cta_text_color | default: '#FFFFFF'
+  assign menu = linklists[section.settings.menu]
+  assign logo_alt = section.settings.logo_alt | default: shop.name
+-%}
+
+<header
+  class="mel-hdr{% if section.settings.sticky %} mel-hdr--sticky{% endif %}{% if section.settings.logo_position == 'center' %} mel-hdr--center{% endif %}"
+  id="mel-hdr-{{ section.id }}"
+>
+  <div class="mel-hdr__inner">
+
+    {%- comment -%} Logo {%- endcomment -%}
+    <a href="{{ routes.root_url }}" class="mel-hdr__logo" aria-label="{{ shop.name | escape }} — Startseite">
+      {%- if section.settings.logo -%}
+        {{ section.settings.logo | image_url: width: 600 | image_tag: widths: '120,240,360,480,600', sizes: '(max-width: 1149px) 120px, 240px', alt: logo_alt, class: 'mel-hdr__logo-img', loading: 'eager' }}
+      {%- else -%}
+        <span class="mel-hdr__logo-text">{{ shop.name }}</span>
+      {%- endif -%}
+    </a>
+
+    {%- comment -%} Navigation — erst ab 1150px sichtbar {%- endcomment -%}
+    {%- if menu != blank and menu.links.size > 0 -%}
+      <nav class="mel-hdr__nav" aria-label="Hauptnavigation">
+        {%- for link in menu.links -%}
+          {%- if link.links.size > 0 -%}
+            <div class="mel-hdr__sub">
+              <button type="button" class="mel-hdr__link mel-hdr__sub-btn" aria-expanded="false">
+                {{ link.title }}
+                <svg class="mel-hdr__chev" width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                  <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <div class="mel-hdr__sub-menu">
+                {%- for child in link.links -%}
+                  <a href="{{ child.url }}" class="mel-hdr__sub-item">{{ child.title }}</a>
+                {%- endfor -%}
+              </div>
+            </div>
+          {%- else -%}
+            <a href="{{ link.url }}" class="mel-hdr__link{% if link.active %} is-active{% endif %}">{{ link.title }}</a>
+          {%- endif -%}
+        {%- endfor -%}
+      </nav>
+    {%- endif -%}
+
+    {%- comment -%} Rechte Seite {%- endcomment -%}
+    <div class="mel-hdr__actions">
+      {%- if section.settings.cta_label != blank -%}
+        <a href="{{ section.settings.cta_url | default: routes.all_products_collection_url }}" class="mel-hdr__cta">
+          {{ section.settings.cta_label }}
+        </a>
+      {%- endif -%}
+
+      {%- if section.settings.show_cart -%}
+        <a href="{{ routes.cart_url }}" class="mel-hdr__cart" aria-label="Warenkorb, {{ cart.item_count }} Artikel">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M2 3h3l2.4 11.2a1.6 1.6 0 0 0 1.6 1.3h8.3a1.6 1.6 0 0 0 1.6-1.3L21 7H6"
+                  stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="9.5" cy="20" r="1.4" fill="currentColor"/>
+            <circle cx="17.5" cy="20" r="1.4" fill="currentColor"/>
+          </svg>
+          {%- if cart.item_count > 0 -%}
+            <span class="mel-hdr__count">{{ cart.item_count }}</span>
+          {%- endif -%}
+        </a>
+      {%- endif -%}
+
+      <button type="button" class="mel-hdr__burger" id="mel-burger-{{ section.id }}"
+              aria-label="Menü öffnen" aria-expanded="false" aria-controls="mel-drawer-{{ section.id }}">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+{%- comment -%} Mobiles Menü {%- endcomment -%}
+<div class="mel-hdr__scrim" data-mel-scrim hidden></div>
+
+<div class="mel-hdr__drawer" id="mel-drawer-{{ section.id }}" hidden>
+  <div class="mel-hdr__drawer-top">
+    <span class="mel-hdr__drawer-title">Menü</span>
+    <button type="button" class="mel-hdr__close" data-mel-close aria-label="Menü schließen">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+
+  {%- if menu != blank and menu.links.size > 0 -%}
+    <nav class="mel-hdr__drawer-nav" aria-label="Menü">
+      {%- for link in menu.links -%}
+        {%- if link.links.size > 0 -%}
+          <button type="button" class="mel-hdr__drawer-link mel-hdr__drawer-toggle" aria-expanded="false">
+            {{ link.title }}
+            <svg class="mel-hdr__chev" width="13" height="13" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="mel-hdr__drawer-sub" hidden>
+            {%- for child in link.links -%}
+              <a href="{{ child.url }}" class="mel-hdr__drawer-link mel-hdr__drawer-child">{{ child.title }}</a>
+            {%- endfor -%}
+          </div>
+        {%- else -%}
+          <a href="{{ link.url }}" class="mel-hdr__drawer-link">{{ link.title }}</a>
+        {%- endif -%}
+      {%- endfor -%}
+    </nav>
+  {%- endif -%}
+
+  {%- if section.settings.cta_label != blank -%}
+    <a href="{{ section.settings.cta_url | default: routes.all_products_collection_url }}" class="mel-hdr__cta mel-hdr__cta--wide">
+      {{ section.settings.cta_label }}
+    </a>
+  {%- endif -%}
+</div>
+
+{%- style -%}
+  #shopify-section-{{ section.id }} { margin: 0; padding: 0; }
+
+  .mel-hdr {
+    background: {{ bg }};
+    color: {{ fg }};
+    border-bottom: 1px solid rgba(61, 38, 69, .08);
+  }
+  .mel-hdr--sticky { position: sticky; top: 0; z-index: 60; }
+
+  .mel-hdr__inner {
+    max-width: 80rem; margin-inline: auto;
+    padding: 12px 20px;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  }
+
+  /* Logo */
+  .mel-hdr__logo { display: inline-flex; align-items: center; text-decoration: none; flex: none; }
+  .mel-hdr__logo-img {
+    display: block; height: auto;
+    width: {{ section.settings.logo_width | default: 120 }}px;
+    max-width: 100%;
+  }
+  .mel-hdr__logo-text {
+    font-size: 1.25rem; font-weight: 700; letter-spacing: .04em; color: {{ fg }};
+  }
+
+  /* Navigation */
+  .mel-hdr__nav { display: none; align-items: center; gap: 4px; flex: 1; justify-content: center; }
+  .mel-hdr__link {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 8px 12px; border: 0; background: none; cursor: pointer;
+    font: inherit; font-size: .9375rem; color: {{ fg }}; text-decoration: none;
+    border-radius: 999px; white-space: nowrap;
+    transition: background-color .15s ease;
+  }
+  .mel-hdr__link:hover { background: rgba(129, 81, 163, .10); }
+  .mel-hdr__link.is-active { background: rgba(129, 81, 163, .14); font-weight: 600; }
+  .mel-hdr__chev { transition: transform .2s ease; }
+
+  /* Untermenü auf dem Desktop */
+  .mel-hdr__sub { position: relative; }
+  .mel-hdr__sub-menu {
+    position: absolute; top: calc(100% + 6px); left: 0; z-index: 70;
+    min-width: 200px; padding: 8px;
+    background: #FFFFFF; border: 1px solid #D5C0E8; border-radius: 14px;
+    box-shadow: 0 12px 32px rgba(61, 38, 69, .12);
+    opacity: 0; visibility: hidden; transform: translateY(-4px);
+    transition: opacity .15s ease, transform .15s ease, visibility .15s;
+  }
+  .mel-hdr__sub:hover .mel-hdr__sub-menu,
+  .mel-hdr__sub:focus-within .mel-hdr__sub-menu {
+    opacity: 1; visibility: visible; transform: translateY(0);
+  }
+  .mel-hdr__sub:hover .mel-hdr__chev,
+  .mel-hdr__sub:focus-within .mel-hdr__chev { transform: rotate(180deg); }
+  .mel-hdr__sub-item {
+    display: block; padding: 9px 12px; border-radius: 10px;
+    font-size: .875rem; color: #3D2645; text-decoration: none; white-space: nowrap;
+  }
+  .mel-hdr__sub-item:hover { background: #F2E8F8; }
+
+  /* Rechte Seite */
+  .mel-hdr__actions { display: flex; align-items: center; gap: 8px; flex: none; }
+  .mel-hdr__cta {
+    display: none; align-items: center; justify-content: center;
+    background: {{ cta_bg }}; color: {{ cta_fg }};
+    padding: 10px 20px; border-radius: 999px;
+    font-size: .875rem; font-weight: 600; text-decoration: none; white-space: nowrap;
+    transition: filter .15s ease;
+  }
+  .mel-hdr__cta:hover { filter: brightness(1.08); color: {{ cta_fg }}; }
+  .mel-hdr__cta--wide { display: flex; margin: 20px; }
+
+  .mel-hdr__cart {
+    position: relative; display: inline-flex; align-items: center; justify-content: center;
+    width: 42px; height: 42px; border-radius: 999px; color: {{ fg }}; text-decoration: none;
+  }
+  .mel-hdr__cart:hover { background: rgba(129, 81, 163, .10); }
+  .mel-hdr__count {
+    position: absolute; top: 4px; right: 2px;
+    min-width: 18px; height: 18px; padding: 0 5px;
+    display: inline-flex; align-items: center; justify-content: center;
+    background: {{ cta_bg }}; color: {{ cta_fg }};
+    border-radius: 999px; font-size: 11px; font-weight: 700; line-height: 1;
+  }
+
+  .mel-hdr__burger {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 42px; height: 42px; border: 0; background: none; cursor: pointer;
+    color: {{ fg }}; border-radius: 999px;
+  }
+  .mel-hdr__burger:hover { background: rgba(129, 81, 163, .10); }
+
+  /* Mobiles Menü */
+  .mel-hdr__scrim {
+    position: fixed; inset: 0; z-index: 80;
+    background: rgba(61, 38, 69, .45); backdrop-filter: blur(2px);
+    opacity: 0; transition: opacity .25s ease;
+  }
+  .mel-hdr__scrim.is-open { opacity: 1; }
+
+  .mel-hdr__drawer {
+    position: fixed; top: 0; right: 0; bottom: 0; z-index: 90;
+    width: min(84vw, 340px);
+    background: {{ bg }}; color: {{ fg }};
+    display: flex; flex-direction: column;
+    transform: translateX(100%); transition: transform .28s ease;
+    overflow-y: auto; box-shadow: -8px 0 32px rgba(61, 38, 69, .18);
+  }
+  .mel-hdr__drawer.is-open { transform: translateX(0); }
+  .mel-hdr__drawer-top {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 20px; border-bottom: 1px solid rgba(61, 38, 69, .10);
+  }
+  .mel-hdr__drawer-title { font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; font-weight: 700; opacity: .65; }
+  .mel-hdr__close {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 40px; height: 40px; border: 0; background: none; cursor: pointer;
+    color: {{ fg }}; border-radius: 999px;
+  }
+  .mel-hdr__close:hover { background: rgba(129, 81, 163, .10); }
+
+  .mel-hdr__drawer-nav { padding: 8px 0; }
+  .mel-hdr__drawer-link {
+    display: flex; align-items: center; justify-content: space-between; gap: 8px;
+    width: 100%; padding: 14px 20px; border: 0; background: none; cursor: pointer;
+    font: inherit; font-size: 1rem; color: {{ fg }}; text-decoration: none; text-align: left;
+  }
+  .mel-hdr__drawer-link:hover { background: rgba(129, 81, 163, .08); }
+  .mel-hdr__drawer-child { padding-left: 36px; font-size: .9375rem; opacity: .85; }
+  .mel-hdr__drawer-toggle[aria-expanded='true'] .mel-hdr__chev { transform: rotate(180deg); }
+
+  /* Tastaturbedienung sichtbar machen */
+  .mel-hdr a:focus-visible,
+  .mel-hdr button:focus-visible,
+  .mel-hdr__drawer a:focus-visible,
+  .mel-hdr__drawer button:focus-visible {
+    outline: 2px solid {{ cta_bg }}; outline-offset: 2px;
+  }
+
+  /* Ab 1150px: Navigation sichtbar, Hamburger weg.
+     990px reicht nicht — sieben Menuepunkte plus Logo und Schaltflaeche
+     ergeben rund 1090px Mindestbreite. */
+  @media screen and (min-width: 1150px) {
+    .mel-hdr__nav { display: flex; }
+    .mel-hdr__cta { display: inline-flex; }
+    .mel-hdr__burger { display: none; }
+    .mel-hdr__inner { padding: 14px 24px; }
+
+    .mel-hdr--center .mel-hdr__inner {
+      display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px;
+    }
+    .mel-hdr--center .mel-hdr__nav { order: 1; justify-content: flex-start; }
+    .mel-hdr--center .mel-hdr__logo { order: 2; justify-self: center; }
+    .mel-hdr--center .mel-hdr__actions { order: 3; justify-self: end; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mel-hdr__drawer, .mel-hdr__scrim, .mel-hdr__sub-menu, .mel-hdr__chev { transition: none; }
+  }
+{%- endstyle -%}
+
+<script>
+  (function () {
+    var burger = document.getElementById('mel-burger-{{ section.id }}');
+    var drawer = document.getElementById('mel-drawer-{{ section.id }}');
+    if (!burger || !drawer) return;
+
+    var scrim = document.querySelector('[data-mel-scrim]');
+    var closeBtn = drawer.querySelector('[data-mel-close]');
+
+    function open() {
+      drawer.hidden = false;
+      if (scrim) scrim.hidden = false;
+      // Erst im naechsten Frame die Klasse setzen, damit die Bewegung sichtbar wird.
+      requestAnimationFrame(function () {
+        drawer.classList.add('is-open');
+        if (scrim) scrim.classList.add('is-open');
+      });
+      burger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+      if (closeBtn) closeBtn.focus();
+    }
+
+    function close() {
+      drawer.classList.remove('is-open');
+      if (scrim) scrim.classList.remove('is-open');
+      burger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      burger.focus();
+      window.setTimeout(function () {
+        drawer.hidden = true;
+        if (scrim) scrim.hidden = true;
+      }, 280);
+    }
+
+    burger.addEventListener('click', function () {
+      burger.getAttribute('aria-expanded') === 'true' ? close() : open();
+    });
+    if (closeBtn) closeBtn.addEventListener('click', close);
+    if (scrim) scrim.addEventListener('click', close);
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && burger.getAttribute('aria-expanded') === 'true') close();
+    });
+
+    // Untermenues im mobilen Menue aufklappen
+    drawer.querySelectorAll('.mel-hdr__drawer-toggle').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!open));
+        var panel = btn.nextElementSibling;
+        if (panel) panel.hidden = open;
+      });
+    });
+
+    // Beim Wechsel auf Desktopbreite das Menue schliessen, damit nichts haengen bleibt.
+    var wide = window.matchMedia('(min-width: 1150px)');
+    var onChange = function (e) { if (e.matches && burger.getAttribute('aria-expanded') === 'true') close(); };
+    wide.addEventListener ? wide.addEventListener('change', onChange) : wide.addListener(onChange);
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Header",
+  "tag": "header",
+  "class": "melyla-header",
+  "settings": [
+    { "type": "header", "content": "Logo" },
+    { "type": "image_picker", "id": "logo", "label": "Logo-Bild" },
+    { "type": "range", "id": "logo_width", "label": "Logobreite", "min": 60, "max": 260, "step": 10, "default": 120, "unit": "px" },
+    { "type": "text", "id": "logo_alt", "label": "Logo Alt-Text", "default": "MELYLA" },
+    {
+      "type": "select", "id": "logo_position", "label": "Logoposition", "default": "left",
+      "options": [{ "value": "left", "label": "Links" }, { "value": "center", "label": "Mittig" }]
+    },
+
+    { "type": "header", "content": "Navigation" },
+    { "type": "link_list", "id": "menu", "label": "Menü", "default": "main-menu", "info": "Wird unter Inhalte → Menüs gepflegt." },
+
+    { "type": "header", "content": "Schaltfläche rechts" },
+    { "type": "text", "id": "cta_label", "label": "Beschriftung", "default": "Zum Shop" },
+    { "type": "url", "id": "cta_url", "label": "Ziel" },
+    { "type": "color", "id": "cta_bg_color", "label": "Schaltfläche — Fläche", "default": "#8151A3" },
+    { "type": "color", "id": "cta_text_color", "label": "Schaltfläche — Schrift", "default": "#FFFFFF" },
+
+    { "type": "header", "content": "Warenkorb" },
+    { "type": "checkbox", "id": "show_cart", "label": "Warenkorb-Symbol anzeigen", "default": true },
+
+    { "type": "header", "content": "Verhalten" },
+    { "type": "checkbox", "id": "sticky", "label": "Beim Scrollen oben festhalten", "default": true },
+
+    { "type": "header", "content": "Farben" },
+    { "type": "color", "id": "bg_color", "label": "Hintergrund", "default": "#FAF7FF" },
+    { "type": "color", "id": "text_color", "label": "Schrift", "default": "#3D2645", "info": "Heller Hintergrund braucht dunkle Schrift (#3D2645), dunkler Hintergrund weiße. Weiß auf Hell ist unlesbar." }
+  ]
+}
+{% endschema %}

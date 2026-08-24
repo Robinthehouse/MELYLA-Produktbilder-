@@ -1,0 +1,43 @@
+Baue einen Abschnitt mit hellem Hintergrund (#FAF7FF), abgerundeten Ecken und großzügigem Innenabstand.
+
+OBEN, zentriert, max. 660px breit:
+- Kleine Überschrift, Großbuchstaben, gesperrt, Farbe #8151A3: "Verarbeitung"
+- Große Serifen-Überschrift in #3D2645: "Jedes Detail hat seinen Grund"
+- Fließtext in #775C88: "Ein BH, den man acht Stunden lang trägt, verzeiht keine schlechte Naht. Deshalb sitzt hier nichts zufällig."
+
+DARUNTER drei Abschnitte untereinander, jeder zweispaltig mit großem Abstand dazwischen. Die Seiten wechseln sich ab: erster Abschnitt Bild links / Text rechts, zweiter Text links / Bild rechts, dritter wieder Bild links / Text rechts. Auf dem Handy stehen Bild und Text untereinander, Bild immer zuerst.
+
+Bildspalte: Bild im Seitenverhältnis 16:9, abgerundete Ecken, weicher Schatten, füllt die Spaltenbreite.
+
+Textspalte von oben nach unten:
+- Kleine Überschrift, Großbuchstaben, gesperrt, in #8151A3
+- Serifen-Überschrift in #3D2645
+- Fließtext in #775C88
+- Drei Merkmale untereinander, je Merkmal ein kleiner runder Kreis (32px) mit Hintergrund #EDE0F5 und einem Häkchen in #8151A3, daneben eine halbfette Bezeichnung in #3D2645 und darunter eine kurze Erklärung in #775C88
+
+Inhalte:
+
+ABSCHNITT 1 — kleine Überschrift "Durchdachtes Design", Überschrift "Jedes Detail hat seinen Grund"
+Text: "Der MELYLA Schlaf BH wurde für maximalen Tragekomfort und wirksame Faltenvorbeugung entwickelt. Hochwertiges Material trifft auf durchdachte Formgebung — für Nächte, die für deine Haut arbeiten."
+Merkmale:
+  "Verstellbarer Verschluss" — "Lässt sich genau an deinen Umfang anpassen"
+  "Eingenähte Polsterung" — "Stützt das Gewebe sanft von innen"
+  "82 % Elastan, 18 % Nylon" — "Atmungsaktiv und formstabil, Nacht für Nacht"
+
+ABSCHNITT 2 — kleine Überschrift "Perfekte Passform", Überschrift "Individuelle Unterstützung für jede Körperform"
+Text: "Verstellbare Schultergurte und eine durchdachte Unterbruststütze sorgen dafür, dass der Schlaf BH jeder Körperform gerecht wird. Er stützt sanft, ohne einzuengen — und hält das Dekolleté auch im Liegen in Form."
+Merkmale:
+  "Verstellbare Schultergurte" — "Individuell anpassbar für den perfekten Sitz"
+  "Optimale Unterbruststütze" — "Hält die Brust natürlich in Position"
+  "Kein Einschneiden" — "Weiche Kanten für ungestörten Schlaf"
+
+ABSCHNITT 3 — kleine Überschrift "Am Morgen", Überschrift "Wach auf mit glattem Dekolleté"
+Text: "Nacht für Nacht schützt der Schlaf BH dein Dekolleté vor Falten durch die Seitenlage. Die sanfte Stütze hält die Haut gleichmäßig gespannt und verhindert, dass neue Schlaffalten entstehen — ganz ohne Aufwand."
+Merkmale:
+  "Wirkt in jeder Schlafposition" — "Auf der Seite wie auf dem Rücken"
+  "Vorbeugung statt Nachbessern" — "Es entstehen gar nicht erst neue Linien"
+  "Ohne Cremes und ohne Aufwand" — "Anziehen, schlafen, fertig"
+
+EINSTELLUNGEN: Jeder der drei Abschnitte ist ein eigener Block mit Bildauswahl, Alt-Text, kleiner Überschrift, Überschrift, Fließtext und den drei Merkmalen (je Bezeichnung und Erklärung). Auch die Überschriften ganz oben sollen im Theme-Editor änderbar sein. Bitte alle Texte als Standardwerte vorbelegen. Die abwechselnde Seite soll automatisch aus der Position des Blocks folgen, damit sie beim Umsortieren stimmt.
+
+WICHTIG ZUM KONTRAST: Auf hellem Hintergrund niemals #9B71B8 oder ein helleres Violett für Text, und niemals Gold als Schrift- oder Symbolfarbe. Fließtext und Erklärungen #775C88, Bezeichnungen und Überschriften #3D2645, kleine Überschriften und Häkchen #8151A3. #EDE0F5 ist nur Flächenfarbe.

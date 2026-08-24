@@ -1,0 +1,20 @@
+Im Produktbereich oben gibt es zwei Probleme. Bitte beide beheben, ohne den restlichen Aufbau zu verändern.
+
+PROBLEM 1 — Auf dem Handy ist der Abschnitt breiter als der Bildschirm. Titel, Preis und Texte werden rechts abgeschnitten, und die Seite lässt sich seitlich verschieben.
+
+Ursache sind sehr wahrscheinlich die Schaltflächen der Größenauswahl: Ihre Beschriftungen sind lang ("XL (95cm und größerer Unterbrustumfang)") und erzwingen eine Mindestbreite, die der Bildschirm nicht hergibt.
+
+Bitte so lösen:
+- Die Größen-Schaltflächen stehen auf schmalen Bildschirmen untereinander und nehmen jeweils die volle Breite ein. Der Text darin darf umbrechen und wird mittig ausgerichtet.
+- Keine feste Mindestbreite und keine feste Pixelbreite bei diesen Schaltflächen.
+- Der gesamte Produktbereich darf auf keiner Bildschirmbreite waagerecht scrollen. Alle Elemente — Titel, Preisfeld, Beschreibungstext, Vertrauenssymbole und Zahlungsarten — bleiben innerhalb der Bildschirmbreite und brechen bei Bedarf um.
+- Der Produkttitel darf umbrechen und wird nicht abgeschnitten.
+- Die Reihe der Zahlungsarten und die Reihe der Vertrauenssymbole brechen auf schmalen Bildschirmen um, statt hinauszuragen.
+
+PROBLEM 2 — Auf dem Desktop bleibt die linke Spalte beim Scrollen leer, weil die Bildergalerie kurz ist und der Text daneben viel länger.
+
+Bitte die Bildergalerie auf breiten Bildschirmen mitlaufen lassen: Sie bleibt beim Scrollen sichtbar am oberen Rand stehen, solange die rechte Spalte noch Inhalt hat, mit etwas Abstand nach oben. Auf schmalen Bildschirmen bleibt alles wie bisher untereinander, ohne Mitlaufen.
+
+AUSSERDEM: Die Beschriftung über der Größenauswahl lautet aktuell "Size wählen:". Bitte auf "Größe wählen:" ändern.
+
+Alles andere bleibt unverändert: Reihenfolge der Elemente, Farben, der goldene Kauf-Button mit dunkler Schrift, die Vertrauenssymbole und die Zahlungsarten.

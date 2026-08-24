@@ -63,8 +63,11 @@ internen Link aus Vorlagen, Sektionsgruppen und HTML-Bausteinen mit seinem Statu
 ## Offen — nur im Shopify-Admin
 
 - Im Abschnitt *MELYLA Angebot* die drei Produkte auswählen — setzt Links **und** Preise
-- Vorlagen zuweisen: `melyla-bh`, `melyla-kissen`, `bundle`, `funktionsweise-kissen`
-  (letztere an die Seite *Wie funktioniert das Anti-Falten Kissen?*)
+- **Vorlagen zuweisen geht noch nicht.** Das Dropdown im Seiten-Editor listet nur die Vorlagen
+  des **veröffentlichten** Themes — unseres ist es nicht. Belegt am 24.08.: dort stehen
+  `landing-kissen` und `ueber-melyla`, die es bei uns gar nicht gibt, während keine unserer fünf
+  Vorlagen auftaucht. Betrifft `melyla-bh`, `melyla-kissen`, `bundle`, `funktionsweise-kissen`
+  gleichermaßen. Bis zur Veröffentlichung tragen die HTML-Bausteine die Seiten.
 - Seite *Funktionsweise* umbenennen in *Wie funktioniert der Anti-Falten Schlaf BH?* —
   **nur den Titel, nicht die Adresse** `/pages/funktionsweise`, daran hängen vier Vorlagen
 - Beide Erklärseiten ins Menü aufnehmen

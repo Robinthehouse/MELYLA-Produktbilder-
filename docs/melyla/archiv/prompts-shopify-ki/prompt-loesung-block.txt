@@ -1,0 +1,34 @@
+Baue einen Abschnitt mit hellem Hintergrund (#FAF7FF), abgerundeten Ecken und großzügigem Innenabstand.
+
+OBEN, zentriert, max. 660px breit:
+- Kleine Überschrift, Großbuchstaben, gesperrt, Farbe #8151A3: "Die Lösung"
+- Große Serifen-Überschrift in #3D2645: "Ein BH, der genau eine Aufgabe hat"
+- Fließtext in #775C88: "Nicht stützen. Nicht formen. Nur verhindern, dass dein Dekolleté nachts zusammenfällt."
+
+DARUNTER: drei Schritte untereinander, jeder Schritt zweispaltig mit großem Abstand dazwischen. Die Seiten wechseln sich ab: Schritt 1 Bild links / Text rechts, Schritt 2 Text links / Bild rechts, Schritt 3 wieder Bild links / Text rechts. Auf dem Handy stehen Bild und Text untereinander, Bild immer zuerst.
+
+Die Bildspalte: Bild im Seitenverhältnis 4:3, abgerundete Ecken, weicher Schatten, füllt die Spaltenbreite.
+
+Die Textspalte, von oben nach unten:
+- Eine große Schrittnummer in Serifenschrift (etwa 42px, fett) in hellem Violett #D5C0E8, daneben eine dünne waagerechte Linie in #D5C0E8, die den Rest der Breite füllt
+- Serifen-Überschrift in #3D2645
+- Fließtext in #775C88
+- Eine Liste ohne Aufzählungspunkte, stattdessen je ein Häkchen in #8151A3 links, Text in #775C88
+
+Inhalte der drei Schritte:
+
+SCHRITT 01 — Überschrift "Er trennt, statt zu drücken"
+Text: "Der weiche Mittelsteg legt sich zwischen die Brüste und hält sie sanft auf Abstand. Die Haut am Dekolleté bleibt glatt gespannt — auch wenn du dich auf die Seite drehst."
+Liste: "Wirkt in Seiten- und in Rückenlage" / "Kein Bügel, kein Druck auf das Gewebe" / "Bleibt in Position, auch wenn du dich drehst"
+
+SCHRITT 02 — Überschrift "Du spürst ihn nach zwei Nächten nicht mehr"
+Text: "Racerback-Schnitt, flache Nähte, keine Bügel, kein Haken im Rücken. Atmungsaktiv genug, um ihn auch im Sommer die ganze Nacht zu tragen."
+Liste: "Flache Nähte, die nicht drücken" / "Atmungsaktives Material für die ganze Nacht" / "Vier Größen von S bis XL"
+
+SCHRITT 03 — Überschrift "Und morgens siehst du den Unterschied"
+Text: "Keine frischen Knicklinien mehr, die sich erst über den Vormittag glätten müssen. Und weil keine neuen dazukommen, arbeitet die Zeit ab jetzt für dich statt gegen dich."
+Liste: "Keine frischen Schlaffalten am Morgen" / "Kundinnen berichten von ersten Veränderungen nach 2–4 Wochen" / "Je früher du beginnst, desto mehr bleibt dir erhalten"
+
+EINSTELLUNGEN: Jeder Schritt soll ein eigener Block sein, mit Bildauswahl, Alt-Text, Überschrift, Text und den drei Listenpunkten als bearbeitbare Felder. Auch die Überschriften ganz oben sollen im Theme-Editor änderbar sein. Bitte alle Texte als Standardwerte vorbelegen. Die Schrittnummern (01, 02, 03) sollen automatisch aus der Reihenfolge der Blöcke entstehen, damit sie beim Umsortieren stimmen. Die abwechselnde Seite (Bild links/rechts) soll ebenfalls automatisch aus der Position folgen.
+
+WICHTIG ZUM KONTRAST: Auf diesem hellen Hintergrund niemals #9B71B8 oder ein helleres Violett für Fließtext verwenden — das ist zu kontrastarm. Für Fließtext #775C88, für Häkchen und kleine Überschriften #8151A3, für große Überschriften #3D2645. Das helle #D5C0E8 ist ausschließlich für die Schrittnummer und die Trennlinie erlaubt, weil beides reine Dekoration ist — niemals für lesbaren Text.

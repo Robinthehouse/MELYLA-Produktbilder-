@@ -1,0 +1,13 @@
+Die große Überschrift mit dem Text "Anti-Falten Schlaf BH von Melyla, um 50 Euro" ist immer noch weiß und auf dem hellen Hintergrund komplett unsichtbar. Die vorherige Korrektur hat sie nicht erfasst.
+
+Bitte gezielt diese eine Überschrift reparieren:
+
+1. Entferne von dieser Überschrift ALLE Effekte, die die Textfarbe erzeugen oder überlagern — insbesondere Farbverläufe im Hintergrund in Verbindung mit durchsichtigem Text (background-clip: text und -webkit-text-fill-color), Transparenz, Textschatten, Mischmodi und jede Vererbung aus einem Farbschema.
+2. Setze danach die Textfarbe fest auf #3D2645. Falls eine andere Regel dagegen gewinnt, setze sie mit höherer Priorität durch.
+3. Der Hintergrund hinter der Überschrift bleibt hell und unverändert — es soll KEIN dunkler Kasten hinter den Text gelegt werden. Nur die Schriftfarbe ändert sich.
+
+Zusätzlich: Das Häkchen-Symbol links neben "BARBARA Magazin — Ausgabe Nr. 61" ist noch golden und hebt sich zu schwach ab. Setze es auf #8151A3.
+
+Alles andere in diesem Abschnitt ist bereits richtig und bleibt unverändert: Bild, Anordnung, Abstände, der Beschreibungstext und die Zeile "Redaktionsempfehlung".
+
+Zur Kontrolle: Nach der Änderung muss die Überschrift dunkelviolett auf hellem Grund stehen und beim Lesen sofort ins Auge fallen — so deutlich wie der Beschreibungstext darunter, nur größer.

@@ -1,0 +1,25 @@
+Baue eine schmale Ankündigungsleiste, die ganz oben über dem Header sitzt.
+
+AUSSEHEN:
+- Hintergrund #3D2645, Schrift in Weiß, kleine Schriftgröße (13-14px), Text mittig.
+- Geringe Höhe: nur etwa 10px Innenabstand oben und unten. Die Leiste soll nicht ins Gewicht fallen, sondern ein feiner Streifen sein.
+- Kein Rahmen, kein Schatten, keine abgerundeten Ecken. Sie schließt bündig an den Header darunter an, ohne Abstand dazwischen.
+
+INHALT:
+Auf breiten Bildschirmen stehen drei Angaben nebeneinander in einer Zeile, getrennt durch einen dezenten Mittelpunkt in #B08AC8. Jede Angabe beginnt mit einem kleinen Häkchen:
+  "Gratis Versand"
+  "30 Tage Rückgabe"
+  "Designed in Germany"
+
+Auf schmalen Bildschirmen ist nebeneinander kein Platz. Zeige dort nur eine Angabe zur Zeit und blende alle paar Sekunden sanft zur nächsten weiter, in Endlosschleife. Der Wechsel soll ruhig sein, ohne Springen der Leistenhöhe.
+
+Wenn im Betriebssystem "Bewegung reduzieren" eingeschaltet ist, findet kein automatischer Wechsel statt — dann steht dort dauerhaft die erste Angabe.
+
+EINSTELLUNGEN:
+- Jede Angabe ist ein eigener Block mit einem Textfeld und einem optionalen Link.
+- Ein Schalter, ob auf dem Handy automatisch weitergeblendet wird, dazu ein Feld für die Anzeigedauer in Sekunden (Standard 4).
+- Felder für Hintergrundfarbe und Schriftfarbe, vorbelegt mit #3D2645 und Weiß.
+- Ein Schalter, ob das Häkchen vor jeder Angabe angezeigt wird.
+Bitte die drei genannten Texte als Standardwerte vorbelegen.
+
+WICHTIG ZUM KONTRAST: Die Schrift muss sich klar vom Hintergrund abheben. Auf dem dunklen Hintergrund #3D2645 ausschließlich weiße Schrift verwenden — niemals #9B71B8 oder Gold, beides ist dort zu kontrastarm. Der Trennpunkt zwischen den Angaben darf in #B08AC8 stehen, weil er nur Dekoration ist.

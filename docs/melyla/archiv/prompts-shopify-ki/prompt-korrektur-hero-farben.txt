@@ -1,0 +1,17 @@
+Der Aufbau dieses Abschnitts ist genau richtig und bleibt unverändert — insbesondere die Anordnung, die Häkchenliste mit den drei Angaben und die Position des Videos. Bitte ausschließlich die Farben korrigieren:
+
+1. HINTERGRUND: Der Abschnitt hat aktuell keinen eigenen Hintergrund. Gib ihm einen weichen senkrechten Farbverlauf von #F2E8F8 oben nach #FAF7FF unten.
+
+2. ÜBERSCHRIFT: Die zweite Zeile "mehr Lächeln" soll in #8151A3 stehen, die erste Zeile "Weniger Falten," bleibt in #3D2645. Der Zeilenumbruch zwischen beiden Zeilen soll fest sein, damit "mehr Lächeln" immer allein in der zweiten Zeile steht.
+
+3. KAUF-BUTTON "Jetzt entdecken": Die Schrift ist derzeit weiß auf Gold — das ist zu kontrastarm und schlecht lesbar. Setze die Schriftfarbe auf #3D2645. Der goldene Hintergrund #C9973E bleibt. Beim Überfahren wird der Hintergrund heller (#E0AF5C), die Schrift bleibt dunkel.
+
+4. ZWEITE SCHALTFLÄCHE "Wie funktioniert's?": Rahmen und Schrift auf #8151A3 setzen, Hintergrund bleibt durchsichtig.
+
+5. HÄKCHEN vor den drei Angaben: von Gold auf #8151A3 umstellen — Gold hebt sich vom hellen Hintergrund zu schwach ab. Der Text daneben bleibt in #3D2645.
+
+6. PILLE "Nr. 1 Bestseller" auf dem Video: Hintergrund von Gold auf #8151A3 umstellen, Schrift bleibt weiß.
+
+7. Die Sterne in der kleinen Bewertungskarte auf dem Video von Gelb auf #8151A3 umstellen.
+
+Grundregel: Gold (#C9973E) wird in diesem Abschnitt nur noch als Fläche des Kauf-Buttons verwendet, nirgends als Schrift- oder Symbolfarbe. Für Akzente, Symbole und Hervorhebungen gilt #8151A3.

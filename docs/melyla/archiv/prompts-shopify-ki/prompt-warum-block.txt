@@ -1,0 +1,25 @@
+Baue einen Abschnitt mit hellem Hintergrund (#F2E8F8), abgerundeten Ecken und großzügigem Innenabstand.
+
+OBEN, zentriert, max. 660px breit:
+- Kleine Überschrift, Großbuchstaben, gesperrt, Farbe #8151A3: "Warum bisher nichts geholfen hat"
+- Große Serifen-Überschrift in #3D2645: "Du hast nicht zu wenig getan. Du hast am falschen Punkt angesetzt."
+- Fließtext in #775C88: "Drei Dinge, die fast jede Frau zuerst probiert — und warum sie an Schlaffalten vorbeigehen."
+
+DARUNTER: drei gleich breite Karten nebeneinander (3 Spalten auf dem Desktop, 1 Spalte auf dem Handy). Jede Karte: weißer Hintergrund (#FFFFFF), abgerundete Ecken, weicher Schatten, großzügiger Innenabstand, gleiche Höhe. Aufbau je Karte von oben nach unten:
+- Ein runder Kreis (36px) mit hellrosa Hintergrund (#EDE0F5), darin ein kleines X-Symbol in #8151A3
+- Serifen-Überschrift in #3D2645
+- Fließtext in #775C88
+
+Inhalte der drei Karten:
+1) Überschrift "Creme wirkt auf der Haut. Gefaltet wird sie darunter." — Text: "Auch die beste Pflege ändert nichts daran, dass die Haut acht Stunden lang mechanisch geknickt wird. Sie versorgt die Oberfläche, während der Knick jede Nacht neu gesetzt wird."
+2) Überschrift "Das Seidenkissen schützt dein Gesicht — nicht dein Dekolleté." — Text: "Ein Kissen verringert Reibung an der Wange. An dein Dekolleté kommt es gar nicht heran. Dort ist auch nicht Reibung das Problem, sondern der Druck der eigenen Brust."
+3) Überschrift "Auf dem Rücken schlafen hält niemand durch." — Text: "Der Vorsatz hält genau bis zum Einschlafen. Danach entscheidet dein Körper — und der dreht sich vielfach pro Nacht, ohne dich zu fragen."
+
+GANZ UNTEN ein breiter weißer Kasten (#FFFFFF, abgerundet, weicher Schatten), zweigeteilt: links ein Bild über die volle Höhe, rechts der Text. Auf dem Handy stehen Bild und Text untereinander, Bild zuerst. Der Textbereich enthält:
+- Kleine Überschrift, Großbuchstaben, gesperrt, in #8151A3: "Der eigentliche Hebel"
+- Serifen-Überschrift in #3D2645: "Schlaffalten sind kein Pflegeproblem. Sie sind ein Haltungsproblem."
+- Fließtext in #775C88: "Solange dein Dekolleté jede Nacht acht Stunden lang gefaltet wird, arbeitet jede Creme gegen einen Gegner, den sie nicht erreicht. Setz an der Ursache an — und die Pflege, die du ohnehin machst, wirkt endlich in dieselbe Richtung."
+
+EINSTELLUNGEN: Jede der drei Karten soll ein eigener Block mit Überschrift und Text als bearbeitbare Felder sein. Der Kasten unten braucht eine Bildauswahl mit Alt-Text-Feld sowie Felder für die drei Textzeilen. Auch die Überschriften ganz oben sollen im Theme-Editor änderbar sein. Bitte alle Texte als Standardwerte vorbelegen. Das Bild im unteren Kasten darf zunächst leer bleiben — der Kasten muss dann trotzdem sauber aussehen und der Text die volle Breite nutzen.
+
+WICHTIG ZUM KONTRAST: Auf diesem hellen Hintergrund niemals #9B71B8 oder ein helleres Violett für Text verwenden — das ist zu kontrastarm und schlecht lesbar. Für Fließtext #775C88, für Akzente und kleine Überschriften #8151A3, für große Überschriften #3D2645. Das X-Symbol im Kreis ist nur Dekoration und braucht keinen Alt-Text.

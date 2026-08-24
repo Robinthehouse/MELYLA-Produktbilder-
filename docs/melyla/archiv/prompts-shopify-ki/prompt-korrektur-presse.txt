@@ -1,0 +1,11 @@
+Im Presse-Kasten ist mehrerer Text weiß oder sehr hell auf hellem Hintergrund und dadurch unlesbar. Bitte alle Textfarben in diesem Kasten korrigieren:
+
+- Das große Zitat ("Anti-Falten Schlaf BH von Melyla, um 50 Euro") auf #3D2645 setzen. Es ist aktuell weiß und praktisch unsichtbar.
+- Die Quellenzeile darunter ("BARBARA Magazin — Ausgabe Nr. 61") auf #775C88 setzen. Sie ist ebenfalls zu hell.
+- Den Beschreibungstext auf #5D3E6E setzen.
+- Die kleine Überschrift "Redaktionsempfehlung" auf #8151A3 setzen.
+- Das Häkchen-Symbol neben der Quellenzeile auf #8151A3 setzen, nicht auf Gold — Gold hebt sich vom hellen Hintergrund zu schwach ab.
+
+Grundregel für diesen Abschnitt: Auf hellem Hintergrund darf kein Text weiß, hellgrau, gold oder in einem hellen Violett stehen. Erlaubt sind ausschließlich #3D2645 für Überschriften und Zitate, #5D3E6E für Fließtext, #775C88 für kleine Begleittexte und #8151A3 für Akzente und Symbole.
+
+Der Aufbau, die Abstände und das Bild bleiben unverändert — bitte nur die Farben anpassen.

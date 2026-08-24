@@ -1,0 +1,18 @@
+Dieser Abschnitt lässt sich im Theme-Editor nicht bearbeiten — es erscheint nur ein Feld für eigenes CSS, aber keine Einstellungen. Bitte den Abschnitt so ergänzen, dass sich alle Inhalte ohne Code ändern lassen.
+
+FÜR DEN HEADER folgende Einstellungen anlegen:
+- Eine Bildauswahl für das Logo, dazu ein Feld für die Logobreite in Pixeln und ein Alt-Text-Feld
+- Eine Menü-Auswahl, die auf die in Shopify unter Inhalte → Menüs gepflegte Navigation zugreift. Die Menüpunkte dürfen nicht fest im Code stehen, sondern müssen aus dem gewählten Menü kommen, damit Änderungen am Menü automatisch übernommen werden.
+- Eine Auswahl für die Logoposition (links oder mittig)
+- Ein Schalter, ob der Header beim Scrollen oben stehen bleibt
+- Ein Feld für die Beschriftung der Schaltfläche rechts und ein Feld für deren Ziel
+- Ein Schalter, ob das Warenkorb-Symbol angezeigt wird
+
+FÜR DIE ANKÜNDIGUNGSLEISTE:
+- Jede Ankündigung ist ein eigener Block mit einem Textfeld und einem Feld für einen Link
+- Ein Schalter, ob mehrere Ankündigungen automatisch nacheinander eingeblendet werden, und ein Feld für die Anzeigedauer in Sekunden
+- Felder für Hintergrundfarbe und Schriftfarbe
+
+Bitte alle aktuell im Code stehenden Texte, Bilder und Links als Standardwerte in die neuen Felder übernehmen, damit sich am Aussehen zunächst nichts ändert.
+
+WICHTIG ZUM KONTRAST: Die Schriftfarbe muss sich deutlich vom gewählten Hintergrund abheben. Auf dunklem Hintergrund weiße Schrift, auf hellem Hintergrund #3D2645. Niemals #9B71B8 oder Gold als Schriftfarbe auf hellem Grund.

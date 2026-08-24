@@ -1,0 +1,39 @@
+Baue einen Abschnitt mit hellem Hintergrund (#F2E8F8), abgerundeten Ecken und großzügigem Innenabstand.
+
+OBEN, zentriert, max. 660px breit:
+- Kleine Überschrift, Großbuchstaben, gesperrt, Farbe #8151A3: "Dein Angebot"
+- Große Serifen-Überschrift in #3D2645: "Wähle dein Set"
+- Fließtext in #775C88: "Jede Nacht ohne BH ist eine Nacht, in der die Falte tiefer wird. Deshalb starten die meisten Kundinnen direkt mit zwei."
+
+DARUNTER drei Angebotskarten nebeneinander (3 Spalten auf dem Desktop, 1 Spalte auf dem Handy), gleiche Höhe, max. 1000px Gesamtbreite. Jede Karte: weißer Hintergrund, abgerundete Ecken, 2px Rahmen in #D5C0E8, großzügiger Innenabstand.
+
+Die hervorgehobene Karte bekommt stattdessen einen 2px Rahmen in #8151A3, einen stärkeren Schatten und wird auf dem Desktop leicht größer dargestellt.
+
+Aufbau je Karte von oben nach unten:
+- Optional ein Band mittig über dem oberen Kartenrand: abgerundete Pille, Hintergrund #8151A3, Text in Weiß, klein und fett
+- Serifen-Überschrift in #3D2645
+- Kleine Unterzeile in #775C88
+- Die Preiszeile: großer fetter Preis in #3D2645, daneben der durchgestrichene Vergleichspreis in #775C88, daneben eine kleine Rabatt-Pille mit Hintergrund in hellem Violett und Text in #8151A3
+- Eine Zeile in #5D3E6E mit dem Ersparnis-Hinweis
+- Eine feine Trennlinie in #D5C0E8
+- Eine Liste ohne Aufzählungspunkte, je ein Häkchen in #8151A3 links, Text in #5D3E6E
+- Wenn das Produkt Varianten hat: eine Größenauswahl als Auswahlfeld
+- Ein breiter Kauf-Button über die volle Kartenbreite: Hintergrund #C9973E, Schrift in #3D2645, fett, abgerundet. Beim Überfahren wird der Button heller (#E0AF5C), die Schrift bleibt dunkel.
+
+WICHTIG ZUM RABATT: Die Prozentzahl muss auf eine ganze Zahl gerundet werden. Niemals Nachkommastellen anzeigen. Wenn kein Vergleichspreis vorhanden ist, Rabatt-Pille und Streichpreis komplett ausblenden.
+
+Inhalte der drei Karten:
+1) Überschrift "1× Schlaf BH" — Unterzeile "Zum Ausprobieren" — kein Band — Ersparnis-Hinweis "49,50 € pro Stück" — Liste: "1× Anti-Falten Schlaf BH" / "Gratis Versand" / "30 Tage Geld-zurück-Garantie"
+2) Überschrift "2× Schlaf BH" — Unterzeile "Einer am Körper, einer in der Wäsche" — Band "Beliebteste Wahl" — hervorgehoben — Ersparnis-Hinweis "44,50 € pro Stück" — Liste: "2× Anti-Falten Schlaf BH" / "Größen frei kombinierbar" / "Gratis Versand" / "30 Tage Geld-zurück-Garantie"
+3) Überschrift "Nachtroutine-Set" — Unterzeile "Die komplette Abendroutine" — Band "Bester Wert" — Ersparnis-Hinweis "Du sparst 35,60 €" — Liste: "1× Anti-Falten Schlaf BH" / "1× Anti-Falten Kissen" / "1× Schlafmaske" / "1× Haargummi 4er-Pack" / "1× ECO Reinigungsschwamm" / "1× ECO Abschminkpads"
+
+UNTER DEN KARTEN, zentriert, max. 460px breit:
+- Ein Textlink in #8151A3, fett, klein: "Unsicher bei der Größe? Zum Größenberater" — verlinkt auf #groesse
+- Darunter eine Reihe mit drei Vertrauenshinweisen nebeneinander, die auf dem Handy umbrechen. Je Eintrag ein kleines Symbol in #8151A3 und Text in #5D3E6E: ein LKW mit "Gratis Versand", ein Rückgabepfeil mit "30 Tage Rückgabe", ein Schloss mit "Sichere Zahlung"
+- Darunter eine kleine Zeile in #775C88: "Zahlung mit PayPal, Klarna, Kreditkarte und Apple Pay"
+
+EINSTELLUNGEN: Jede Karte ist ein eigener Block. Felder je Block: Produktauswahl, Überschrift, Unterzeile, Text des Bandes, ein Schalter zum Hervorheben, Ersparnis-Hinweis, die Listenpunkte und die Beschriftung des Kauf-Buttons. Zusätzlich Ersatzfelder für Preis und Vergleichspreis als reiner Text.
+
+WICHTIG ZUM PRODUKT: Preis, Vergleichspreis, Varianten und der Kauf laufen über das ausgewählte Produkt. Ist bei einer Karte noch kein Produkt hinterlegt, zeigt die Karte die Ersatz-Texte an und der Button wird zu einem normalen Link — die Karte darf dabei nicht kaputtgehen oder leer wirken. Das ist wichtig, weil ein Produkt erst später angelegt wird.
+
+WICHTIG ZUM KONTRAST: Auf dem goldenen Kauf-Button immer dunkle Schrift (#3D2645), niemals weiße — weiß auf Gold ist zu kontrastarm. Auf hellem Hintergrund niemals #9B71B8 für Text. Fließtext #775C88, Listentext und Vertrauenshinweise #5D3E6E, Akzente und Symbole #8151A3, Überschriften und Preise #3D2645.
