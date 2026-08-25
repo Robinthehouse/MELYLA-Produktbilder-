@@ -154,3 +154,147 @@ Das Theme kann Bilder nicht per Push mitbringen — Schritt 5 und 6 gehen nur im
   einer zulässigen Mechanik-Darstellung und einer belegpflichtigen Wirkaussage.
 - **Kennzeichnung KI-generierter Inhalte** bei Anzeigen auf Meta und Google prüfen — dort gelten
   eigene Vorgaben, unabhängig davon, was im Shop steht.
+
+---
+
+# Teil 2: Die vier Schleifen der Problem-Sektion
+
+Stand 25.08.2026. Ersetzen die vier Standbilder in der Problem-Sektion auf der Startseite.
+
+## Was hier anders ist als bei den drei Videos oben
+
+Die Mechanik-Videos oben **erzählen** etwas: Eine Bewegung beginnt und endet woanders. Diese
+vier hier **laufen endlos**. Eine gerichtete Bewegung kann das nicht — beim Sprung vom letzten
+zum ersten Bild zuckt es sichtbar.
+
+Deshalb beschreibt jeder dieser Prompts eine Bewegung, die **dort endet, wo sie beginnt**:
+ein Atemzug, wandernde Blätterschatten, eine Hand, die sich hebt und wieder sinkt. Der Rest
+des Bildes steht vollkommen still, die Kamera sowieso.
+
+**Weniger Bewegung ist hier besser.** Diese Videos laufen im Hintergrund einer Textkarte. Sie
+sollen Leben andeuten, nicht die Aufmerksamkeit vom Text wegziehen.
+
+| Vorgabe | Wert |
+|---|---|
+| Seitenverhältnis | **4:3 quer** — die Kartenfläche ist fest 4:3 |
+| Länge | 3–5 Sekunden |
+| Ton | keiner, die Videos laufen stumm |
+| Erstes und letztes Bild | identisch, sonst ist der Übergang sichtbar |
+| Format | **MP4**, nicht GIF — ein GIF derselben Länge ist zwanzigmal so groß und kann nur 256 Farben, was bei Hauttönen sichtbar streift |
+| Modell | Higgsfield `soul_2`, 2K |
+
+Es gilt weiter alles aus Teil 1: weiches Morgenlicht, warme Neutraltöne, Modelalter 40–60,
+echte unretuschierte Haut, ruhige Tonalität. Und in **jedem** Prompt:
+
+```
+no text, no watermark, no logo, no label, no brand name, no lettering
+```
+
+> **Warum das hier besonders zählt:** Auf Karte 1 steht gerade ein Canva-Grafik-GIF mit
+> „Falsches Kissen" ins Bild eingebrannt. Es zeigt außerdem ein Kissenproblem, während der
+> Kartentext vom Dekolleté handelt. Genau das soll S1 ersetzen.
+
+---
+
+## S1 — „Nacht für Nacht in Seitenlage"
+
+Kennzahl auf der Karte: **6–8 Std. · gefaltet pro Nacht**
+
+**Startbild**
+
+> Woman in her late 40s asleep on her side in bed with cream linen sheets, photographed from
+> above at a slight angle. Soft morning light from a window. Framing centred on the décolleté,
+> where the chest is compressed and the skin creased into vertical folds. Face softly out of
+> focus at the edge of the frame. Natural unretouched skin with visible texture, warm neutral
+> color palette, editorial beauty photography, shallow depth of field, horizontal 4:3.
+> no text, no watermark, no logo, no label, no brand name, no lettering
+
+**Bewegung**
+
+> Only quiet breathing. The chest rises and falls once, very slowly, and returns exactly to the
+> starting position. The creased skin of the décolleté stays creased throughout. Nothing else
+> moves. Camera completely static. Seamless loop, first and last frame identical. 4 seconds.
+
+---
+
+## S2 — „Aus dem Knick wird eine Falte"
+
+Kennzahl: **ab 25 · lässt Kollagen nach**. **Kein Gesicht im Bild.**
+
+**Startbild**
+
+> Close-up macro photograph of the décolleté skin of a woman in her 50s, showing fine vertical
+> lines running between the collarbone and chest. Soft neutral daylight from the side, no
+> makeup, no retouching, visible natural skin texture and fine hairs. Cropped so no face is
+> visible. Warm neutral tones, clinical yet respectful editorial style, horizontal 4:3.
+> no text, no watermark, no logo, no label, no brand name, no lettering
+
+**Bewegung**
+
+> Almost imperceptible movement: one slow shallow breath, and the daylight shifts very slightly
+> as if a cloud passes, then returns. The vertical lines in the skin remain unchanged and in
+> focus the whole time. Camera completely static. Seamless loop, first and last frame identical.
+> 4 seconds.
+
+---
+
+## S3 — „Die Sonne macht es schlimmer"
+
+Kennzahl: **Zone 2 · nach dem Gesicht**
+
+**Startbild**
+
+> Woman in her 50s sitting outdoors on a terrace in direct afternoon sunlight, wearing an open
+> V-neck linen shirt, sunlight falling directly onto her décolleté. Shot from the side, face
+> turned away and partly cropped. Visible sun exposure and natural skin texture on the chest.
+> Warm golden light, dappled shade from a tree at the edge of the frame, lifestyle editorial
+> photography, horizontal 4:3.
+> no text, no watermark, no logo, no label, no brand name, no lettering
+
+**Bewegung**
+
+> Dappled leaf shadows drift slowly across her décolleté as the tree moves in a light breeze,
+> and the linen collar shifts a few millimetres. She stays completely still. The shadow pattern
+> returns to where it started. Camera completely static. Seamless loop, first and last frame
+> identical. 5 seconds.
+
+---
+
+## S4 — „Und irgendwann fällt es dir auf"
+
+Kennzahl: **Leise · aber jeden Tag**. Der emotionale Anker der Sektion.
+
+**Startbild**
+
+> Woman in her early 50s standing in a bright bathroom, looking down at her own décolleté in
+> the mirror, arms relaxed at her sides. Thoughtful, calm expression — not sad, not ashamed.
+> Soft diffused morning light, warm neutral bathroom in cream tones. Shot from behind over her
+> shoulder so the mirror shows her upper body. Editorial lifestyle photography, horizontal 4:3.
+> no text, no watermark, no logo, no label, no brand name, no lettering
+
+**Bewegung**
+
+> Her right hand rises slowly and rests lightly on her collarbone, pauses for a moment, then
+> lowers back to her side exactly as it started. Her gaze stays on her reflection. Nothing else
+> moves. Camera completely static. Seamless loop, first and last frame identical. 5 seconds.
+
+---
+
+## Ablauf
+
+1. Motive erzeugen, jedes Ergebnis prüfen: keine Schrift im Bild, Übergang vom letzten zum
+   ersten Bild ohne Sprung
+2. Auf 4:3 zuschneiden, als **MP4** exportieren, stumm, unter 1 MB je Datei
+3. Aus jedem Video ein Einzelbild als `.webp` ziehen — das wird das Standbild
+4. In Shopify unter *Inhalte → Dateien* hochladen, je Datei den Link kopieren
+5. Im Theme-Editor, Abschnitt **MELYLA Problem**, je Karte:
+   *Bild* = das Standbild, *Video-Link* = der kopierte Link
+
+Ohne Video-Link bleibt die Karte beim Standbild — du kannst die vier also einzeln nachrüsten.
+
+## Wie sich die Videos auf der Seite verhalten
+
+- Sie starten erst, wenn die Karte ins Bild scrollt, und halten an, sobald sie es verlässt.
+  Vier gleichzeitig laufende Videos wären auf dem Handy sonst spürbar.
+- Wer im Betriebssystem **Bewegung reduzieren** eingestellt hat, sieht nur das Standbild.
+- Bis das Video geladen ist, steht das Standbild — es gibt keinen leeren Kasten.

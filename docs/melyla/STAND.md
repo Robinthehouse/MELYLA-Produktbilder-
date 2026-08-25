@@ -59,6 +59,22 @@ internen Link aus Vorlagen, Sektionsgruppen und HTML-Bausteinen mit seinem Statu
 | **Kundenstimmen: Karussell und zweites Video** | **Blockiert** — Shopify verweigert Änderungen an dieser Datei seit dem 23.08. |
 | **Otto- und Amazon-Listings** | Wartet auf Material von Jochen, Gerüst steht in `10-marktplatz-listings.md` |
 
+## Problem-Sektion — bewegt seit 25.08.
+
+Jede der vier Karten hat jetzt ein Feld **Video-Link**. Liegt eines vor, läuft dort eine stumme
+Schleife mit dem Bild als Standbild; ohne Video bleibt alles beim Standbild. Die Schleifen
+starten erst beim Hereinscrollen und halten an, sobald die Karte aus dem Bild ist. Wer
+*Bewegung reduzieren* eingestellt hat, sieht nur das Standbild.
+
+Die vier Prompts stehen in `12-bildbriefing-mechanik.md`, Teil 2. **MP4, nicht GIF** — ein GIF
+derselben Länge ist rund zwanzigmal so groß und kann nur 256 Farben, was bei Hauttönen streift.
+
+**Offen:** Auf Karte 1 steht ein Canva-Grafik-GIF mit „Falsches Kissen" ins Bild eingebrannt.
+Es zeigt ein Kissenproblem, obwohl der Kartentext vom Dekolleté handelt. Sollte auch dann
+ersetzt werden (Prompt S1), wenn die anderen drei noch Standbilder sind.
+
+Die vier Bildbeschreibungen waren leer und sind gefüllt.
+
 ## Preisnachlass Kissen — Stand 25.08.2026
 
 Das Kissen wurde **Anfang August 2026** von 89,50 € auf 49,50 € gesenkt (Robin, 25.08.:
