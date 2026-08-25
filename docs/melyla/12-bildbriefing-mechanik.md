@@ -298,3 +298,44 @@ Ohne Video-Link bleibt die Karte beim Standbild — du kannst die vier also einz
   Vier gleichzeitig laufende Videos wären auf dem Handy sonst spürbar.
 - Wer im Betriebssystem **Bewegung reduzieren** eingestellt hat, sieht nur das Standbild.
 - Bis das Video geladen ist, steht das Standbild — es gibt keinen leeren Kasten.
+
+---
+
+# Exportvorgaben für alle Videodateien
+
+Gilt für beide Videosektionen. Zwei Regeln, die im laufenden Betrieb Ärger gemacht haben:
+
+## MP4, niemals MOV
+
+Das Unboxing lag als `.mov` auf dem CDN und wurde als `video/quicktime` ausgeliefert.
+
+> **Chrome und Firefox spielen das nicht ab.** Beide kennen nur `video/mp4`, `video/webm` und
+> `video/ogg`. Safari spielt es — deshalb fällt es beim Testen auf dem Mac nicht auf, während
+> die Kachel auf Android leer bleibt.
+
+Shopify wandelt Dateien aus *Inhalte → Dateien* **nicht** um. Was hochgeladen wird, wird
+ausgeliefert.
+
+**Umwandeln:** QuickTime öffnen → *Ablage → Exportieren als → 1080p*. Ergebnis ist eine `.mp4`
+mit H.264. Kostenlos geht HandBrake, Preset *Web → Gmail Large 3 Minutes 720p30*.
+
+## Unter 1 MB je Clip
+
+Die drei Videos auf der BH-Seite wogen 7,9 + 6,0 + 3,7 MB — zusammen **17,6 MB**. Bei
+automatischer Wiedergabe lädt jede Besucherin das mit.
+
+| Vorgabe | Wert |
+|---|---|
+| Auflösung | 720 × 1280 reicht — die Kachel ist auf dem Handy rund 104 px breit |
+| Bildrate | 30 fps |
+| Länge | 3–8 Sekunden |
+| Ton | für Schleifen keiner; bei Sprache im Clip bleibt der Ton drin |
+| Zielgröße | **unter 1 MB** |
+
+HandBrake mit *720p30* und Qualität RF 26 trifft das zuverlässig.
+
+## Standbild nicht vergessen
+
+Jede Kachel braucht ein Standbild. Es erscheint sofort, das Video lädt erst beim Hineinscrollen.
+Ohne Standbild sieht man bis dahin eine leere Fläche. Am einfachsten ein Einzelbild aus dem
+fertigen Video ziehen — dann stimmen Ausschnitt und Farben garantiert.

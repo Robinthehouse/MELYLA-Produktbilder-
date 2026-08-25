@@ -59,6 +59,25 @@ internen Link aus Vorlagen, Sektionsgruppen und HTML-Bausteinen mit seinem Statu
 | **Kundenstimmen: Karussell und zweites Video** | **Blockiert** — Shopify verweigert Änderungen an dieser Datei seit dem 23.08. |
 | **Otto- und Amazon-Listings** | Wartet auf Material von Jochen, Gerüst steht in `10-marktplatz-listings.md` |
 
+## Videosektionen — Stand 25.08.
+
+Zwei Sektionen mit unterschiedlicher Aufgabe:
+
+| | |
+|---|---|
+| **MELYLA Video-Karussell** | Große Kacheln, eine füllt das Handy, wird angetippt. Trägt die Erklärvideos und das Unboxing. |
+| **MELYLA Video-Reihe** *(neu)* | Kleine Kacheln, drei nebeneinander, laufen stumm von selbst. Vorbild ist die Leiste von CALMONT. Steht auf beiden Produktseiten direkt unter den Vertrauenskarten. |
+
+Beide sind über *Abschnitt hinzufügen* auf jeder Seite wählbar.
+
+**Offen bei Robin — das Unboxing liegt als `.mov` vor** (7,9 MB, `video/quicktime`). Chrome und
+Firefox spielen das nicht ab, nur Safari. Muss als MP4 neu hochgeladen werden; Anleitung und
+Exportvorgaben stehen in `12-bildbriefing-mechanik.md`. Ebenso offen: Die drei Videos wiegen
+zusammen 17,6 MB, Zielgröße sind rund 1 MB je Clip.
+
+Die Kacheln der Video-Reihe sind auf beiden Seiten angelegt, aber ohne Dateien — **die Sektion
+bleibt unsichtbar, bis Videos oder Standbilder ausgewählt sind.**
+
 ## Problem-Sektion — bewegt seit 25.08.
 
 Jede der vier Karten hat jetzt ein Feld **Video-Link**. Liegt eines vor, läuft dort eine stumme
