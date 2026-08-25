@@ -59,6 +59,27 @@ internen Link aus Vorlagen, Sektionsgruppen und HTML-Bausteinen mit seinem Statu
 | **Kundenstimmen: Karussell und zweites Video** | **Blockiert** — Shopify verweigert Änderungen an dieser Datei seit dem 23.08. |
 | **Otto- und Amazon-Listings** | Wartet auf Material von Jochen, Gerüst steht in `10-marktplatz-listings.md` |
 
+## Preisnachlass Kissen — Stand 25.08.2026
+
+Das Kissen wurde **Anfang August 2026** von 89,50 € auf 49,50 € gesenkt (Robin, 25.08.:
+„vor 2–3 Wochen"). Damit ist der Streichpreis zulässig: § 11 PAngV verlangt den niedrigsten
+Gesamtpreis der **30 Tage vor der Senkung** — und das war 89,50 €.
+
+Der Baustein `snippets/melyla-ersparnis.liquid` rechnet das aus den Shopify-Produktdaten aus:
+**Du sparst 40,00 € (44 %)** plus den vorgeschriebenen Hinweis. Ohne Vergleichspreis gibt er
+nichts aus, der BH bleibt also unberührt.
+
+> **Eine Korrektur an meiner eigenen Aussage vom 25.08.:** Ich hatte geschrieben, der
+> Streichpreis müsse nach 30 Tagen weg. Das stimmt so nicht. Die 30 Tage sind der
+> Rückblickzeitraum **vor** der Senkung, keine Verfallsfrist für die Anzeige. Ein Enddatum gibt
+> es nicht — riskant wird es erst, wenn 49,50 € faktisch der normale Preis geworden ist. Dann
+> ist es keine Ermäßigung mehr, sondern eine irreführende Angabe nach § 5 UWG.
+
+**Praktisch:** Das Kissen ist laut Protokoll vom 12.08. ein **Abverkauf** vor dem italienischen
+Nachfolgemodell. Genau dafür ist ein anhaltender Nachlass gedacht. Sobald der Restbestand weg
+ist oder das neue Kissen startet, gehört der Vergleichspreis in Shopify gelöscht — dann
+verschwindet die Anzeige von selbst.
+
 ## Produktseiten — Umbau am 25.08.
 
 | | |
@@ -117,7 +138,7 @@ bereits eigene Schaltflächen.
 | ~~Erfundene Beispielstimmen~~ — **am 25.08. entfernt.** Die neue Sektion *MELYLA Bewertungen* blendet sich aus, solange keine echte Bewertung eingetragen ist | erledigt |
 | ~~„Über 1.000 verkauft"~~ — **am 25.08. auf „Über 800" korrigiert**, belegt sind ~822 (Otto 353, Amazon Gr. M 197, Shop ~272) | erledigt |
 | ~~„Nr. 1 Bestseller"~~ im Hero — **am 25.08. entfernt.** Eine Spitzenstellungsbehauptung, die wir nicht belegen können | erledigt |
-| **Streichpreis Kissen 89,50 €: Datum der Senkung fehlt.** § 11 PAngV verlangt, dass der durchgestrichene Preis der niedrigste der 30 Tage davor war. Liegt die Senkung länger zurück, muss der Streichpreis weg — der EuGH hat das 2024 (Aldi Süd) eng ausgelegt | Shopify-Produktdaten |
+| ~~Streichpreis Kissen~~ — **am 25.08. geklärt.** Senkung Anfang August 2026, also innerhalb der Frist. 89,50 € ist der korrekte Bezugspreis nach § 11 PAngV und wird mit Hinweis angezeigt. **Zu beobachten:** Ein Abverkauf darf nicht dauerhaft als „Ermäßigung" laufen (§ 5 UWG) | erledigt, mit Frist |
 | **Widersprüchliche Materialangabe BH**: „82 % Elastan / 18 % Nylon" gegen „95 % Baumwolle" | Produktbeschreibungen |
 | OEKO-TEX® und GOTS weggelassen, bis Zertifikate vorliegen | Box-Beschreibung |
 | Alle `CLAIM-CHECK`-Stellen | `src/lib/funnel-bh.ts`, `09-beauty-sleep-box.md` |
