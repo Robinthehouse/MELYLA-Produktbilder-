@@ -66,9 +66,17 @@ Zwei Sektionen mit unterschiedlicher Aufgabe:
 | | |
 |---|---|
 | **MELYLA Video-Karussell** | Große Kacheln, eine füllt das Handy, wird angetippt. Trägt die Erklärvideos und das Unboxing. |
-| **MELYLA Video-Reihe** *(neu)* | Kleine Kacheln, drei nebeneinander, laufen stumm von selbst. Vorbild ist die Leiste von CALMONT. Steht auf beiden Produktseiten direkt unter den Vertrauenskarten. |
+| **MELYLA Video-Reihe** *(neu)* | Kleine Kacheln, drei nebeneinander, laufen stumm von selbst. Vorbild ist die Leiste von CALMONT. |
 
-Beide sind über *Abschnitt hinzufügen* auf jeder Seite wählbar.
+Die Video-Reihe gibt es **doppelt**, und das ist Absicht:
+
+- **Als Block** in den Produktinformationen — dort lässt sie sich zwischen Kaufen-Knopf und
+  Aufklappern schieben. So steht sie jetzt auf beiden Produktseiten, direkt unter dem
+  Kaufen-Knopf. Drei feste Clips.
+- **Als Abschnitt** für alle anderen Seiten, dort mit beliebig vielen Clips.
+
+Beide teilen sich denselben Code (`snippets/melyla-video-kachel.liquid` und
+`snippets/melyla-video-reihe-huelle.liquid`) — eine Änderung wirkt an beiden Stellen.
 
 **Offen bei Robin — das Unboxing liegt als `.mov` vor** (7,9 MB, `video/quicktime`). Chrome und
 Firefox spielen das nicht ab, nur Safari. Muss als MP4 neu hochgeladen werden; Anleitung und
