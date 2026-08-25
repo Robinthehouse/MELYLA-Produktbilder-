@@ -14,7 +14,7 @@ export default function BlogPage() {
     <>
       <section className="pt-32 pb-12 bg-gradient-to-b from-melyla-cream-warm to-melyla-cream">
         <div className="container-luxury text-center max-w-2xl mx-auto">
-          <p className="text-melyla-gold text-xs tracking-[0.2em] uppercase font-semibold mb-4">
+          <p className="text-melyla-gold-deep text-xs tracking-[0.2em] uppercase font-semibold mb-4">
             Wissen & Tipps
           </p>
           <h1 className="font-serif text-[3rem] text-melyla-navy mb-4">
@@ -45,19 +45,19 @@ export default function BlogPage() {
                   />
                 </div>
                 <div className="flex items-center gap-3 mb-2">
-                  <span className="text-melyla-gold text-xs tracking-widest uppercase font-semibold">
+                  <span className="text-melyla-gold-deep text-xs tracking-widest uppercase font-semibold">
                     {post.category}
                   </span>
                   <span className="text-melyla-border">·</span>
                   <span className="text-melyla-muted text-xs">{post.readTime} Min. Lesezeit</span>
                 </div>
-                <h2 className="font-serif text-xl text-melyla-navy mb-2 leading-snug group-hover:text-melyla-gold transition-colors duration-200 text-balance">
+                <h2 className="font-serif text-xl text-melyla-navy mb-2 leading-snug group-hover:text-melyla-gold-deep transition-colors duration-200 text-balance">
                   {post.title}
                 </h2>
                 <p className="text-melyla-muted text-sm leading-relaxed line-clamp-3 mb-4">
                   {post.excerpt}
                 </p>
-                <span className="inline-flex items-center gap-1 text-melyla-gold text-sm font-medium group-hover:gap-2 transition-all duration-200">
+                <span className="inline-flex items-center gap-1 text-melyla-gold-deep text-sm font-medium group-hover:gap-2 transition-all duration-200">
                   Weiterlesen <ArrowRight size={14} />
                 </span>
               </Link>

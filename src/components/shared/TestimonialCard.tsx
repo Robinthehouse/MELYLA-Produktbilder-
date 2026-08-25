@@ -35,7 +35,7 @@ export default function TestimonialCard({
           {imageSrc ? (
             <Image src={imageSrc} alt={name} fill className="object-cover" sizes="48px" />
           ) : (
-            <span className="w-full h-full flex items-center justify-center font-serif text-lg text-melyla-gold">
+            <span className="w-full h-full flex items-center justify-center font-serif text-lg text-melyla-gold-deep">
               {name[0]}
             </span>
           )}
@@ -52,7 +52,7 @@ export default function TestimonialCard({
         &ldquo;{quote}&rdquo;
       </blockquote>
       {productName && (
-        <p className="text-melyla-gold text-xs mt-auto font-medium">{productName}</p>
+        <p className="text-melyla-gold-deep text-xs mt-auto font-medium">{productName}</p>
       )}
     </div>
   );

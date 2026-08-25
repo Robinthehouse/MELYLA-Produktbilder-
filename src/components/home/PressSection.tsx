@@ -11,7 +11,7 @@ export default function PressSection() {
 
       <div className="container-luxury relative z-10">
         <ScrollReveal>
-          <p className="text-center text-melyla-gold text-xs tracking-[0.3em] uppercase font-semibold mb-14">
+          <p className="text-center text-melyla-gold-light text-xs tracking-[0.3em] uppercase font-semibold mb-14">
             Bekannt aus
           </p>
         </ScrollReveal>
@@ -43,7 +43,7 @@ export default function PressSection() {
           <ScrollReveal delay={200} className="flex-1 text-center lg:text-left">
             <div className="inline-flex items-center gap-2 mb-6">
               <div className="h-px w-8 bg-melyla-gold/40" />
-              <span className="text-melyla-gold text-xs tracking-[0.2em] uppercase font-semibold">
+              <span className="text-melyla-gold-light text-xs tracking-[0.2em] uppercase font-semibold">
                 Redaktionsempfehlung
               </span>
               <div className="h-px w-8 bg-melyla-gold/40" />
@@ -53,7 +53,7 @@ export default function PressSection() {
               „Anti-Falten Schlaf BH von Melyla, um 50 Euro"
             </blockquote>
 
-            <p className="text-melyla-muted leading-relaxed mb-8 max-w-md mx-auto lg:mx-0">
+            <p className="text-melyla-on-dark leading-relaxed mb-8 max-w-md mx-auto lg:mx-0">
               Das Frauenmagazin BARBARA zählte den MELYLA Anti-Falten Schlaf BH zu seinen Produktempfehlungen — ein unabhängiges Zeichen für Qualität und Wirkung.
             </p>
 

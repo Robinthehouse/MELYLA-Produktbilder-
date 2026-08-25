@@ -56,9 +56,33 @@ internen Link aus Vorlagen, Sektionsgruppen und HTML-Bausteinen mit seinem Statu
 | | Warum es noch nicht erledigt ist |
 |---|---|
 | **Problem-Sektion als Karussell** | Robins Wunsch, noch nicht umgesetzt |
-| **Zwei dunkle Flächen aufhellen** | Vertrauensleiste und Vorher/Nachher haben dunklen Hintergrund |
 | **Kundenstimmen: Karussell und zweites Video** | **Blockiert** — Shopify verweigert Änderungen an dieser Datei seit dem 23.08. |
 | **Otto- und Amazon-Listings** | Wartet auf Material von Jochen, Gerüst steht in `10-marktplatz-listings.md` |
+
+## Produktseiten — Umbau am 25.08.
+
+| | |
+|---|---|
+| **BH-Seite** | 15 → 9 Abschnitte. Der Fließtext aus *Produktdetails* und *Warum nichts geholfen hat* liegt jetzt in vier Aufklappern direkt in der Kaufbox: sichtbar für Google, unsichtbar beim Scrollen. |
+| **Kissen-Seite** | 13 → 7 Abschnitte. Die drei identischen Produktdetail-Sektionen sind zu Aufklappern geworden. |
+| **Neu in der Kaufbox** | Mengenwähler, Zahlungsart-Icons, vier Aufklapper. Der PayPal-Knopf kommt aus Dawns dynamischem Checkout und war schon aktiv. |
+| **Zwei neue Sektionen** | *MELYLA Video-Karussell* (hochkant, lädt erst beim Antippen) und *MELYLA Bewertungen* (rechnet Schnitt und Verteilung selbst) |
+
+**Jede Sektion lässt sich überall einsetzen.** Alle 21 haben ein Preset und keine
+Seitenbeschränkung: *Abschnitt hinzufügen* im Editor, auf jeder Seite. Das galt schon vorher —
+es war nur nicht dokumentiert.
+
+## Farben, Links und Buttons — seit dem 25.08. im Editor
+
+| | |
+|---|---|
+| **Textfarben** | Alle Sektionen haben jetzt *Überschriften* und *Fließtext* unter **Farben**. Vorher fehlte das in 7 von 19 — deshalb ging „dunkle Flächen aufhellen" nicht: Beim Aufhellen verschwand der weiße Text. |
+| **Links im Fließtext** | Erben die Textfarbe statt Browser-Blau. Die Regel `a:not([class])` trifft nur Textlinks, weil Buttons und Kartenlinks immer eine Klasse haben. |
+| **CTA-Button** | 13 Sektionen haben unten *Button-Text*, *Button-Link* und *Button-Stil*. Text leer = kein Button. |
+| **Button-Texte abgesichert** | Ein versehentlicher Link im Button-Text wird zu normalem Text, statt den Button zu zerreißen (verschachtelte `<a>`). Fett und Kursiv bleiben. |
+
+Ohne CTA-Feld bleiben nur **Kundenstimmen** (Shopify lehnt die Datei ab) — dort gibt es dafür
+bereits eigene Schaltflächen.
 
 ## Offen — nur im Shopify-Admin
 
@@ -90,8 +114,10 @@ internen Link aus Vorlagen, Sektionsgruppen und HTML-Bausteinen mit seinem Statu
 
 | Was | Wo |
 |---|---|
-| Die vier Beispielstimmen sind **erfunden** — unzulässig nach UWG, Anhang Nr. 23 | Sektion *MELYLA Stimmen* |
-| „Über 1.000 verkauft" — belegt sind ~822 (Otto 353, Amazon Gr. M 197, Shop ~272) | Vertrauenszeile, Stimmen |
+| ~~Erfundene Beispielstimmen~~ — **am 25.08. entfernt.** Die neue Sektion *MELYLA Bewertungen* blendet sich aus, solange keine echte Bewertung eingetragen ist | erledigt |
+| ~~„Über 1.000 verkauft"~~ — **am 25.08. auf „Über 800" korrigiert**, belegt sind ~822 (Otto 353, Amazon Gr. M 197, Shop ~272) | erledigt |
+| ~~„Nr. 1 Bestseller"~~ im Hero — **am 25.08. entfernt.** Eine Spitzenstellungsbehauptung, die wir nicht belegen können | erledigt |
+| **Streichpreis Kissen 89,50 €: Datum der Senkung fehlt.** § 11 PAngV verlangt, dass der durchgestrichene Preis der niedrigste der 30 Tage davor war. Liegt die Senkung länger zurück, muss der Streichpreis weg — der EuGH hat das 2024 (Aldi Süd) eng ausgelegt | Shopify-Produktdaten |
 | **Widersprüchliche Materialangabe BH**: „82 % Elastan / 18 % Nylon" gegen „95 % Baumwolle" | Produktbeschreibungen |
 | OEKO-TEX® und GOTS weggelassen, bis Zertifikate vorliegen | Box-Beschreibung |
 | Alle `CLAIM-CHECK`-Stellen | `src/lib/funnel-bh.ts`, `09-beauty-sleep-box.md` |

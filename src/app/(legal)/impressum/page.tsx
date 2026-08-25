@@ -64,7 +64,7 @@ export default function ImpressumPage() {
   return (
     <section className="pt-32 pb-20 bg-melyla-cream">
       <div className="container-luxury max-w-2xl">
-        <p className="text-melyla-gold text-xs tracking-[0.25em] uppercase font-semibold mb-3">Rechtliches</p>
+        <p className="text-melyla-gold-deep text-xs tracking-[0.25em] uppercase font-semibold mb-3">Rechtliches</p>
         <h1 className="font-serif text-4xl text-melyla-navy mb-10">Impressum</h1>
         <div className="space-y-8">
           {sections.map((s) => (

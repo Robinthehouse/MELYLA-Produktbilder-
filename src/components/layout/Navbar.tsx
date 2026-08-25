@@ -69,7 +69,7 @@ export default function Navbar() {
           <nav className="hidden md:flex items-center gap-8">
             <Link
               href="/"
-              className="text-sm text-melyla-stone hover:text-melyla-gold transition-colors duration-200 tracking-wide"
+              className="text-sm text-melyla-stone hover:text-melyla-gold-deep transition-colors duration-200 tracking-wide"
             >
               Home
             </Link>
@@ -83,7 +83,7 @@ export default function Navbar() {
             >
               <button
                 onClick={() => setDropdownOpen((v) => !v)}
-                className="flex items-center gap-1 text-sm text-melyla-stone hover:text-melyla-gold transition-colors duration-200 tracking-wide cursor-pointer"
+                className="flex items-center gap-1 text-sm text-melyla-stone hover:text-melyla-gold-deep transition-colors duration-200 tracking-wide cursor-pointer"
                 aria-expanded={dropdownOpen}
               >
                 Produkte
@@ -105,7 +105,7 @@ export default function Navbar() {
                       key={link.href}
                       href={link.href}
                       onClick={() => setDropdownOpen(false)}
-                      className="flex items-center justify-between px-5 py-3 text-sm text-melyla-navy hover:bg-melyla-cream-warm hover:text-melyla-gold transition-colors duration-150"
+                      className="flex items-center justify-between px-5 py-3 text-sm text-melyla-navy hover:bg-melyla-cream-warm hover:text-melyla-gold-deep transition-colors duration-150"
                     >
                       <span>{link.label}</span>
                       {link.badge && (
@@ -126,7 +126,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm text-melyla-stone hover:text-melyla-gold transition-colors duration-200 tracking-wide"
+                className="text-sm text-melyla-stone hover:text-melyla-gold-deep transition-colors duration-200 tracking-wide"
               >
                 {link.label}
               </Link>

@@ -104,7 +104,7 @@ export default function FunktionsweisePage() {
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-melyla-rose/80 blur-3xl" />
         </div>
         <div className="container-luxury text-center max-w-3xl mx-auto relative z-10">
-          <p className="text-melyla-gold text-xs tracking-[0.25em] uppercase font-semibold mb-4">
+          <p className="text-melyla-gold-deep text-xs tracking-[0.25em] uppercase font-semibold mb-4">
             Wissenschaftlich erklärt
           </p>
           <h1 className="font-serif text-[3.5rem] lg:text-[4.5rem] text-melyla-navy mb-6 text-balance leading-[1.08]">
@@ -167,7 +167,7 @@ export default function FunktionsweisePage() {
                       </span>
                       <div className="h-px flex-1 bg-melyla-border" />
                     </div>
-                    <p className="text-melyla-gold text-xs tracking-[0.2em] uppercase font-semibold">
+                    <p className="text-melyla-gold-deep text-xs tracking-[0.2em] uppercase font-semibold">
                       {step.subtitle}
                     </p>
                     <h2 className="font-serif text-[2rem] text-melyla-navy leading-tight">
@@ -179,7 +179,7 @@ export default function FunktionsweisePage() {
                     {i === steps.length - 1 && (
                       <Link
                         href="/produkte/anti-falten-schlaf-bh"
-                        className="inline-flex items-center gap-2 text-melyla-gold font-semibold text-sm hover:gap-3 transition-all duration-200 mt-2"
+                        className="inline-flex items-center gap-2 text-melyla-gold-deep font-semibold text-sm hover:gap-3 transition-all duration-200 mt-2"
                       >
                         Jetzt starten <ArrowRight size={16} />
                       </Link>
@@ -196,7 +196,7 @@ export default function FunktionsweisePage() {
       <section className="section-padding bg-melyla-cream-warm">
         <div className="container-luxury max-w-3xl">
           <div className="text-center mb-12">
-            <p className="text-melyla-gold text-xs tracking-[0.25em] uppercase font-semibold mb-3">Häufige Fragen</p>
+            <p className="text-melyla-gold-deep text-xs tracking-[0.25em] uppercase font-semibold mb-3">Häufige Fragen</p>
             <h2 className="font-serif text-[2.25rem] text-melyla-navy">Alles, was du wissen möchtest</h2>
           </div>
           <FaqAccordion faqs={faqs} />
@@ -210,11 +210,11 @@ export default function FunktionsweisePage() {
           <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] rounded-full bg-melyla-gold/5 blur-3xl" />
         </div>
         <div className="container-luxury max-w-2xl mx-auto text-center relative z-10">
-          <p className="text-melyla-gold text-xs tracking-[0.25em] uppercase font-semibold mb-4">Kein Risiko</p>
+          <p className="text-melyla-gold-light text-xs tracking-[0.25em] uppercase font-semibold mb-4">Kein Risiko</p>
           <h2 className="font-serif text-[2.5rem] text-white mb-4 text-balance">
             Bereit für deine erste Nacht?
           </h2>
-          <p className="text-melyla-muted mb-10 leading-relaxed">
+          <p className="text-melyla-on-dark mb-10 leading-relaxed">
             30 Tage Geld-zurück-Garantie — wenn du nicht begeistert bist, bekommst du jeden Cent zurück.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">

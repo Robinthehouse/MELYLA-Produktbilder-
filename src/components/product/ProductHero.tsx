@@ -2,11 +2,13 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Product } from "@/types/product";
 import { formatPrice } from "@/lib/utils";
 import StarRating from "@/components/shared/StarRating";
 import AddToCartButton from "./AddToCartButton";
-import { ShieldCheck, RefreshCw, Truck, Leaf, Zap, CheckCircle2 } from "lucide-react";
+import { FUNNEL_SLUG } from "@/lib/funnel-bh";
+import { ShieldCheck, RefreshCw, Truck, Leaf, Zap, CheckCircle2, Ruler, PackageCheck } from "lucide-react";
 
 interface ProductHeroProps {
   product: Product;
@@ -39,6 +41,7 @@ export default function ProductHero({ product }: ProductHeroProps) {
   const [selectedSize, setSelectedSize] = useState<string | undefined>(product.sizes?.[0]);
   const allImages = product.images?.length ? product.images : product.imageSrc ? [product.imageSrc] : [];
   const [activeImage, setActiveImage] = useState(0);
+  const isFunnel = product.slug === FUNNEL_SLUG;
 
   const savings = product.originalPrice
     ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
@@ -58,7 +61,8 @@ export default function ProductHero({ product }: ProductHeroProps) {
                 fill
                 className="object-cover transition-opacity duration-300"
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                priority
+                loading="eager"
+                fetchPriority="high"
               />
             ) : (
               <div className="w-full h-full flex items-center justify-center">
@@ -105,7 +109,7 @@ export default function ProductHero({ product }: ProductHeroProps) {
               </span>
             )}
             {product.isNew && (
-              <span className="inline-flex items-center gap-1.5 border border-melyla-gold text-melyla-gold text-xs font-semibold px-3 py-1.5 rounded-full">
+              <span className="inline-flex items-center gap-1.5 border border-melyla-gold text-melyla-gold-deep text-xs font-semibold px-3 py-1.5 rounded-full">
                 Neu
               </span>
             )}
@@ -113,14 +117,33 @@ export default function ProductHero({ product }: ProductHeroProps) {
 
           {/* Titel & Bewertung */}
           <div>
+            {isFunnel && (
+              <p className="text-melyla-gold-deep text-xs tracking-[0.2em] uppercase font-semibold mb-2">
+                Gegen Schlaffalten am Dekolleté
+              </p>
+            )}
             <h1 className="font-serif text-[2.5rem] leading-tight text-melyla-navy mb-3">
               {product.name}
             </h1>
-            <div className="flex items-center gap-3">
-              <StarRating rating={product.rating} size={16} />
-              <span className="text-melyla-stone text-sm font-medium">{product.rating}</span>
-              <span className="text-melyla-muted text-sm">({product.reviewCount} Bewertungen)</span>
-            </div>
+            {isFunnel ? (
+              <Link
+                href="#bewertungen"
+                className="inline-flex items-center gap-3 group"
+                aria-label={`${product.reviewCount} Bewertungen ansehen`}
+              >
+                <StarRating rating={product.rating} size={16} />
+                <span className="text-melyla-stone text-sm font-medium">{product.rating}</span>
+                <span className="text-melyla-muted text-sm underline underline-offset-2 group-hover:text-melyla-gold-deep transition-colors duration-200">
+                  ({product.reviewCount} Bewertungen)
+                </span>
+              </Link>
+            ) : (
+              <div className="flex items-center gap-3">
+                <StarRating rating={product.rating} size={16} />
+                <span className="text-melyla-stone text-sm font-medium">{product.rating}</span>
+                <span className="text-melyla-muted text-sm">({product.reviewCount} Bewertungen)</span>
+              </div>
+            )}
           </div>
 
           {/* Preis */}
@@ -141,7 +164,7 @@ export default function ProductHero({ product }: ProductHeroProps) {
                 <span className="text-melyla-muted text-lg line-through">
                   {formatPrice(product.originalPrice)}
                 </span>
-                <span className="text-xs font-bold text-melyla-gold bg-melyla-gold/10 px-2 py-0.5 rounded-full">
+                <span className="text-xs font-bold text-melyla-gold-deep bg-melyla-gold/10 px-2 py-0.5 rounded-full">
                   {savings}% gespart
                 </span>
               </>
@@ -169,7 +192,18 @@ export default function ProductHero({ product }: ProductHeroProps) {
           {/* Größenauswahl */}
           {product.sizes && (
             <div>
-              <p className="text-sm font-semibold text-melyla-navy mb-3">Größe wählen:</p>
+              <div className="flex items-baseline justify-between gap-3 mb-3">
+                <p className="text-sm font-semibold text-melyla-navy">Größe wählen:</p>
+                {isFunnel && (
+                  <Link
+                    href="#groesse"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-melyla-gold-deep hover:underline"
+                  >
+                    <Ruler size={13} />
+                    Größe unsicher?
+                  </Link>
+                )}
+              </div>
               <div className="flex flex-wrap gap-2">
                 {product.sizes.map((size) => (
                   <button
@@ -192,12 +226,21 @@ export default function ProductHero({ product }: ProductHeroProps) {
           <div className="flex items-center gap-2.5 bg-melyla-gold/8 border border-melyla-gold/20 rounded-xl px-4 py-3">
             <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse shrink-0" />
             <p className="text-sm text-melyla-stone">
-              <span className="font-semibold text-melyla-navy">Auf Lager</span> · Versand heute bei Bestellung bis 14:00 Uhr
+              <span className="font-semibold text-melyla-navy">Auf Lager</span> · Versand aus
+              Deutschland, Lieferung in 2–4 Werktagen
             </p>
           </div>
 
           {/* CTA */}
           <AddToCartButton productName={product.name} selectedSize={selectedSize} />
+
+          <div className="flex items-center justify-center gap-2 -mt-1">
+            <PackageCheck size={15} className="text-melyla-gold shrink-0" />
+            <p className="text-sm text-melyla-stone">
+              <span className="font-semibold text-melyla-navy">30 Nächte testen.</span> Gefällt er
+              dir nicht, bekommst du dein Geld zurück.
+            </p>
+          </div>
 
           {/* Trust Badges */}
           <div className="grid grid-cols-4 gap-3 pt-4 border-t border-melyla-border">

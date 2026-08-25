@@ -32,16 +32,16 @@ export default function BlogPreview() {
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
               </div>
-              <span className="text-melyla-gold text-xs tracking-widest uppercase font-semibold">
+              <span className="text-melyla-gold-deep text-xs tracking-widest uppercase font-semibold">
                 {post.category}
               </span>
-              <h3 className="font-serif text-xl text-melyla-navy mt-2 mb-2 leading-snug group-hover:text-melyla-gold transition-colors duration-200 text-balance">
+              <h3 className="font-serif text-xl text-melyla-navy mt-2 mb-2 leading-snug group-hover:text-melyla-gold-deep transition-colors duration-200 text-balance">
                 {post.title}
               </h3>
               <p className="text-melyla-muted text-sm leading-relaxed line-clamp-2">
                 {post.excerpt}
               </p>
-              <span className="inline-flex items-center gap-1 mt-4 text-melyla-gold text-sm font-medium group-hover:gap-2 transition-all duration-200">
+              <span className="inline-flex items-center gap-1 mt-4 text-melyla-gold-deep text-sm font-medium group-hover:gap-2 transition-all duration-200">
                 Weiterlesen <ArrowRight size={14} />
               </span>
             </Link>

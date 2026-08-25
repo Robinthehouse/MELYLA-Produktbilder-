@@ -12,9 +12,9 @@ const base =
   "inline-flex items-center justify-center gap-2 rounded-full font-medium transition-colors duration-200 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-3 disabled:opacity-50 disabled:cursor-not-allowed";
 
 const variants: Record<string, string> = {
-  primary: "bg-melyla-gold text-white hover:bg-melyla-gold-light",
+  primary: "bg-melyla-gold-deep text-white hover:bg-melyla-gold-deeper",
   ghost: "border border-melyla-stone text-melyla-navy hover:bg-melyla-cream-warm",
-  outline: "border border-melyla-gold text-melyla-gold hover:bg-melyla-gold hover:text-white",
+  outline: "border border-melyla-gold-deep text-melyla-gold-deep hover:bg-melyla-gold-deep hover:text-white",
 };
 
 const sizes: Record<string, string> = {

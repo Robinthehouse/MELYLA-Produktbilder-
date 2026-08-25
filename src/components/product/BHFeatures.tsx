@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
@@ -14,7 +13,7 @@ const features = [
     points: [
       { label: "Verstellbarer Verschluss", desc: "Einfach anzupassen für optimalen Sitz" },
       { label: "Eingenähte Polsterung", desc: "Unterstützt das Hautgewebe sanft von innen" },
-      { label: "Elastan & Nylon Mix", desc: "Atmungsaktiver Stoff für optimalen Tragekomfort" },
+      { label: "95 % Baumwolle, 5 % Elasthan", desc: "Atmungsaktiver Stoff für optimalen Tragekomfort" },
     ],
   },
   {
@@ -57,7 +56,7 @@ export default function BHFeatures() {
               <div className="container-luxury">
                 <ScrollReveal>
                   <div className="text-center max-w-2xl mx-auto mb-10">
-                    <p className="text-melyla-gold text-xs tracking-[0.2em] uppercase font-semibold mb-3">
+                    <p className="text-melyla-gold-deep text-xs tracking-[0.2em] uppercase font-semibold mb-3">
                       {feature.eyebrow}
                     </p>
                     <h2 className="font-serif text-[2.25rem] text-melyla-navy mb-4 text-balance">
@@ -116,7 +115,7 @@ export default function BHFeatures() {
               >
                 <ScrollReveal delay={isTextLeft ? 0 : 100}>
                   <div className={isTextLeft ? "" : "lg:order-2"}>
-                    <p className="text-melyla-gold text-xs tracking-[0.2em] uppercase font-semibold mb-3">
+                    <p className="text-melyla-gold-deep text-xs tracking-[0.2em] uppercase font-semibold mb-3">
                       {feature.eyebrow}
                     </p>
                     <h2 className="font-serif text-[2rem] text-melyla-navy mb-5 text-balance leading-tight">
@@ -158,30 +157,6 @@ export default function BHFeatures() {
         );
       })}
 
-      {/* CTA Banner */}
-      <section className="bg-melyla-navy py-20 px-6">
-        <div className="container-luxury text-center max-w-2xl mx-auto">
-          <p className="text-melyla-gold text-xs tracking-[0.2em] uppercase font-semibold mb-4">
-            Jetzt starten
-          </p>
-          <h2 className="font-serif text-[2.25rem] text-white mb-4 text-balance">
-            Bereit für glatteres Dekolleté?
-          </h2>
-          <p className="text-white/60 text-sm leading-relaxed mb-8">
-            Über 10.000 Kundinnen vertrauen dem MELYLA Anti-Falten Schlaf BH. 30-Tage-Rückgabe inklusive.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link
-              href="/produkte/anti-falten-schlaf-bh"
-              className="inline-flex items-center gap-2 px-10 py-4 rounded-full font-semibold text-white text-base cursor-pointer transition-all duration-300 shadow-[var(--shadow-cta)] hover:shadow-[0_8px_36px_rgba(201,151,62,0.55)] hover:scale-105"
-              style={{ backgroundColor: "#C9973E" }}
-            >
-              Jetzt kaufen — €49,50
-            </Link>
-            <span className="text-white/40 text-xs">✓ Kostenloser Versand · ✓ 30 Tage Garantie</span>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

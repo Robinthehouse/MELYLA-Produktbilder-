@@ -77,7 +77,7 @@ export default function AgbPage() {
   return (
     <section className="pt-32 pb-20 bg-melyla-cream">
       <div className="container-luxury max-w-2xl">
-        <p className="text-melyla-gold text-xs tracking-[0.25em] uppercase font-semibold mb-3">Rechtliches</p>
+        <p className="text-melyla-gold-deep text-xs tracking-[0.25em] uppercase font-semibold mb-3">Rechtliches</p>
         <h1 className="font-serif text-4xl text-melyla-navy mb-4">
           Allgemeine Geschäftsbedingungen
         </h1>
@@ -91,7 +91,7 @@ export default function AgbPage() {
               className="bg-white rounded-2xl p-6 border border-melyla-border shadow-[var(--shadow-card)]"
             >
               <div className="flex items-center gap-3 mb-3 pb-3 border-b border-melyla-border">
-                <span className="text-xs font-bold text-melyla-gold bg-melyla-rose px-2.5 py-1 rounded-full">
+                <span className="text-xs font-bold text-melyla-gold-deep bg-melyla-rose px-2.5 py-1 rounded-full">
                   {s.num}
                 </span>
                 <h2 className="font-sans font-semibold text-melyla-navy text-base">

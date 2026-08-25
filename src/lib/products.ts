@@ -6,9 +6,10 @@ export const products: Product[] = [
     name: "Anti-Falten Schlaf BH",
     shortName: "Schlaf BH",
     price: 49.5,
+    originalPrice: 69.9,
     currency: "EUR",
     description:
-      "Der Original Anti-Falten Schlaf BH — schläft du dich jung und strahlt am Morgen.",
+      "Der Original Anti-Falten Schlaf BH: Er hält dein Dekolleté nachts sanft in Position — damit du morgens ohne frische Schlaffalten aufwachst.",
     longDescription:
       "Der MELYLA Anti-Falten Schlaf BH hält dein Dekolleté während des Schlafs sanft zusammen und verhindert so das Entstehen neuer Falten. Aus besonders weichem, atmungsaktivem Material gefertigt, trägt er sich so bequem, dass du ihn kaum spürst. Entwickelt in Deutschland für Frauen, die auch im Schlaf aktiv für ihre Haut tun möchten.",
     benefits: [
@@ -44,7 +45,7 @@ export const products: Product[] = [
     slug: "anti-falten-kissen",
     name: "Anti-Falten Kissen",
     shortName: "Schlafkissen",
-    price: 89.5,
+    price: 49.5,
     currency: "EUR",
     description:
       "Das ergonomische Anti-Falten Kissen — schläfst du in der optimalen Position für jugendliche Haut.",

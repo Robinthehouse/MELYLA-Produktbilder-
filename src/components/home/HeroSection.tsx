@@ -11,7 +11,7 @@ export default function HeroSection() {
 
       <div className="container-luxury relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center py-16">
         <div className="order-2 lg:order-1">
-          <p className="text-melyla-gold text-xs tracking-[0.25em] uppercase font-semibold mb-5">
+          <p className="text-melyla-gold-deep text-xs tracking-[0.25em] uppercase font-semibold mb-5">
             Designed in Germany · Anti-Aging · Schlafpflege
           </p>
 

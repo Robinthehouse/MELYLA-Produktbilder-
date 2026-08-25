@@ -93,7 +93,7 @@ export default function TestimonialsSection() {
         {/* Header */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-12 gap-4">
           <div>
-            <p className="text-melyla-gold text-xs tracking-[0.25em] uppercase font-semibold mb-2">Kundenstimmen</p>
+            <p className="text-melyla-gold-light text-xs tracking-[0.25em] uppercase font-semibold mb-2">Kundenstimmen</p>
             <h2 className="font-serif text-[2rem] text-white">Das sagen unsere Kunden</h2>
           </div>
           <div className="flex items-center gap-2 shrink-0">
@@ -154,7 +154,7 @@ export default function TestimonialsSection() {
               {/* Bottom: author + product */}
               <div className="flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-white/10">
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full bg-melyla-gold/20 flex items-center justify-center text-melyla-gold font-bold text-sm font-serif">
+                  <div className="w-9 h-9 rounded-full bg-melyla-gold/20 flex items-center justify-center text-melyla-gold-light font-bold text-sm font-serif">
                     {t.name.charAt(0)}
                   </div>
                   <div>
@@ -162,7 +162,7 @@ export default function TestimonialsSection() {
                     <p className="text-white/50 text-xs">{t.location}</p>
                   </div>
                 </div>
-                <span className="text-[11px] font-medium text-melyla-gold bg-melyla-gold/10 border border-melyla-gold/20 rounded-full px-3 py-1">
+                <span className="text-[11px] font-medium text-melyla-gold-light bg-melyla-gold/10 border border-melyla-gold/20 rounded-full px-3 py-1">
                   {t.productName}
                 </span>
               </div>

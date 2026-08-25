@@ -44,3 +44,9 @@ next-env.d.ts
 .claude/
 .agents/
 skills-lock.json
+
+# Shopify-Theme: eigenes Repository fuer die GitHub-Verbindung
+shopify-theme/
+
+# Arbeitskopie des Live-Themes: eigenes Repository
+shopify-theme-live/

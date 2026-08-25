@@ -20,7 +20,7 @@ export default function BestsellerGrid() {
         <div className="text-center">
           <Link
             href="/produkte/anti-falten-schlaf-bh"
-            className="inline-flex items-center gap-2 text-white font-semibold text-sm px-8 py-3.5 rounded-full transition-all duration-300 shadow-[var(--shadow-cta)] hover:shadow-[0_8px_36px_rgba(201,151,62,0.55)] hover:scale-105 cursor-pointer min-h-[44px]"
+            className="inline-flex items-center gap-2 text-melyla-navy font-semibold text-sm px-8 py-3.5 rounded-full transition-all duration-300 shadow-[var(--shadow-cta)] hover:shadow-[0_8px_36px_rgba(201,151,62,0.55)] hover:scale-105 cursor-pointer min-h-[44px]"
             style={{ backgroundColor: "#C9973E" }}
           >
             Jetzt kaufen

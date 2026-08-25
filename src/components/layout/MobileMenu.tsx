@@ -52,7 +52,7 @@ export default function MobileMenu({ open, onClose, links }: MobileMenuProps) {
               key={link.href}
               href={link.href}
               onClick={onClose}
-              className="py-3 px-2 text-melyla-navy text-lg font-medium border-b border-melyla-border/50 hover:text-melyla-gold transition-colors duration-200 cursor-pointer"
+              className="py-3 px-2 text-melyla-navy text-lg font-medium border-b border-melyla-border/50 hover:text-melyla-gold-deep transition-colors duration-200 cursor-pointer"
             >
               {link.label}
             </Link>

@@ -3,8 +3,8 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 
 const perks = [
   "30 Tage Geld-zurück-Garantie",
-  "Gratis Versand ab 29 €",
-  "Über 500 zufriedene Kundinnen",
+  "Gratis Versand",
+  "4.79 Sterne bei 52 Bewertungen",
 ];
 
 export default function CtaBanner() {
@@ -17,7 +17,7 @@ export default function CtaBanner() {
 
       <div className="container-luxury relative z-10 text-center max-w-2xl mx-auto">
         <ScrollReveal>
-          <p className="text-melyla-gold text-xs tracking-[0.25em] uppercase font-semibold mb-4">
+          <p className="text-melyla-gold-light text-xs tracking-[0.25em] uppercase font-semibold mb-4">
             Jetzt starten
           </p>
           <h2 className="font-serif text-[2.5rem] lg:text-[3rem] text-white text-balance leading-tight mb-5">
@@ -41,7 +41,7 @@ export default function CtaBanner() {
 
           <Link
             href="/produkte/anti-falten-schlaf-bh"
-            className="inline-flex items-center gap-3 text-white font-semibold text-base px-10 py-4 rounded-full transition-all duration-300 shadow-[var(--shadow-cta)] hover:shadow-[0_12px_40px_rgba(201,151,62,0.55)] hover:scale-105 cursor-pointer min-h-[52px]"
+            className="inline-flex items-center gap-3 text-melyla-navy font-semibold text-base px-10 py-4 rounded-full transition-all duration-300 shadow-[var(--shadow-cta)] hover:shadow-[0_12px_40px_rgba(201,151,62,0.55)] hover:scale-105 cursor-pointer min-h-[52px]"
             style={{ backgroundColor: "#C9973E" }}
           >
             Jetzt kaufen

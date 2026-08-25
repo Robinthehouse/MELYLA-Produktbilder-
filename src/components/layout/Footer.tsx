@@ -35,21 +35,21 @@ export default function Footer() {
               height={40}
               className="h-10 w-auto mb-4"
             />
-            <p className="text-melyla-muted text-sm leading-relaxed">
+            <p className="text-melyla-on-dark text-sm leading-relaxed">
               Gemütlich faltenfrei schlafen. Anti-Falten Produkte für ein strahlendes Ich — Designed in Germany.
             </p>
             <div className="flex gap-4 mt-5">
-              <span className="text-xs text-melyla-muted bg-white/5 rounded-full px-3 py-1">
+              <span className="text-xs text-melyla-on-dark bg-white/5 rounded-full px-3 py-1">
                 ✓ 30-Tage-Garantie
               </span>
-              <span className="text-xs text-melyla-muted bg-white/5 rounded-full px-3 py-1">
+              <span className="text-xs text-melyla-on-dark bg-white/5 rounded-full px-3 py-1">
                 ✓ CO₂-neutral
               </span>
             </div>
           </div>
 
           <div>
-            <h4 className="font-sans text-xs tracking-widest uppercase text-melyla-gold font-semibold mb-5">
+            <h4 className="font-sans text-xs tracking-widest uppercase text-melyla-gold-light font-semibold mb-5">
               Shop
             </h4>
             <ul className="space-y-3">
@@ -57,7 +57,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-melyla-muted hover:text-white transition-colors duration-200"
+                    className="text-sm text-melyla-on-dark hover:text-white transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -67,7 +67,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-sans text-xs tracking-widest uppercase text-melyla-gold font-semibold mb-5">
+            <h4 className="font-sans text-xs tracking-widest uppercase text-melyla-gold-light font-semibold mb-5">
               Info
             </h4>
             <ul className="space-y-3">
@@ -75,7 +75,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-melyla-muted hover:text-white transition-colors duration-200"
+                    className="text-sm text-melyla-on-dark hover:text-white transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -85,7 +85,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-sans text-xs tracking-widest uppercase text-melyla-gold font-semibold mb-5">
+            <h4 className="font-sans text-xs tracking-widest uppercase text-melyla-gold-light font-semibold mb-5">
               Rechtliches
             </h4>
             <ul className="space-y-3">
@@ -93,7 +93,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-melyla-muted hover:text-white transition-colors duration-200"
+                    className="text-sm text-melyla-on-dark hover:text-white transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -104,7 +104,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-melyla-muted">
+          <p className="text-xs text-melyla-on-dark">
             © {new Date().getFullYear()} MELYLA. Alle Rechte vorbehalten.
           </p>
           <PaymentIcons />

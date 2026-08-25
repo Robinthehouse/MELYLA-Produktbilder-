@@ -45,7 +45,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           <StarRating rating={product.rating} size={13} />
           <span className="text-melyla-muted text-xs">({product.reviewCount})</span>
         </div>
-        <h3 className="font-sans font-semibold text-melyla-navy text-sm leading-snug mb-1 group-hover:text-melyla-gold transition-colors duration-200">
+        <h3 className="font-sans font-semibold text-melyla-navy text-sm leading-snug mb-1 group-hover:text-melyla-gold-deep transition-colors duration-200">
           {product.name}
         </h3>
         <div className="flex items-baseline gap-2">

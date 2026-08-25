@@ -48,11 +48,11 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
             content: (
               <div className="space-y-4">
                 <div className="bg-melyla-rose rounded-xl p-4">
-                  <p className="text-xs font-semibold text-melyla-gold uppercase tracking-wider mb-1">Material</p>
+                  <p className="text-xs font-semibold text-melyla-gold-deep uppercase tracking-wider mb-1">Material</p>
                   <p className="text-melyla-stone text-sm">{product.materials}</p>
                 </div>
                 <div className="bg-melyla-rose rounded-xl p-4">
-                  <p className="text-xs font-semibold text-melyla-gold uppercase tracking-wider mb-1">Pflege</p>
+                  <p className="text-xs font-semibold text-melyla-gold-deep uppercase tracking-wider mb-1">Pflege</p>
                   <p className="text-melyla-stone text-sm">{product.care}</p>
                 </div>
               </div>
@@ -80,7 +80,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
                     <div className="w-8 h-8 rounded-lg bg-melyla-rose flex items-center justify-center shrink-0">
                       <Icon size={15} className="text-melyla-gold" />
                     </div>
-                    <span className="font-sans font-semibold text-melyla-navy group-hover:text-melyla-gold transition-colors duration-200">
+                    <span className="font-sans font-semibold text-melyla-navy group-hover:text-melyla-gold-deep transition-colors duration-200">
                       {s.label}
                     </span>
                   </div>

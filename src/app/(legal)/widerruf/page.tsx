@@ -8,7 +8,7 @@ export default function WiderrufPage() {
   return (
     <section className="pt-32 pb-20 bg-melyla-cream">
       <div className="container-luxury max-w-2xl">
-        <p className="text-melyla-gold text-xs tracking-[0.25em] uppercase font-semibold mb-3">Rechtliches</p>
+        <p className="text-melyla-gold-deep text-xs tracking-[0.25em] uppercase font-semibold mb-3">Rechtliches</p>
         <h1 className="font-serif text-4xl text-melyla-navy mb-4">Widerrufsrecht & Rückgabe</h1>
         <p className="text-melyla-stone text-sm mb-10">
           Wir bieten dir mehr als gesetzlich vorgeschrieben: 30 Tage Rückgabe ohne Angabe von Gründen.

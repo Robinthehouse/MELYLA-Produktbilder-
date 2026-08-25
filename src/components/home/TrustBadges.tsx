@@ -33,7 +33,7 @@ export default function TrustBadges() {
                 <p className="text-white font-sans font-semibold text-sm">
                   {badge.title}
                 </p>
-                <p className="text-melyla-muted text-xs mt-0.5">{badge.subtitle}</p>
+                <p className="text-melyla-on-dark text-xs mt-0.5">{badge.subtitle}</p>
               </div>
             </div>
           ))}

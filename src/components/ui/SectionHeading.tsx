@@ -26,7 +26,7 @@ export default function SectionHeading({
       )}
     >
       {eyebrow && (
-        <p className="text-melyla-gold text-xs tracking-[0.2em] uppercase font-sans font-semibold mb-3">
+        <p className="text-melyla-gold-deep text-xs tracking-[0.2em] uppercase font-sans font-semibold mb-3">
           {eyebrow}
         </p>
       )}
@@ -42,7 +42,7 @@ export default function SectionHeading({
         <p
           className={cn(
             "mt-4 text-base leading-relaxed",
-            light ? "text-melyla-muted" : "text-melyla-muted"
+            light ? "text-melyla-on-dark" : "text-melyla-muted"
           )}
         >
           {subtitle}

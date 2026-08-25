@@ -24,7 +24,7 @@ export default function FaqAccordion({ faqs }: { faqs: FaqItem[] }) {
             className="w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer group hover:bg-melyla-cream transition-colors duration-200"
             aria-expanded={open === i}
           >
-            <span className="font-sans font-semibold text-melyla-navy text-sm pr-4 group-hover:text-melyla-gold transition-colors duration-200">
+            <span className="font-sans font-semibold text-melyla-navy text-sm pr-4 group-hover:text-melyla-gold-deep transition-colors duration-200">
               {faq.q}
             </span>
             <ChevronDown

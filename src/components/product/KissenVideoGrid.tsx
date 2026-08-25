@@ -21,7 +21,7 @@ export default function KissenVideoGrid() {
       <div className="container-luxury">
         <ScrollReveal>
           <div className="text-center max-w-xl mx-auto mb-10">
-            <p className="text-melyla-gold text-xs tracking-[0.2em] uppercase font-semibold mb-3">
+            <p className="text-melyla-gold-deep text-xs tracking-[0.2em] uppercase font-semibold mb-3">
               In Bewegung
             </p>
             <h2 className="font-serif text-[2rem] text-white text-balance">

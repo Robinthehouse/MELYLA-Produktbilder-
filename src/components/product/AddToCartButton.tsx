@@ -33,7 +33,7 @@ export default function AddToCartButton({
         "w-full flex items-center justify-center gap-3 min-h-[52px] rounded-full font-medium text-base transition-all duration-300 cursor-pointer focus-visible:outline-2 focus-visible:outline-melyla-gold focus-visible:outline-offset-3 disabled:cursor-not-allowed",
         state === "success"
           ? "bg-green-600 text-white shadow-none"
-          : "bg-[#C9973E] text-white hover:bg-[#A87B2E] shadow-[0_6px_28px_rgba(201,151,62,0.45)] hover:shadow-[0_8px_36px_rgba(201,151,62,0.6)] hover:scale-[1.02]",
+          : "bg-melyla-cta text-melyla-navy hover:bg-melyla-cta-dark shadow-[0_6px_28px_rgba(201,151,62,0.45)] hover:shadow-[0_8px_36px_rgba(201,151,62,0.6)] hover:scale-[1.02]",
         className
       )}
     >

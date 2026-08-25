@@ -59,7 +59,7 @@ export default function BeforeAfterSection() {
             <span className="absolute top-4 right-4 bg-melyla-navy/90 text-white text-xs font-semibold px-3 py-1 rounded-full">Nachher</span>
           </div>
 
-          <p className="text-center text-melyla-muted text-xs mt-4">
+          <p className="text-center text-melyla-on-dark text-xs mt-4">
             Slider verschieben für Vorher-Nachher-Vergleich
           </p>
         </div>

@@ -71,13 +71,13 @@ export default async function BlogPostPage({ params }: Props) {
         <div className="container-luxury max-w-3xl">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-melyla-muted text-sm hover:text-melyla-gold transition-colors duration-200 mb-8"
+            className="inline-flex items-center gap-2 text-melyla-muted text-sm hover:text-melyla-gold-deep transition-colors duration-200 mb-8"
           >
             <ArrowLeft size={14} /> Zurück zum Blog
           </Link>
 
           <div className="flex flex-wrap items-center gap-4 mb-5">
-            <span className="inline-flex items-center gap-1.5 bg-melyla-rose text-melyla-gold text-xs font-semibold px-3 py-1.5 rounded-full border border-melyla-border">
+            <span className="inline-flex items-center gap-1.5 bg-melyla-rose text-melyla-gold-deep text-xs font-semibold px-3 py-1.5 rounded-full border border-melyla-border">
               <Tag size={11} />
               {post.category}
             </span>
@@ -127,7 +127,7 @@ export default async function BlogPostPage({ params }: Props) {
 
           {/* CTA am Ende */}
           <div className="mt-16 bg-melyla-rose rounded-3xl p-8 text-center border border-melyla-border">
-            <p className="text-melyla-gold text-xs tracking-[0.2em] uppercase font-semibold mb-2">Jetzt ausprobieren</p>
+            <p className="text-melyla-gold-deep text-xs tracking-[0.2em] uppercase font-semibold mb-2">Jetzt ausprobieren</p>
             <h3 className="font-serif text-2xl text-melyla-navy mb-3">
               Bereit für bessere Haut?
             </h3>
@@ -143,7 +143,7 @@ export default async function BlogPostPage({ params }: Props) {
       {related.length > 0 && (
         <section className="py-16 bg-melyla-cream-warm">
           <div className="container-luxury max-w-3xl">
-            <p className="text-melyla-gold text-xs tracking-[0.2em] uppercase font-semibold mb-2">Weiterlesen</p>
+            <p className="text-melyla-gold-deep text-xs tracking-[0.2em] uppercase font-semibold mb-2">Weiterlesen</p>
             <h2 className="font-serif text-2xl text-melyla-navy mb-8">Weitere Artikel</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {related.map((p) => (
@@ -151,11 +151,11 @@ export default async function BlogPostPage({ params }: Props) {
                   <div className="relative aspect-[16/9] rounded-2xl overflow-hidden mb-4 shadow-[var(--shadow-card)]">
                     <Image src={p.coverImage} alt={p.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                   </div>
-                  <span className="text-melyla-gold text-xs font-semibold uppercase tracking-wider">{p.category}</span>
-                  <h3 className="font-serif text-lg text-melyla-navy mt-1 mb-2 leading-snug group-hover:text-melyla-gold transition-colors duration-200">
+                  <span className="text-melyla-gold-deep text-xs font-semibold uppercase tracking-wider">{p.category}</span>
+                  <h3 className="font-serif text-lg text-melyla-navy mt-1 mb-2 leading-snug group-hover:text-melyla-gold-deep transition-colors duration-200">
                     {p.title}
                   </h3>
-                  <span className="inline-flex items-center gap-1 text-melyla-gold text-sm font-medium group-hover:gap-2 transition-all duration-200">
+                  <span className="inline-flex items-center gap-1 text-melyla-gold-deep text-sm font-medium group-hover:gap-2 transition-all duration-200">
                     Lesen <ArrowRight size={13} />
                   </span>
                 </Link>
