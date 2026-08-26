@@ -21,6 +21,7 @@ einfügen, **sofort speichern**. Nicht in die Textansicht zurückschalten.
 | `produktbeschreibung-beauty-sleep-box.html` | Produkt *MELYLA Beauty Sleep Box* → Beschreibung |
 | `produktbeschreibung-kissen.html` | Produkt *Anti-Falten Kissen* → Beschreibung |
 | `warum-melyla.html` | Seite *Warum MELYLA* → Inhalt |
+| `falten-vermeiden.html` | Seite *Wie Falten entstehen* → Inhalt (Seite muss noch angelegt werden, Adresse `falten-vermeiden`) |
 | `problem-passage.html` | Rückfalloption, falls ein Block nicht klappt |
 
 ## 2. Prompts an die Shopify-KI — **nicht mehr aktuell**

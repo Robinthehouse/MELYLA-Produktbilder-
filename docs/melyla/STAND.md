@@ -59,6 +59,25 @@ internen Link aus Vorlagen, Sektionsgruppen und HTML-Bausteinen mit seinem Statu
 | **Kundenstimmen: Karussell und zweites Video** | **Blockiert** — Shopify verweigert Änderungen an dieser Datei seit dem 23.08. |
 | **Otto- und Amazon-Listings** | Wartet auf Material von Jochen, Gerüst steht in `10-marktplatz-listings.md` |
 
+## Ratgeberseite „Wie Falten entstehen" — neu am 25.08.
+
+Eine Wissensseite, die erklärt statt zu verkaufen: vier Faltenarten, der Mechanismus vom Knick
+zur bleibenden Linie, Maßnahmen nach Beleglage sortiert, acht häufige Fragen. **1.155 Wörter**,
+Schaubilder direkt im HTML, keine Bilddateien nötig.
+
+Der Zweck: für **Schlaffalten** ranken. Diesen Begriff besetzen bisher Ratgeberportale, obwohl
+MELYLA das Produkt dazu verkauft. Vier Kurzantwort-Blöcke und acht Fragen mit vollständigen
+Antworten liefern das, was KI-Antwortmaschinen zitieren.
+
+Verlinkt wird von der Startseite, beiden Produktseiten und beiden Funktionsweise-Seiten.
+
+**MELYLA taucht erst im letzten Abschnitt auf**, dort als eine Möglichkeit unter mehreren. Eine
+Ratgeberseite, die zur Verkaufsseite wird, verliert Vertrauen und Ranking zugleich.
+
+**Offen bei Robin:** Seite in Shopify anlegen mit der Adresse `falten-vermeiden`, HTML einsetzen,
+Suchmaschinen-Eintrag übernehmen, ins Menü aufnehmen. Alles Nötige steht in
+`14-ratgeberseite-falten.md`. Bis dahin melden fünf Verweise erwartungsgemäß 404.
+
 ## Videosektionen — Stand 25.08.
 
 Zwei Sektionen mit unterschiedlicher Aufgabe:
