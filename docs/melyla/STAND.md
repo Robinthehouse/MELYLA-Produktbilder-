@@ -59,6 +59,24 @@ internen Link aus Vorlagen, Sektionsgruppen und HTML-Bausteinen mit seinem Statu
 | **Kundenstimmen: Karussell und zweites Video** | **Blockiert** — Shopify verweigert Änderungen an dieser Datei seit dem 23.08. |
 | **Otto- und Amazon-Listings** | Wartet auf Material von Jochen, Gerüst steht in `10-marktplatz-listings.md` |
 
+## Gründergeschichte — neu erzählt am 25.08.
+
+Auf *Warum MELYLA* stand bisher ein Satz über den Gründer, der „neben Hauptjob und kleinem Kind“
+entworfen habe. Ersetzt durch einen Erzählbogen in vier Abschnitten: der Morgen im Spiegel, die
+vergebliche Suche, die eigene Entwicklung, das Wachsen des Sortiments. **226 Wörter.**
+
+Erzählt wird die **echte** Geschichte, aber **anonym** — die Gründerin hat zugestimmt, möchte
+aber nicht genannt werden, ihr Partner ebenso wenig. Kein Name, kein Berufstitel, genau eine
+Jahreszahl (2022).
+
+Eine erfundene Gründergeschichte wäre eine Irreführung nach § 5 UWG gewesen, dort ausdrücklich
+als Angabe über die Person des Unternehmers genannt. Quellenzuordnung Satz für Satz in
+`15-gruendergeschichte.md`.
+
+**Offen bei Robin:** Baustein einsetzen und die Gründerin gegenlesen lassen. Vier Bild-Prompts
+liegen bereit — sie zeigen bewusst **keine Person**, weil ein Gesicht neben der Passage als
+„das ist sie“ gelesen würde.
+
 ## Ratgeberseite „Wie Falten entstehen" — neu am 25.08.
 
 Eine Wissensseite, die erklärt statt zu verkaufen: vier Faltenarten, der Mechanismus vom Knick
