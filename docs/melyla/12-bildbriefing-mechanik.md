@@ -339,3 +339,113 @@ HandBrake mit *720p30* und Qualität RF 26 trifft das zuverlässig.
 Jede Kachel braucht ein Standbild. Es erscheint sofort, das Video lädt erst beim Hineinscrollen.
 Ohne Standbild sieht man bis dahin eine leere Fläche. Am einfachsten ein Einzelbild aus dem
 fertigen Video ziehen — dann stimmen Ausschnitt und Farben garantiert.
+
+---
+
+# Teil 3: Die drei Schleifen der Ergebnis-Sektion
+
+Stand 25.08.2026. Für die Sektion *MELYLA Feature-Videos* („✨ Das Ergebnis") auf der Startseite.
+Die drei Videofelder sind bereits da — Video auswählen, fertig.
+
+## Vorgaben
+
+| | |
+|---|---|
+| Seitenverhältnis | **4:3 quer** — die Kartenfläche ist fest 4:3 |
+| Länge | 4–6 Sekunden |
+| Ton | keiner, die Videos laufen stumm |
+| Erstes und letztes Bild | identisch |
+| Format | **MP4**, unter 1 MB je Datei |
+| Modell | Higgsfield `soul_2`, 2K |
+
+Alles aus Teil 1 gilt weiter: weiches Morgenlicht, warme Neutraltöne, Modelalter 40–60, echte
+unretuschierte Haut, Kamera völlig still. Und in **jedem** Prompt:
+
+```
+no text, no watermark, no logo, no label, no brand name, no lettering
+```
+
+**Dieselbe Darstellerin in allen drei Videos.** Sonst wirken die Karten wie drei Werbespots
+verschiedener Marken.
+
+**Weniger Bewegung ist besser.** Diese Videos laufen über einer Textkarte. Sie sollen Leben
+andeuten, nicht die Aufmerksamkeit vom Text wegziehen.
+
+---
+
+## E1 — „Neue Falten verhindern"
+
+Zeigt, was nachts **nicht** passiert: Die Haut bleibt glatt, obwohl sie in Seitenlage liegt.
+
+**Startbild**
+
+> Woman in her late 40s asleep on her side in bed with cream linen sheets, wearing a soft
+> nude-coloured sleep bra with a wide band and no underwire. Photographed from above at a
+> slight angle, soft morning light from a window. Framing centred on the décolleté — the skin
+> lies smooth and uncompressed, no folds. Face relaxed and softly out of focus at the edge of
+> the frame. Natural unretouched skin with visible texture, warm neutral colour palette,
+> editorial beauty photography, shallow depth of field, horizontal 4:3.
+> no text, no watermark, no logo, no label, no brand name, no lettering
+
+**Bewegung**
+
+> Only quiet breathing. The chest rises and falls once, very slowly, and returns exactly to the
+> starting position. The skin of the décolleté stays smooth throughout — no folds appear at any
+> point. Nothing else moves. Camera completely static. Seamless loop, first and last frame
+> identical. 5 seconds.
+
+---
+
+## E2 — „Morgens ohne frische Linien"
+
+Die Nahaufnahme am Morgen. **Kein Gesicht.**
+
+> **Wichtig:** Dieses Video zeigt **glatte Haut ohne frische Abdrücke** — nicht „gestraffte"
+> Haut und keinen Vorher-Nachher-Effekt. Eine sichtbare Hautveränderung zu suggerieren wäre
+> eine belegpflichtige Wirkaussage. Gezeigt wird der Zustand am Morgen, nicht ein Ergebnis
+> nach Wochen.
+
+**Startbild**
+
+> Close-up of the décolleté of a woman in her 50s in soft morning light, skin smooth and
+> relaxed, no fresh crease lines. Wearing a soft nude-coloured sleep bra with a wide
+> comfortable band. Cropped so no face is visible. Natural unretouched skin with visible pores
+> and fine hairs, warm neutral tones, editorial beauty photography, horizontal 4:3.
+> no text, no watermark, no logo, no label, no brand name, no lettering
+
+**Bewegung**
+
+> Almost imperceptible movement: one slow shallow breath, and the morning daylight shifts very
+> slightly as if a curtain moves, then returns. The skin stays smooth and unchanged the whole
+> time — nothing appears, nothing fades. Camera completely static. Seamless loop, first and
+> last frame identical. 5 seconds.
+
+---
+
+## E3 — „Vorbeugung & Schutz"
+
+Die Gewohnheit: abends anziehen, und fertig. Ruhig, alltäglich, kein Produktwerbespot.
+
+**Startbild**
+
+> Woman in her early 50s standing in a warmly lit bedroom in the evening, having just put on a
+> soft nude-coloured sleep bra, one hand resting near the shoulder strap. Seen from the side,
+> face turned away and partly cropped. Calm, unhurried bedtime atmosphere, bedside lamp, linen
+> bedding in the background. Natural unretouched skin, warm neutral tones, editorial lifestyle
+> photography, horizontal 4:3.
+> no text, no watermark, no logo, no label, no brand name, no lettering
+
+**Bewegung**
+
+> Her hand smooths the shoulder strap once, slowly, then lowers back to her side exactly as it
+> started. Everything else stays still. Camera completely static. Seamless loop, first and last
+> frame identical. 5 seconds.
+
+---
+
+## Ablauf
+
+1. E1 erzeugen, prüfen: keine Schrift im Bild, Übergang vom letzten zum ersten Bild ohne Sprung
+2. Aus E1 die Darstellerin für E2 und E3 ableiten
+3. Auf 4:3 zuschneiden, als **MP4** exportieren, unter 1 MB
+4. Im Theme-Editor, Abschnitt **MELYLA Feature-Videos**, je Karte das Video auswählen

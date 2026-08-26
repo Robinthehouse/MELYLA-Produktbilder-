@@ -59,6 +59,28 @@ internen Link aus Vorlagen, Sektionsgruppen und HTML-Bausteinen mit seinem Statu
 | **Kundenstimmen: Karussell und zweites Video** | **Blockiert** — Shopify verweigert Änderungen an dieser Datei seit dem 23.08. |
 | **Otto- und Amazon-Listings** | Wartet auf Material von Jochen, Gerüst steht in `10-marktplatz-listings.md` |
 
+## Zwei Aussagen korrigiert — 25.08.
+
+Beim Schreiben der Videoprompts für die Ergebnis-Sektion sind zwei Widersprüche aufgefallen:
+
+**Die Mechanik stand falsch herum.** An vier Stellen hieß es, der BH halte das Dekolleté „sanft
+**zusammen**". Er hält die Brüste **auseinander** — der Mittelsteg legt sich dazwischen. Überall
+sonst stand es richtig. Korrigiert; „sanft zusammen" kommt im Theme nicht mehr vor.
+
+**„Straffer" ist eine Wirkaussage, die ein Textil nicht einlösen kann.** Straffen heißt: die
+Haut wird fester. Ein BH verhindert Verformung, mehr nicht. Die Aussage stand an sechs Stellen,
+unter anderem als Überschrift „Ein strafferes Dekolleté — jede Nacht" und auf der BH-Seite als
+„Morgens aufwachen mit glatterer, strafferer Haut".
+
+Das widersprach dem, was auf denselben Seiten steht: *Warum MELYLA* sagt „Vorhandene Falten
+glättet kein Textil", die Ratgeberseite dasselbe. Ersetzt durch das, was das Produkt tatsächlich
+leistet — „Ein glatteres Dekolleté — Morgen für Morgen", „Morgens ohne frische Linien".
+Gegengeprüft: „straffer" kommt im gesamten Theme nicht mehr vor.
+
+**Videoprompts** für die drei Ergebnis-Karten stehen in `12-bildbriefing-mechanik.md`, Teil 3.
+Die Videofelder sind bereits vorhanden — Robin wählt nur die Dateien aus.
+
+
 ## Gründergeschichte — neu erzählt am 25.08.
 
 Auf *Warum MELYLA* stand bisher ein Satz über den Gründer, der „neben Hauptjob und kleinem Kind“
