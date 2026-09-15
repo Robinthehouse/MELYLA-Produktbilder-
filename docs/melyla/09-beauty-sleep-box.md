@@ -1,5 +1,20 @@
 # MELYLA Beauty Sleep Box — Produkttexte, Wertanker, Captions
 
+> **ZURÜCKGESTELLT am 15.09.2026.** Jochen hat bestätigt: Es sind **nicht genug Artikel am Lager**
+> für ein Sechser-Set. Die Box ist weder als Angebotskarte noch als Produktseite aktiv.
+>
+> An ihre Stelle tritt das Set **BH + Kissen** — 79,00 € gegen 99,00 € einzeln, Ersparnis 20,00 €
+> (20 %). Es läuft über dieselbe Vorlage (`templates/product.bundle.json`) und dieselbe Sektion
+> (`sections/melyla-funnel-box-inhalt.liquid`), nur mit zwei Positionen statt sechs.
+>
+> **Dieses Dokument bleibt vollständig erhalten.** Sobald die Artikel da sind, ist die Vorarbeit
+> sofort einsatzbereit: Texte, Wertanker-Tabelle, Bildbriefing. Der HTML-Baustein liegt weiter in
+> `shopify-einfuegen/produktbeschreibung-beauty-sleep-box.html`.
+>
+> Offen geblieben und **vor einer Wiederaufnahme zu klären:** Die Marge ist nicht abgesichert —
+> die Einkaufspreise von Schlafmaske, Scrunchie, Schwamm und Abschminkpads fehlen (Abschnitt
+> „Marge nicht abgesichert"). Siehe [STAND.md](STAND.md).
+
 Stand 21.08.2026. Verkaufsfertige Texte für das Bundle aus allen sechs Shop-Produkten.
 Löst Punkt 1 aus der Robin-Tabelle in [07-goto-market-kampagnenplan.md](07-goto-market-kampagnenplan.md)
 ("Box-Positionierung, Name, Texte") ein.

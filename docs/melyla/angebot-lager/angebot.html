@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>MELYLA — Lager und Versand, Angebot an Ralph Liebzeit</title>
+<style>
+  @page { size: A4; margin: 16mm 15mm 14mm 15mm; }
+
+  :root {
+    --dunkel: #3D2645;
+    --violett: #8151A3;
+    --gold: #C9973E;
+    --flaeche: #FAF7FF;
+    --flaeche2: #F2E8F8;
+    --linie: #E2D6EC;
+    --text: #2B2230;
+    --grau: #6B6272;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 10.2pt;
+    line-height: 1.5;
+    color: var(--text);
+    margin: 0;
+  }
+
+  h1 { font-size: 19pt; line-height: 1.2; color: var(--dunkel); margin: 0 0 4pt; letter-spacing: -0.2pt; }
+  h2 {
+    font-size: 12.5pt; color: var(--dunkel); margin: 15pt 0 6pt;
+    padding-bottom: 4pt; border-bottom: 1.5pt solid var(--linie);
+  }
+  h3 { font-size: 10.5pt; color: var(--dunkel); margin: 11pt 0 4pt; }
+  p { margin: 0 0 7pt; }
+  strong { color: var(--dunkel); }
+  ul { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 3pt; }
+
+  .marke {
+    font-size: 12pt; letter-spacing: 5pt; font-weight: 700;
+    color: var(--violett); text-transform: uppercase; margin-bottom: 10pt;
+  }
+  .untertitel { font-size: 11pt; color: var(--grau); margin: 0 0 14pt; }
+
+  .parteien {
+    display: flex; gap: 16pt; border-top: 1.5pt solid var(--dunkel);
+    border-bottom: 1.5pt solid var(--dunkel); padding: 9pt 0; margin-bottom: 16pt;
+  }
+  .parteien div { flex: 1; }
+  .label {
+    font-size: 7.5pt; text-transform: uppercase; letter-spacing: 1pt;
+    color: var(--violett); font-weight: 700; margin-bottom: 2pt;
+  }
+
+  .kasten {
+    background: var(--flaeche); border: 1pt solid var(--linie);
+    border-left: 4pt solid var(--gold);
+    padding: 11pt 13pt; margin: 0 0 14pt; break-inside: avoid;
+  }
+  .kasten h3 { margin-top: 0; }
+  .hinweis {
+    background: var(--flaeche2); border: none; border-left: 4pt solid var(--violett);
+    padding: 9pt 12pt; margin: 0 0 12pt; font-size: 9.6pt; break-inside: avoid;
+  }
+  .hinweis p:last-child { margin-bottom: 0; }
+
+  table { width: 100%; border-collapse: collapse; margin: 0 0 12pt; font-size: 9.6pt; break-inside: avoid; }
+  th {
+    background: var(--dunkel); color: #fff; text-align: left;
+    padding: 5pt 7pt; font-size: 8.6pt; letter-spacing: 0.3pt; font-weight: 600;
+  }
+  td { padding: 5pt 7pt; border-bottom: 0.75pt solid var(--linie); vertical-align: top; }
+  tr:nth-child(even) td { background: #FBF9FD; }
+  td.z, th.z { text-align: right; white-space: nowrap; }
+  td.hell { color: var(--grau); }
+  tfoot td { background: var(--flaeche2) !important; font-weight: 700; color: var(--dunkel); border-bottom: none; }
+
+  .feld {
+    display: inline-block; min-width: 46pt; border-bottom: 1pt dotted var(--violett);
+    height: 11pt; margin: 0 2pt;
+  }
+  .feld.breit { min-width: 150pt; }
+  .feld.schmal { min-width: 30pt; }
+
+  .fuenf { list-style: none; padding: 0; margin: 0; }
+  .fuenf li {
+    display: flex; justify-content: space-between; gap: 10pt;
+    padding: 5pt 0; border-bottom: 0.75pt solid var(--linie);
+  }
+  .fuenf li:last-child { border-bottom: none; }
+  .fuenf .wert { font-weight: 700; color: var(--dunkel); text-align: right; white-space: nowrap; }
+  .gold { color: var(--gold); }
+
+  .seite { break-before: page; }
+  .zusammen { break-inside: avoid; }
+
+  .signatur { display: flex; gap: 30pt; margin-top: 26pt; break-inside: avoid; }
+  .signatur div { flex: 1; }
+  .sigline { border-bottom: 1pt solid var(--dunkel); height: 34pt; margin-bottom: 4pt; }
+  .sigtext { font-size: 8.6pt; color: var(--grau); }
+
+  .fuss {
+    margin-top: 20pt; padding-top: 7pt; border-top: 0.75pt solid var(--linie);
+    font-size: 8pt; color: var(--grau);
+  }
+  .quelle { font-size: 8.6pt; color: var(--grau); font-style: italic; }
+</style>
+</head>
+<body>
+
+<!-- ===================== SEITE 1 ===================== -->
+<div class="marke">MELYLA</div>
+
+<h1>Lager und Versand für MELYLA</h1>
+<p class="untertitel">Angebot zur Zusammenarbeit · Stand 27. August 2026</p>
+
+<div class="parteien">
+  <div>
+    <div class="label">Für</div>
+    Ralph Liebzeit<br>
+    <span class="feld breit"></span><br>
+    <span class="quelle">Firma / Anschrift</span>
+  </div>
+  <div>
+    <div class="label">Von</div>
+    MELYLA UG (haftungsbeschränkt)<br>
+    Robin Liebzeit · Jochen Schweizer<br>
+    <span class="quelle">melyla.de</span>
+  </div>
+</div>
+
+<div class="kasten">
+  <h3>Das Angebot in fünf Zeilen</h3>
+  <ul class="fuenf">
+    <li><span>Monatliche Pauschale, fest</span><span class="wert gold">100,00 €</span></li>
+    <li><span>Dafür: Lagerplatz (Palettenstellplatz) und die Paketabwicklung</span><span class="wert">bis <span class="feld schmal"></span> Pakete/Monat</span></li>
+    <li><span>Jedes Paket darüber</span><span class="wert"><span class="feld schmal"></span> € je Stück</span></li>
+    <li><span>Retoure annehmen, prüfen, wieder einlagern</span><span class="wert">2,00 € je Stück</span></li>
+    <li><span>Porto</span><span class="wert">1:1 durchgereicht</span></li>
+  </ul>
+</div>
+
+<h2>Worum es geht</h2>
+
+<p>
+  MELYLA verkauft Anti-Falten-Textilien über Otto, Amazon und den eigenen Shop. Lagerung und Versand
+  laufen heute über einen externen Dienstleister. Wir möchten damit zu dir kommen — in ein Lager, das
+  in der Familie ist, kurze Wege hat und einen Ansprechpartner, den wir direkt erreichen.
+</p>
+
+<p>Zwei Gründe, klar benannt:</p>
+
+<ul>
+  <li>
+    <strong>Kosten.</strong> Das heutige Lager kostet uns <strong>200 € im Monat</strong> — bei
+    derzeit rund 20 Bestellungen. Das ist für diese Größe zu viel.
+  </li>
+  <li>
+    <strong>Pünktlichkeit.</strong> Otto misst, wie viele Pakete im zugesagten Zeitfenster ankommen.
+    Wir liegen bei <strong>35 %</strong>. Das kostet uns Platzierung im Otto-Ranking und sorgt für
+    Retouren, die keine Produktschuld sind. Das ist der eigentliche Grund für den Umzug.
+  </li>
+</ul>
+
+<div class="hinweis">
+  <p>
+    <strong>Was das für dich heißt:</strong> Es geht nicht um Masse. Es geht um wenige Pakete, die
+    zuverlässig am selben Tag rausgehen. Aktuell sind das etwa 20 im Monat — also grob ein Paket pro
+    Werktag. Das Angebot ist so gebaut, dass es sich für dich auch dann rechnet, wenn es dabei bleibt,
+    und deutlich mehr abwirft, wenn wir wachsen.
+  </p>
+</div>
+
+<!-- ===================== SEITE 2 ===================== -->
+<div class="seite"></div>
+
+<h2>Der Bestand, der umziehen würde</h2>
+
+<table>
+  <thead>
+    <tr><th>Artikel</th><th class="z">Bestand</th><th>Anmerkung</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Anti-Falten Kissen (altes Modell)</td><td class="z">ca. 400 Stück</td><td class="hell">Der Brocken. Wird abverkauft, Bestand sinkt</td></tr>
+    <tr><td>Anti-Falten Schlaf-BH, Größen S/M/L/XL</td><td class="z">Bestand vor Ort</td><td class="hell">Hauptprodukt, flach und leicht</td></tr>
+    <tr><td>Satin-Kissenbezug und Kissenbezug grau</td><td class="z">Bestand vor Ort</td><td class="hell">Klein, kartonweise</td></tr>
+    <tr><td>Schlafmaske, Reinigungsschwamm, Abschminkpads, Scrunchies</td><td class="z">Bestand vor Ort</td><td class="hell">Zubehör, geringes Volumen</td></tr>
+  </tbody>
+</table>
+
+<p class="quelle">
+  Bestandszahl aus unserer Aufnahme vom 12.08.2026. Wie viel Stellfläche das braucht, messen wir
+  gemeinsam vor Ort — geraten wird hier nichts.
+</p>
+
+<h2>Was wir brauchen</h2>
+
+<table>
+  <thead>
+    <tr><th>Leistung</th><th>Was konkret dahintersteckt</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Wareneingang</strong></td>
+      <td>Palette annehmen, prüfen, einlagern. Passiert selten — nur bei Nachbestellungen.</td>
+    </tr>
+    <tr>
+      <td><strong>Lagerung</strong></td>
+      <td>Trocken und zugänglich. Textil und Schaumstoff — nichts Empfindliches, nichts Gefährliches.</td>
+    </tr>
+    <tr>
+      <td><strong>Kommissionierung</strong></td>
+      <td>Lieferschein kommt per E-Mail. Meist ein Artikel, selten zwei.</td>
+    </tr>
+    <tr>
+      <td><strong>Verpacken</strong></td>
+      <td>Karton oder Versandtasche, Lieferschein rein, zu.</td>
+    </tr>
+    <tr>
+      <td><strong>Frankieren und Übergabe</strong></td>
+      <td>Label über dein Versandkonto, Übergabe an den Zusteller.</td>
+    </tr>
+    <tr>
+      <td><strong>Retouren</strong></td>
+      <td>Annehmen, öffnen, sichten, zurück ins Regal oder aussortieren. Separat vergütet.</td>
+    </tr>
+    <tr>
+      <td><strong>Bestandsmeldung</strong></td>
+      <td>Einmal im Monat: was ist noch da. Formlos, Zettel oder Nachricht genügt.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="kasten">
+  <h3>Die eine Zusage, auf die es uns ankommt</h3>
+  <p>
+    <strong>Was bis 14:00 Uhr an Bestellungen da ist, geht am selben Werktag raus.</strong>
+  </p>
+  <p style="margin-bottom:0">
+    Das ist der Punkt, an dem unser heutiger Dienstleister scheitert, und der Grund, warum wir
+    umziehen. Bei einem Paket pro Tag ist das machbar — bei zwanzig am Tag reden wir noch einmal
+    darüber, wie es organisiert wird.
+  </p>
+</div>
+
+<h3>Retouren — damit es später keine Diskussion gibt</h3>
+<p>
+  Ein erheblicher Teil kommt zurück: Bei Otto liegt die Quote beim Schlaf-BH bei <strong>38,5 %</strong>,
+  beim Kissen bei <strong>45,3 %</strong> — auf 20 verschickte Pakete also etwa 8 Rücksendungen.
+  Das ist echte Arbeit, deshalb hat sie einen eigenen Preis und zählt nicht gegen die Inklusivmenge.
+  An der Quote arbeiten wir; sie soll runter, nicht bleiben.
+</p>
+
+
+<!-- ===================== SEITE 3 ===================== -->
+<div class="seite"></div>
+
+<div class="zusammen">
+<h3 style="margin-top:0">Was wir selbst machen — damit klar ist, was nicht bei dir landet</h3>
+<ul>
+  <li>Bestellungen entgegennehmen, Kundenkontakt, Reklamationen, Rechnungen</li>
+  <li>Alles rund um Otto, Amazon und den Shop</li>
+  <li>Nachschub bestellen und rechtzeitig ankündigen</li>
+  <li>Entscheidung, was mit aussortierter Retourenware passiert</li>
+</ul>
+</div>
+
+<h2>Unser Angebot</h2>
+
+<table>
+  <thead>
+    <tr><th>Position</th><th>Preis</th><th>Anmerkung</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Monatspauschale</strong></td>
+      <td class="z"><strong>100,00 €</strong></td>
+      <td class="hell">Fest, unser Vorschlag. Enthält den Lagerplatz und die Paketabwicklung bis zur Inklusivmenge.</td>
+    </tr>
+    <tr>
+      <td>Darin enthalten: Pakete pro Monat</td>
+      <td class="z"><span class="feld schmal"></span> Stück</td>
+      <td class="hell">Wir schlagen 30 vor — heute fallen 20 an, du hast also Luft.</td>
+    </tr>
+    <tr>
+      <td>Jedes weitere Paket</td>
+      <td class="z"><span class="feld schmal"></span> €</td>
+      <td class="hell"><strong>Trag hier deinen Preis ein.</strong> Kommissionieren, packen, frankieren, übergeben.</td>
+    </tr>
+    <tr>
+      <td>Retoure</td>
+      <td class="z">2,00 €</td>
+      <td class="hell">Je Stück. Annahme, Sichtprüfung, Wiedereinlagerung.</td>
+    </tr>
+    <tr>
+      <td>Je weiterer Palettenstellplatz</td>
+      <td class="z"><span class="feld schmal"></span> € / Monat</td>
+      <td class="hell">Falls der Bestand mehr als einen Platz braucht — messen wir vor Ort.</td>
+    </tr>
+    <tr>
+      <td>Verpackungsmaterial</td>
+      <td class="z"><span class="feld schmal"></span></td>
+      <td class="hell">Wer stellt Kartons und Füllmaterial? Wenn du: zum Einkaufspreis weiterberechnet.</td>
+    </tr>
+    <tr>
+      <td>Porto</td>
+      <td class="z">1:1</td>
+      <td class="hell">Du frankierst über dein Konto und stellst das Porto ohne Aufschlag weiter. Beleg als Anlage zur Rechnung.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Was dabei für dich herauskommt</h2>
+
+<p>
+  Damit du nicht rechnen musst: die Pauschale plus Paketvergütung plus Retouren, für drei
+  Volumen und drei mögliche Stückpreise. Porto ist hier nicht enthalten — das ist durchlaufender
+  Posten.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pakete im Monat</th>
+      <th class="z">bei 1,50 €</th>
+      <th class="z">bei 2,00 €</th>
+      <th class="z">bei 2,50 €</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>20</strong> <span class="hell">— heute, 8 Retouren</span></td>
+      <td class="z">116 €</td>
+      <td class="z">116 €</td>
+      <td class="z">116 €</td>
+    </tr>
+    <tr>
+      <td><strong>50</strong> <span class="hell">— Wachstum, 19 Retouren</span></td>
+      <td class="z">168 €</td>
+      <td class="z">178 €</td>
+      <td class="z">188 €</td>
+    </tr>
+    <tr>
+      <td><strong>150</strong> <span class="hell">— Ziel 2027, 57 Retouren</span></td>
+      <td class="z">394 €</td>
+      <td class="z">454 €</td>
+      <td class="z">514 €</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="quelle">
+  Gerechnet mit 30 Inklusivpaketen und 2,00 € je Retoure; Retouren mit 38 % der versendeten Pakete
+  angesetzt. Bei 20 Paketen greift die Pauschale allein, deshalb dort dreimal derselbe Betrag.
+  Die 150 Pakete entsprechen dem Umsatzziel für die nächsten zwölf Monate
+  (8.000–10.000 € im Monat bei knapp 49 € je Bestellung) — <strong>ein Ziel, keine Zusage.</strong>
+</p>
+
+<h3>Abrechnung</h3>
+<ul>
+  <li>Monatliche Rechnung an die MELYLA UG, zahlbar innerhalb von 14 Tagen</li>
+  <li>Porto als eigene Position mit Beleg</li>
+  <li>Beidseitig kündbar mit vier Wochen zum Monatsende</li>
+  <li>Läuft es gut, schauen wir nach sechs Monaten gemeinsam drauf und passen die Zahlen an</li>
+</ul>
+
+<!-- ===================== SEITE 4 ===================== -->
+<div class="seite"></div>
+
+<h2>Zeitplan</h2>
+
+<table>
+  <thead>
+    <tr><th>Wann</th><th>Was</th><th>Wer</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Do, 27.08.2026</td><td>Besichtigung, Stellfläche messen, Angebot besprechen</td><td>Ralph, Robin</td></tr>
+    <tr><td>bis <span class="feld"></span></td><td>Ralph trägt seine Preise ein, Zusage</td><td>Ralph</td></tr>
+    <tr><td>KW 36 (31.08.–06.09.)</td><td>Ware anliefern und einlagern</td><td>gemeinsam</td></tr>
+    <tr><td>direkt danach</td><td>Testbetrieb mit den ersten echten Bestellungen</td><td>Robin</td></tr>
+    <tr><td>anschließend</td><td>Versandadresse bei Otto, Amazon und im Shop umstellen</td><td>Robin</td></tr>
+  </tbody>
+</table>
+
+<div class="kasten">
+  <h3>Was wir von dir brauchen</h3>
+  <ul style="margin-bottom:0">
+    <li>Dein Preis je Paket über der Inklusivmenge</li>
+    <li>Wie viele Pakete du in die 100 € einschließt</li>
+    <li>Preis je weiterem Palettenstellplatz</li>
+    <li>Wer Kartons und Füllmaterial stellt</li>
+    <li>Ob die Zusage „bis 14:00 Uhr angenommen, heute raus" für dich machbar ist</li>
+  </ul>
+</div>
+
+<h2>Offen — vor Ort zu klären</h2>
+<ul>
+  <li><strong>Stellfläche.</strong> Wie viele Palettenplätze braucht der Bestand tatsächlich?</li>
+  <li><strong>Versicherung.</strong> Ist die eingelagerte Ware über deine Betriebsversicherung
+      abgedeckt, oder versichern wir sie selbst? Warenwert liegt im niedrigen fünfstelligen Bereich.</li>
+  <li><strong>Zugang.</strong> Wer kommt wann ans Lager — dürfen wir selbst rein, wenn nötig?</li>
+  <li><strong>Urlaub und Krankheit.</strong> Wer übernimmt, wenn du ausfällst?</li>
+  <li><strong>Versanddienstleister.</strong> Mit wem versendest du, und zu welchen Konditionen?</li>
+</ul>
+
+<div class="hinweis">
+  <p style="margin-bottom:0">
+    Dieses Blatt ist ein <strong>Gesprächsangebot</strong>, keine Vertragsurkunde. Wenn die Zahlen
+    passen, gießen wir sie in eine kurze schriftliche Vereinbarung.
+  </p>
+</div>
+
+<div class="signatur">
+  <div>
+    <div class="sigline"></div>
+    <div class="sigtext">Ort, Datum · Ralph Liebzeit</div>
+  </div>
+  <div>
+    <div class="sigline"></div>
+    <div class="sigtext">Ort, Datum · für die MELYLA UG</div>
+  </div>
+</div>
+
+<div class="fuss">
+  MELYLA UG (haftungsbeschränkt) · melyla.de · Ansprechpartner Robin Liebzeit ·
+  Angebot vom 27.08.2026, gültig 30 Tage
+</div>
+
+</body>
+</html>

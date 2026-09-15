@@ -1,6 +1,6 @@
 # MELYLA — Projektstand
 
-Stand 24.08.2026. Eine Seite: Was ist fertig, was ist offen, wo hakt es.
+Stand 15.09.2026 (zweiter Durchgang). Eine Seite: Was ist fertig, was ist offen, wo hakt es.
 
 ---
 
@@ -46,7 +46,8 @@ Aus `melyla.de/sitemap.xml` geholt, Titel und Preise über `/products/<handle>.j
 | Kissenbezug grau | `/products/kissenbezug-fur-anti-falten-kissen-grau` | |
 | Satin-Kissenbezug | `/products/satin-kissenbezug-fur-das-melyla-anti-falten-kissen` | |
 
-Die **Beauty Sleep Box steht in keiner Sitemap** — das Produkt gibt es noch nicht.
+Die **Beauty Sleep Box steht in keiner Sitemap** — das Produkt gibt es nicht, und es ist seit
+dem 15.09. zurückgestellt. Die Vorarbeit bleibt in `09-beauty-sleep-box.md`.
 
 Prüfen lässt sich das jederzeit: `node bin/links-pruefen.mjs https://melyla.de` meldet jeden
 internen Link aus Vorlagen, Sektionsgruppen und HTML-Bausteinen mit seinem Statuscode.
@@ -207,9 +208,245 @@ es war nur nicht dokumentiert.
 Ohne CTA-Feld bleiben nur **Kundenstimmen** (Shopify lehnt die Datei ab) — dort gibt es dafür
 bereits eigene Schaltflächen.
 
+## Angebotsstaffel neu — 15.09.2026
+
+Jochen hat die Seite gesehen und freigegeben. Eine Sache musste weg: **Die Beauty Sleep Box ist
+nicht lieferbar** — es gibt nicht genug Artikel für ein Sechser-Set. Sie stand als dritte
+Angebotskarte auf der Startseite und hatte eine eigene Produktseite.
+
+Die Staffel jetzt:
+
+| | Angebot | Preis | Streichpreis | Ersparnis |
+|---|---|---|---|---|
+| 1 | 1× Anti-Falten Schlaf BH | 49,50 € | — | — |
+| 2 | 2× Anti-Falten Schlaf BH | 89,00 € | 99,00 € | 10,00 € (10 %) |
+| 3 | **BH + Anti-Falten Kissen** | **79,00 €** | **99,00 €** | **20,00 € (20 %)** |
+
+Karte 3 ist damit das stärkste Angebot und trägt zu Recht das Band „Bester Wert".
+
+**Drei Preise für dasselbe Angebot aufgelöst.** Das Schema sagte 79,00 € / „Du sparst 55,60 €",
+`index.json` sagte 89,00 € / „Du sparst 45,60 €", die Doku 79,00 € / 134,60 €. Jetzt steht
+überall 79,00 € gegen 99,00 €. Karte 2 hatte gar keinen Streichpreis — der 10-€-Nachlass war
+unsichtbar.
+
+**`product.bundle.json` trägt jetzt das Set „BH + Kissen".** Die Datei behält ihren Namen —
+ein umbenanntes Template wäre eine *neue* Datei, und genau die verweigert Shopify seit dem 23.08.
+Von sechs Positionen im Set-Inhalt bleiben zwei. Der Wertanker rechnet sich aus den Blöcken:
+99,00 € einzeln gegen 79,00 € im Set.
+
+**Offen bei Robin:** Zwei Bundle-Produkte in Shopify anlegen (`melyla-bh-doppelpack` 89,00 € /
+99,00 €, `melyla-bh-kissen-set` 79,00 € / 99,00 €) und in *MELYLA Angebot* verknüpfen. Bis dahin
+zeigen die Karten Ersatz-Preise aus dem Editor. **Die müssen mit den späteren Produktpreisen
+übereinstimmen** — sonst steht auf der Startseite ein anderer Preis als im Warenkorb.
+
+Ebenfalls offen: **ein Produktfoto, das BH und Kissen zusammen zeigt.** Karte 3 trägt als
+Zwischenlösung das Kissen-Hero. Das alte Box-Mockup musste weg — es zeigte sechs Produkte für
+ein Set aus zweien.
+
+## Drei Rechtsrisiken behoben — 15.09.2026
+
+**Erfundene Bewertungen, zweiter Fundort.** Am 25.08. waren sie auf der Startseite entfernt
+worden. Sie standen weiter (a) in `product.bundle.json` als vier ausgerollte Blöcke und (b) im
+**Preset** von `melyla-funnel-kundenstimmen.liquid` — ein Preset trägt sie bei jedem Einfügen
+neu ein. Beides entfernt; das Preset startet jetzt ohne Stimmen. Unzulässig nach UWG Anhang Nr. 23.
+
+**Vier verschiedene Bewertungszahlen auf derselben Seite.** Die Startseite nannte „150+
+Bewertungen" und „aus über +400 Bewertungen", die BH-Seite „150+", die Set-Seite „52". Belegt
+sind **52**. Die Verkaufszahl stand an drei Stellen noch auf „Über 1000+", obwohl am 25.08. auf
+„Über 800" korrigiert worden war (belegt: ~822). Alles auf die belegten Werte gezogen.
+
+**Erfundene Knappheit.** Die Set-Seite behauptete „150 Boxen, solange der Vorrat reicht" — eine
+Zahl, die an keinem Bestand hing. Entfernt, auch als Vorgabewert. Der Hinweistext im Editor sagt
+jetzt: leer lassen, solange keine echte Stückzahl vorliegt.
+
+## Schriftarten geprüft — 15.09.2026
+
+Robins Vorgabe: höchstens drei Schriften. **Es sind zwei** — Playfair Display für Überschriften,
+Inter für Fließtext, beide über Shopifys Schrift-Einstellungen. Keine Google Fonts, kein eigenes
+`@font-face`, keine Schriftdateien im Theme. Vorgabe erfüllt, nichts wild gewachsen.
+
+Drei Dinge stimmten trotzdem nicht:
+
+| | Was | Behoben |
+|---|---|---|
+| **57 harte Angaben** in 18 Dateien | Die Schrift stand direkt im CSS statt als Theme-Variable. Der Schriftwähler im Editor war für **alle** MELYLA-Sektionen wirkungslos — ein Wechsel im Admin hätte Header und Warenkorb geändert, aber keine einzige eigene Sektion | alle auf `var(--font-heading-family)` / `var(--font-body-family)` |
+| **Verzerrtes Fett** | Playfair wurde nur in Gewicht 400 geladen, vier Stellen forderten 700 an — der Browser rechnete daraus ein künstliches Fett | echtes Playfair Bold wird jetzt mitgeladen, in `theme.liquid`, `password.liquid` und `gift_card.liquid` |
+| **`font-family: Times`** | Dawns Sternchen-Zeichen, die einzige dritte Familie | auf `inherit` |
+
+Gegenprobe: Jede `font-family` im ausgelieferten Theme ist jetzt eine Variable oder `inherit`.
+
+Dabei fiel eine Nebenwirkung an: Die lokale Vorschau definierte die beiden Variablen nicht und
+hätte alle Sektionen schriftlos gerendert. `preview/serve.mjs` spiegelt sie jetzt.
+
+
+## Qualitätsdurchgang vor dem Livegang — 15.09.2026
+
+Kompletter Durchgang durch Texte, Aufbau und Produkttexte. 17 Vorlagen, 22 Sektionen,
+8 HTML-Bausteine gelesen und gegeneinander geprüft.
+
+### Schriften: Montserrat statt Playfair Display
+
+**Die Markenrichtlinien legen keine Fließtext-Schrift fest.** Seite 8 nennt genau eine
+Schrift — **Noah Bold**, und die gilt nur fürs Logo. Das Dokument selbst ist in **Montserrat**
+gesetzt. Beide sind geometrische Grotesk-Schriften.
+
+Playfair Display war das Gegenteil davon: eine Didone mit hohen Strichkontrasten. Dazu eine
+der meistgenutzten Google-Schriften überhaupt — sie liest sich als Vorlage, nicht als Marke.
+Und ihre Haarlinien brechen bei 14–16 px weg, was bei einer Zielgruppe zwischen 45 und 60
+zählt.
+
+Jetzt: **Montserrat SemiBold** für Überschriften, **Inter** für Fließtext. Zwei Schriften,
+beide über Shopifys Schrift-Einstellungen, Gewichte 400/600/700 echt geladen. Logo,
+Markenbuch und Website sprechen zum ersten Mal dieselbe Formensprache.
+
+### Falsche Produktangaben — die Kissen-Seiten bewarben den BH
+
+| Was | Wo |
+|---|---|
+| Garantietext „Trag den MELYLA **Schlaf BH** 30 Nächte lang" | Kissen-Produktseite **und** Kissen-Erklärseite |
+| Kaufbox-Nutzen 1:1 vom BH kopiert, inkl. „Sanfte Unterstützung **ohne Bügel**" | Kissen-Produktseite |
+| BH-Kennzahlen 52 Bewertungen / 4,79 Sterne | Kissen-Erklärseite (Kissen hat 23 / 4,74) |
+| 4,79 in der Kaufbox über 4,74 im Trust-Badge — auf **derselben** Seite | Kissen-Produktseite |
+| Kissen „hält Wange **und Dekolleté** frei" | Set-Seite — die BH-Seite sagt ausdrücklich „An dein Dekolleté kommt es gar nicht heran" |
+
+Alle behoben. Die Arbeitsteilung steht jetzt überall gleich: **Kissen schützt das Gesicht,
+BH schützt das Dekolleté.** Genau das ist das Argument für das Set.
+
+### Drei weitere Falschaussagen
+
+- **„4,79 aus über 400 Bewertungen"** lief in der Ankündigungsleiste über dem **gesamten
+  Shop** — direkt über „aus 52 Bewertungen" auf der Startseite. Auf 52 gezogen.
+- **„8 von 10 Kundinnen empfehlen diesen Bh"** — quantitative Werbeaussage ohne jeden Beleg
+  im Projekt. Ersetzt durch „Was Kundinnen nach vier Wochen sagen".
+- **„Versand 1-3 Tage"** auf der Startseite gegen „2–4 Werktage" an zwölf anderen Stellen.
+
+### Kontrast: ein Text war praktisch unsichtbar
+
+Auf der **BH-Produktseite** stand die Vertrauensleiste auf hellem Flieder (`#f2e8f8`) —
+die Textfarbe war aber beim dunklen Entwurf geblieben (`#c9b8d4`). Kontrast **1,57:1**.
+WCAG-Minimum ist 4,5:1. Die vier Trust-Sublines waren auf der wichtigsten Produktseite
+nicht lesbar.
+
+Insgesamt fünf Sektionen unter dem Minimum, dazu zwei Schema-Defaults. Alle behoben:
+heller Grund → `#775c88`, dunkler Grund → `#c9b8d4`. **Jede Textfarbe im Theme besteht
+jetzt WCAG AA.**
+
+### Wirkungsversprechen entschärft
+
+Die Ratgeberseite sagt: „Seriöse Anbieter versprechen hier keine Fristen." Vier
+Formulierungen taten genau das — **13 Fundstellen**:
+
+| Vorher | Jetzt |
+|---|---|
+| „Sichtbare Veränderung nach 4 Wochen" | „Was Kundinnen nach vier Wochen berichten" |
+| „zeigt **messbare** Ergebnisse" | „Kundinnen berichten nach zwei bis vier Wochen von weniger frischen Linien am Morgen" |
+| „Was der Schlaf BH aus der Box **bewirkt**" | „Was Kundinnen nach vier Wochen berichten" |
+| „für maximalen Tragekomfort und **wirksame** Faltenvorbeugung" | „dafür entwickelt, nachts bequem zu sitzen und das Dekolleté in Position zu halten" |
+
+Der Unterschied: Was Kundinnen **berichten**, ist belegbar. Was ein Textil **bewirkt**,
+müsste man messen.
+
+### Einheitlichkeit
+
+| | Vorher | Jetzt |
+|---|---|---|
+| Farben | 28, davon 9 Fast-Dubletten (`#1c1916` gegen `#1c1917`, sieben helle Lila) | **19**, alle klein geschrieben (386 Werte vereinheitlicht) |
+| Abstände | 12 willkürliche Werte | **7** auf einer Skala (0/12/24/32/48/64/96) |
+| Umbruchpunkte | 7 Werte aus zwei Systemen (Dawn 749/989 **und** Tailwind 640/768/1024) | **2** — Dawns 749/750 und 989/990 |
+| Fette Leerzeichen | 21 `<strong> </strong>` und Leerzeichen im Fett-Tag | 0 |
+| Englische Kundentexte | „You may also like", „Share", „Opening soon", „Subscribe to our emails" | alle deutsch |
+| Alt-Texte | 8 leer (Problem- und Lösungs-Karten der Startseite) | 0 |
+
+**Zitate blieben unangetastet.** Die Kleinschreibung „Melyla" und „Schlaf-BH" steht in den
+BARBARA-Zitaten — ein Zitat zu glätten wäre eine Verfälschung. Die Quelle ist als
+„BARBARA Magazin — Ausgabe Nr. 61" ausgewiesen.
+
+### Aufbau
+
+- **Die Kissen-Seite war die schwächste Seite im Shop** — sechs aktive Abschnitte gegen
+  dreizehn beim BH, und die Vertrauensleiste war **abgeschaltet**. Jetzt: Vertrauensleiste
+  an, Funktionsweise-Abschnitt ergänzt, Reihenfolge wie auf den anderen Seiten.
+- **Die BH-Seite war der Ausreißer** bei der Beweisführung: FAQ stand *vor* Bewertungen und
+  Presse. Jetzt überall gleich: Beweis → Einwände → Garantie.
+- **Der Footer war komplett leer** — keine Menüspalte, kein Link. Marke, Menü und
+  Service-Spalte angelegt. Rechtstexte kommen über Shopifys Richtlinien-Einstellung.
+- **Die Erklärseite war unsichtbar verlinkt**: Der Button trug einen Link, aber keine
+  Beschriftung — auf drei Seiten. Jetzt „Wie der BH funktioniert".
+- **Zwischen Hero und Angebot gab es keinen einzigen Kaufweg** — zehn Abschnitte
+  Scrollstrecke. Zwei Abschnitte haben jetzt „Zu den Angeboten".
+- **Zwei Sektionen hatten keine einzige Mobilregel** — darunter die Garantie, die auf
+  **allen sechs Seiten** läuft. Ergänzt.
+- **Barrierefreiheit:** Die Vertrauensleiste hatte keine Überschrift und war in der
+  Vorlesereihenfolge unsichtbar — unsichtbare `h2` ergänzt, im Editor änderbar. Die
+  Produktdetails starteten bei `h3` direkt nach der `h1`; auf `h2` gezogen.
+
+### Zahlen: Stand vor dem Jochen-Gespräch
+
+Nach dem Durchgang sind die Zahlen widerspruchsfrei. **Belegt ist nur die Verkaufszahl**
+(~822, daher „Über 800"). Sterne und Bewertungsanzahl warten auf Jochens Amazon- und
+Otto-Rezensionen.
+
+| Angabe | Wert | Fundstellen |
+|---|---|---|
+| Sterne BH | 4,79 | 15 |
+| Bewertungen BH | 52 | 11 |
+| Sterne Kissen | 4,74 | 3 |
+| Bewertungen Kissen | 23 | 2 |
+| Verkaufszahl | Über 800 | 10 |
+
+**Wichtig:** `AggregateRating` fehlt weiterhin bewusst — die Sterne stehen nur als Text auf
+der Seite, nicht maschinenlesbar. Sobald echte Bewertungen eingetragen sind, darf es rein.
+Die Bewertungs-Sektionen sind aktuell **leer** und blenden sich aus; die Zahl 52 steht also
+auf der Seite, ohne dass eine einzige Stimme zu sehen wäre. Das löst sich mit Jochens Material.
+
+### Offen geblieben
+
+- **Materialangabe BH: „82 % Elastan, 18 % Nylon" an fünf Stellen.** Ein Gestrick mit 82 %
+  Elastan gibt es nicht — die Zahlen sind mit hoher Wahrscheinlichkeit **vertauscht**
+  (82 % Nylon / 18 % Elastan). Eine dritte Quelle nennt „95 % Baumwolle / 5 % Elasthan".
+  **Gegen das Etikett prüfen**, bevor die Seite live geht — eine falsche Materialangabe ist
+  nach TextilKennzVO abmahnfähig. Ich habe nichts geraten.
+- **„30 Tage" gegen „30 Nächte"** — auf deinen Wunsch offengelassen, gehört an die
+  Rückgabebedingungen im Shop gekoppelt. 44× „Tage", 25× „Nächte".
+- **Der Material-Tab des BHs nennt kein Material** — die Prozentangabe steht erst weiter
+  unten auf der Seite.
+
+### Zusammenfuehrung mit dem Shopify-Editor — 15.09.2026
+
+Beim Push lagen **29 Commits aus dem Theme-Editor** auf dem Remote, die genau die drei
+Vorlagen aus dem Durchgang betrafen. Zusammengefuehrt statt ueberschrieben.
+
+Aus dem Editor uebernommen: neue Abschnittsreihenfolge der Startseite, Video-Karussell von
+BH- und Kissen-Seite entfernt, neue Videosektion auf der Kissen-Seite, CTA der
+Loesungs-Sektion auf die Ratgeberseite, Badge-Hintergrund auf Markenviolett, diverse
+Fettungen. 75 Einstellungen aus dem Qualitaetsdurchgang blieben erhalten.
+
+**Zwei Entscheidungen von Robin:**
+
+- **Groessenempfehlung umgedreht.** Der Editor sagte neu „Nimm die Kleinere. Der BH muss eng
+  anliegen", acht andere Stellen sagten weiter „im Zweifel die groessere". Die neue Fassung
+  gilt und steht jetzt an **zehn** Stellen inklusive HTML-Baustein. Der Satzbau der
+  Editor-Fassung war fehlerhaft und wurde neu gesetzt. Relevant, weil falsche Groesse laut
+  Protokoll ein Hauptruecksendegrund ist.
+- **Verkaufszahl auf „Ueber 1.000".** Der Editor hatte „Ueber 6000+", alle anderen Stellen
+  „Ueber 800". Vereinheitlicht auf 1.000. **Der Beleg steht aus** — dokumentiert sind ~822
+  (Otto 353, Amazon Gr. M 197, Shop ~272). Robin klaert die echte Zahl mit Jochen. Bis dahin
+  ist das eine Angabe, die im Streitfall nicht belegbar waere.
+
+**Gefunden beim Zusammenfuehren:** Die Angebotskarte 3 hatte im Editor noch die
+Sechser-Box-Liste, waehrend Titel und Preis schon „BH + Kissen" zu 79 € zeigten. Auf den
+Set-Inhalt zurueckgesetzt.
+
+**Ebenfalls aufgefallen:** Der neue CTA zeigt auf `shopify://pages/wie-falten-entstehen-und-was-wirklich-dagegen-hilft`.
+Die Ratgeberseite existiert also — aber unter einem anderen Handle als die fuenf Verweise im
+Theme, die weiter auf `/pages/falten-vermeiden` zeigen. **Die laufen ins Leere.** Entweder den
+Seiten-Handle in Shopify auf `falten-vermeiden` aendern oder die fuenf Verweise nachziehen.
+
 ## Offen — nur im Shopify-Admin
 
 - Im Abschnitt *MELYLA Angebot* die drei Produkte auswählen — setzt Links **und** Preise
+- **Zwei Bundle-Produkte anlegen:** `melyla-bh-doppelpack` (89,00 € / 99,00 €) und `melyla-bh-kissen-set` (79,00 € / 99,00 €), je Größen S–XL
+- **Vor Veröffentlichung: Store auf „New customer accounts" umstellen.** Dawn 16 hat die alten Kundenkonto-Vorlagen entfernt — ohne Umstellung brechen die Kundenkonten.
 - **Vorlagen zuweisen geht noch nicht.** Das Dropdown im Seiten-Editor listet nur die Vorlagen
   des **veröffentlichten** Themes — unseres ist es nicht. Belegt am 24.08.: dort stehen
   `landing-kissen` und `ueber-melyla`, die es bei uns gar nicht gibt, während keine unserer fünf
@@ -218,7 +455,7 @@ bereits eigene Schaltflächen.
 - Seite *Funktionsweise* umbenennen in *Wie funktioniert der Anti-Falten Schlaf BH?* —
   **nur den Titel, nicht die Adresse** `/pages/funktionsweise`, daran hängen vier Vorlagen
 - Beide Erklärseiten ins Menü aufnehmen
-- Beauty Sleep Box als Produkt anlegen: 79,00 €, Vergleichspreis 134,60 €, Größen S–XL
+- ~~Beauty Sleep Box als Produkt anlegen~~ — **zurückgestellt am 15.09.**, nicht genug Artikel
 - Die vier HTML-Bausteine in die Beschreibungsfelder einsetzen
 - Bilder je Sektion auswählen
 - „Kaltschaum" aus den Kissen-Produktdaten entfernen — es ist Memory Foam
