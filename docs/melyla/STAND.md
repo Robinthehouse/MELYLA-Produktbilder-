@@ -514,3 +514,27 @@ Zweiter Hebel: **Otto konvertiert mit 6,4 %** — sechsmal so gut wie der eigene
 - `src/` — die Next.js-Seite, seit dem 19.08. nur noch visuelle Vorlage
 - `shopify-theme-live/` — Abzug des alten Custom-Themes, nur Nachschlagewerk
 - `docs/melyla/archiv/` — verworfene Wege: Headless, Prompts für Shopifys Block-KI
+
+### Bewertungen sind drin — 16.09.2026
+
+Robin hat den Bewertungsexport des Shops gefunden. Damit sind die
+Bewertungs-Sektionen nicht mehr leer: **79 echte Shop-Bewertungen** liegen jetzt
+im Theme, auf Startseite, BH-Seite und Kissen-Seite.
+
+Gebaut sind zwei Sektionen, die sich eine Datenquelle teilen — `MELYLA Bewertungen`
+(groß, Produktseiten) und `MELYLA Stimmen` (kompakt, Landingpages). Der Schnitt
+wird aus den Daten **gerechnet**, nicht eingetippt. Details, Einschränkungen und
+der Weg für Amazon/Otto stehen in `17-bewertungen.md`.
+
+**Drei Zahlen sind mitkorrigiert.** Der gerechnete BH-Schnitt ist **4,78 aus 49**,
+nicht 4,79 aus 52 — die Differenz sind drei Bewertungen aus Inhaber-Mailadressen,
+die draußen sind. Das ist an 30 Stellen in 11 Dateien nachgezogen. Die Kissen-Seite
+trug die BH-Zahl 4,79 neben „23 Bewertungen"; jetzt 4,74 aus 23. Und im BH-Hero
+stand „150+ Bewertungen" bei aria-Label „52 Bewertungen" — die 150+ war durch nichts
+belegt und steht jetzt auf 49.
+
+Damit ist der Protokollpunkt „Rezensionen auswerten" zur Hälfte erledigt. Amazon
+bleibt offen: ein Crawl ist technisch geblockt (HTTP 503) und rechtlich nicht
+sauber, der Weg läuft über Jochens Export aus Seller Central. Otto ist öffentlich
+lesbar und zeigt 3,7 (BH) und 3,8 (Kissen) — die Kritik dort ist konkret und
+gehört eher in die Produktverbesserung als auf die Produktseite.
