@@ -20,7 +20,8 @@ einfügen, **sofort speichern**. Nicht in die Textansicht zurückschalten.
 | `produktbeschreibung-bh.html` | Produkt *Anti-Falten Schlaf BH* → Beschreibung |
 | `produktbeschreibung-beauty-sleep-box.html` | Produkt *MELYLA Beauty Sleep Box* → Beschreibung |
 | `produktbeschreibung-kissen.html` | Produkt *Anti-Falten Kissen* → Beschreibung |
-| `produktbeschreibung-set-bh-kissen.html` | Produkt *MELYLA Anti-Falten Set* → Beschreibung |
+| `produktbeschreibung-set-bh-kissen.html` | Produkt *Anti-Falten Duo (BH + Kissen)* → Beschreibung |
+| `produktbeschreibung-set-2x-bh.html` | Produkt *2× Anti-Falten Schlaf BH* → Beschreibung |
 | `warum-melyla.html` | Seite *Warum MELYLA* → Inhalt (enthält seit 25.08. die Gründergeschichte) |
 | `falten-vermeiden.html` | Seite *Wie Falten entstehen* → Inhalt (Seite muss noch angelegt werden, Adresse `falten-vermeiden`) |
 | `problem-passage.html` | Rückfalloption, falls ein Block nicht klappt |
