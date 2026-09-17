@@ -538,3 +538,27 @@ bleibt offen: ein Crawl ist technisch geblockt (HTTP 503) und rechtlich nicht
 sauber, der Weg läuft über Jochens Export aus Seller Central. Otto ist öffentlich
 lesbar und zeigt 3,7 (BH) und 3,8 (Kissen) — die Kritik dort ist konkret und
 gehört eher in die Produktverbesserung als auf die Produktseite.
+
+### Hero: Video als Hintergrund — 17.09.2026
+
+Das Startseiten-Hero (`melyla-funnel-hero`) kannte zwei Aufbauten: Text links mit
+Medium rechts, oder Bild als Hintergrund. Dazu kommt ein dritter:
+**Video als Hintergrund, Text mittig.** Die beiden alten bleiben unverändert.
+
+Zwei getrennte Videofelder, Desktop und Mobil. Grund: ein Querformat-Video
+schneidet auf dem Handy die Bildmitte weg, dort gehört ein Hochformat hin. Ist nur
+eine Datei gesetzt, läuft sie auf allen Geräten.
+
+Welche Fassung läuft, entscheidet eine CSS-Regel am 750-px-Breakpoint — **nicht**
+Liquid im Style-Block. Der Kommentar in der Datei warnt ausdrücklich davor;
+Steuerlogik dort drin war das, was Shopify diese Datei schon einmal verweigern
+ließ. Beide Videoelemente stehen auf `preload="none"`, gestartet wird nur das
+sichtbare. Auf dem Handy wird die Desktop-Datei also nie geladen.
+
+Das Video ist Dekoration: stumm, in Schleife, `aria-hidden`, nicht fokussierbar.
+Ohne JavaScript und bei „Bewegung reduzieren" bleibt das Vorschaubild stehen.
+
+**Zu wissen:** Im Hintergrund-Aufbau blendet Zeile 85 das rechte Spaltenvideo aus —
+und damit auch Badge und Bewertungskarte, die darin sitzen. Das galt schon für
+„Bild als Hintergrund" und gilt jetzt genauso fürs Video. Wer die 4,78 im Hero
+behalten will, bleibt beim klassischen Aufbau.
