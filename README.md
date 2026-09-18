@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MELYLA
 
-## Getting Started
+Dokumentation, Textbausteine und Bildmaterial für den Shop **melyla.de** —
+Anti-Falten Schlaf BH, Anti-Falten Kissen und Zubehör.
 
-First, run the development server:
+Der Shop läuft auf Shopify. Das Theme liegt in einem **eigenen Repository**
+(`Robinthehouse/melyla-shopify-theme`) und ist über GitHub mit Shopify
+verbunden; lokal liegt es als Unterordner `shopify-theme/`.
+
+## Inhalt
+
+| Ordner | Was drin ist |
+|---|---|
+| [`docs/melyla/`](docs/melyla/) | Die Dokumentation. Einstieg: [`STAND.md`](docs/melyla/STAND.md) |
+| [`docs/melyla/shopify-einfuegen/`](docs/melyla/shopify-einfuegen/) | Fertige HTML-Bausteine für Shopify-Seiten und Produktbeschreibungen, mit Bildern |
+| `public/` | Bildmaterial; die lokale Theme-Vorschau serviert daraus |
+| `exports/` | Bilder für Amazon und Otto (nicht in git) |
+| `shopify-theme/` | Das aktive Theme (eigenes Repository) |
+| `shopify-theme-live/` | Abzug des alten Themes von 2021, nur zum Nachschlagen |
+
+## Womit man anfängt
+
+- **Was ist der Stand?** → [`docs/melyla/STAND.md`](docs/melyla/STAND.md)
+- **Wie kommen Bewertungen in den Shop?** → [`docs/melyla/17-bewertungen.md`](docs/melyla/17-bewertungen.md)
+- **Wie setze ich einen HTML-Baustein ein?** → [`docs/melyla/shopify-einfuegen/README.md`](docs/melyla/shopify-einfuegen/README.md)
+
+## Prüfer
+
+Drei kleine Node-Skripte im Theme, ohne Abhängigkeiten:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+cd shopify-theme
+node bin/vorlagen-pruefen.mjs                    # zeigt jede Vorlage auf existierende Sektionen?
+node bin/zahlen-pruefen.mjs                      # stimmen die getippten Bewertungszahlen?
+node bin/links-pruefen.mjs https://melyla.de     # führt jeder interne Link irgendwohin?
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Die ersten beiden laufen auch in der CI des Theme-Repositories.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Lokale Vorschau des Themes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+cd shopify-theme/preview && npm start      # http://localhost:4010
+```

@@ -192,17 +192,30 @@ dieselbe Datei und tragen dann automatisch das richtige Siegel
 („Verifizierter Kauf über Amazon"). Bis dahin trägt jede Karte
 „Verifizierter Kauf im MELYLA Shop" — weil das der Wahrheitsgehalt ist.
 
+## Zwei Entscheidungen von Robin — 18.09.2026
+
+Damit sie nicht bei jedem Durchgang neu aufkommen:
+
+**Die vier Stimmen in *MELYLA Kundenstimmen* bleiben, wie sie sind.** Auf
+Startseite und BH-Seite stehen dort *Sandra (32, Dortmund)*, *Petra (51,
+Bremen)*, *Melanie (38, Leipzig)* und *Kerstin (27, Nürnberg)* mit Foto, Größe
+und Siegel „Verifizierter Kauf über Otto/Amazon". Keiner dieser Texte steht in
+den 79 echten Bewertungen. Melanies Zitat ist eine geglättete Fassung einer
+echten Bewertung von *S. Günther* (4 ★, 27.09.2021, Shop) — unter anderem Namen
+und auf 5 ★ gesetzt. Der Kopfkommentar der Sektion warnt davor (UWG Anhang
+Nr. 23), sie sind über den Editor zurückgekommen. **Robin hat entschieden, dass
+sie bleiben.** Nicht erneut anfassen.
+
+**Die Angabe „Über 5.000 verkaufte BHs" bleibt.** Beleg wird nachgereicht, siehe
+oben unter „Verkaufte Stück".
+
 ## Noch offen
 
 - `AggregateRating` fehlt weiterhin. Die 4,79-Frage ist entschieden — es sind
   4,78 aus 49 —, also wäre es jetzt zulässig und sollte vor dem Start rein.
-- **Auf der Startseite steht seit dem 17.09. keine echte Bewertung mehr.**
-  *MELYLA Stimmen* und *MELYLA Bewertungen* wurden im Editor entfernt, dafür
-  steht dort eine zweite Sektion *MELYLA Kundenstimmen* — zwei fast gleiche
-  Blöcke hintereinander, beide mit getippten Zahlen. Die 79 Stimmen erscheinen
-  nur noch auf den Produktseiten. Entscheidung offen.
 - Auf Doppelpack- und Set-Seite standen zwei Bewertungsabschnitte direkt
-  hintereinander; einer ist jeweils nach unten gerückt.
+  hintereinander; einer ist jeweils nach unten gerückt. Auf der Startseite
+  ebenso, am 18.09. erledigt.
 - Die getippten Felder in *MELYLA Kundenstimmen*, *Trust* und Hero rechnen
   nicht mit. Solange sie Textfelder sind, hält sie nur `bin/zahlen-pruefen.mjs`
   zusammen. Sauber wäre: leeres Feld = gerechneter Wert aus der Datendatei.

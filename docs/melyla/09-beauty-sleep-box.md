@@ -24,7 +24,7 @@ Baut auf [03-entscheidungsvorlagen.md](03-entscheidungsvorlagen.md) (Vorlage B, 
 [08-bildbriefing-funnel.md](08-bildbriefing-funnel.md) (Tonalität) und dem
 [Protokoll vom 12.08.](protokoll-2026-08-12.md) (Entscheidung #1: altes Kissen nur noch im Bundle) auf.
 
-**CLAIM-CHECK-Konvention:** Wie in `src/lib/funnel-bh.ts` sind alle wirkungsbezogenen Aussagen mit
+**CLAIM-CHECK-Konvention:** Alle wirkungsbezogenen Aussagen sind mit
 `[CLAIM-CHECK]` markiert. Diese Stellen vor dem Live-Gang gegen HWG/UWG prüfen lassen.
 
 ---
@@ -45,12 +45,10 @@ Baut auf [03-entscheidungsvorlagen.md](03-entscheidungsvorlagen.md) (Vorlage B, 
 
 ### ⚠️ Zwei offene Punkte, die nicht in diesem Dokument gelöst sind
 
-1. **Preiskonflikt im Code.** `src/lib/funnel-bh.ts` (Z. 330–345) enthält bereits ein
-   *"Nachtroutine-Set"* zu **99,00 €** gegen 134,60 €, das `src/components/funnel/OfferSection.tsx`
-   auf der BH-Produktseite rendert. Sobald die Box zu 79 € beworben wird, stehen zwei Preise für
-   denselben Warenkorb auf derselben Website. **To-do:** `offerOptions.routine` auf 79,00 € und den
-   Namen auf "Beauty Sleep Box" angleichen — oder die Option ganz entfernen und auf die Box-Seite
-   verlinken.
+1. ~~**Preiskonflikt im Code.**~~ **Erledigt am 18.09.2026.** Die Next.js-Vorstufe enthielt eine
+   Angebotsvariante *"Nachtroutine-Set"* zu **99,00 €** gegen 134,60 € — derselbe Warenkorb wie die
+   Box zu 79 €, nur mit anderem Preis. Mit dem Löschen von `src/` gibt es sie nicht mehr, siehe
+   [20-next-vorstufe.md](20-next-vorstufe.md). Im Theme steht kein zweiter Preis für diesen Korb.
 2. **Marge nicht abgesichert.** Die EKs von Schlafmaske, Scrunchie, Schwamm und Abschminkpads fehlen
    weiterhin (Go-to-Market Punkt 3, liegt bei Jochen). Bekannt sind nur BH 7,80 € + Kissen 12,00 € =
    19,80 €. Bei 79 € VK bleiben davor 59,20 € für Zubehör-EK, Verpackung, Fulfillment, Versand und
@@ -61,8 +59,8 @@ Baut auf [03-entscheidungsvorlagen.md](03-entscheidungsvorlagen.md) (Vorlage B, 
 
 ## 1. Produkttexte
 
-Aufgebaut im Schema von `src/types/product.ts`, damit sie sich 1:1 nach `src/lib/products.ts` oder in
-den Shopify-Admin übertragen lassen.
+Aufgebaut im Schema der damaligen Produktdatei, damit sie sich 1:1 in den Shopify-Admin übertragen
+lassen.
 
 ### `name`
 ```

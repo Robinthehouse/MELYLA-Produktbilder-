@@ -158,7 +158,7 @@ Details und Rechenlogik: [03-entscheidungsvorlagen.md](03-entscheidungsvorlagen.
 
 | Woche | Arbeitspaket | Aufwand |
 |---|---|---|
-| KW 36 | Shopify-App anlegen, Storefront-Token, `src/lib/shopify.ts` | 3 Std. |
+| KW 36 | Shopify-App anlegen, Storefront-Token, Anbindung im Code | 3 Std. |
 | KW 36 | Produktdaten zusammenführen — Preise kommen ab jetzt aus Shopify | 3 Std. |
 | KW 37 | **Echter Warenkorb**: Cart-Context, Drawer, Zähler in der Navigation | 6 Std. |
 | KW 37 | Größenauswahl an echte Shopify-Varianten koppeln | 2 Std. |

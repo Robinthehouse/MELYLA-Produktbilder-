@@ -99,7 +99,7 @@ damit der Unterschied lesbar wird.
 1. Motive generieren (Higgsfield, Midjourney o. ä.) oder fotografieren.
 2. Auf 4:3 zuschneiden, als `.webp` exportieren.
 3. Dateien unter exakt denselben Namen in `public/images/problem/` ablegen.
-4. `npm run dev` und die Seite `/produkte/anti-falten-schlaf-bh` prüfen.
+4. Im Shopify-Editor die BH-Seite öffnen und das Bild im Abschnitt prüfen. Lokal geht es auch über die Theme-Vorschau: `cd shopify-theme/preview && npm start` (Port 4010).
 
 ## Offene Punkte
 

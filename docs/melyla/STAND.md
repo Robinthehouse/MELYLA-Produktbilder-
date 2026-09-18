@@ -54,14 +54,17 @@ jetzt eine zweite Sektion *MELYLA Kundenstimmen*, direkt hinter der ersten.
 
 Zwei Folgen, beide offen:
 
-- Auf der Startseite steht **keine einzige echte Bewertung** mehr. Die 79 Stimmen
-  aus der Datendatei erscheinen nur noch auf BH-, Kissen-, Doppelpack- und
-  Set-Seite. Auf der Startseite steht nur noch die Zahl.
-- Zwei fast gleiche Kundenstimmen-Abschnitte kleben aneinander (Platz 8 und 9),
-  beide mit demselben Schnitt in getippten Feldern.
+**Beides ist am 18.09. erledigt.** Robin hat im Editor eine *MELYLA Stimmen*
+hinter die Produktliste gesetzt — sie stand auf der Voreinstellung `produkt =
+alle` und wies damit 4,78 aus **79** Bewertungen aus, während zwei Felder weiter
+oben auf derselben Seite „aus 49 Bewertungen" steht. Auf `bh` gestellt: Jetzt
+sagt die Seite überall dasselbe, und die Karten zeigen nur Stimmen zum BH statt
+auch zu Kissen, Maske und Schwamm.
 
-Nicht angefasst, weil das eine Layout-Entscheidung von Robin ist. Nur die Zahlen
-in beiden Abschnitten sind richtiggestellt.
+Die beiden *MELYLA Kundenstimmen* standen direkt hintereinander. Die mit den vier
+Stimmen sitzt jetzt hinter der Größenhilfe, die mit Zahlen und Unboxing-Video
+bleibt vorn. Zwischen den drei Bewertungsstellen liegen jetzt jeweils mehrere
+Abschnitte.
 
 **Ersparnis-Zeile im Angebot rechnet jetzt.** Auf der Startseite stand beim
 Anti-Falten Duo „Du sparst 45,60 €" — eine Zahl, die zu keiner Preiskombination
@@ -529,12 +532,12 @@ Seiten-Handle in Shopify auf `falten-vermeiden` aendern oder die fuenf Verweise 
 | Was | Wo |
 |---|---|
 | ~~Erfundene Beispielstimmen~~ — **am 25.08. entfernt.** Die neue Sektion *MELYLA Bewertungen* blendet sich aus, solange keine echte Bewertung eingetragen ist | erledigt |
-| ~~„Über 1.000 verkauft"~~ — **am 25.08. auf „Über 800" korrigiert**, belegt sind ~822 (Otto 353, Amazon Gr. M 197, Shop ~272) | erledigt |
+| **„Über 5.000 verkaufte BHs"** — Stand 18.09.2026 nach Robins Angabe über alle Kanäle. Die frühere Angabe „Über 800" beruhte auf dem Teilstand 08/2026 (Otto 353, Amazon Gr. M 197, Shop ~272, ohne Amazon S/L/XL). **Offen: Beleg ablegen** — Summe aus Billbee und Seller Central mit Stichtag | offen |
 | ~~„Nr. 1 Bestseller"~~ im Hero — **am 25.08. entfernt.** Eine Spitzenstellungsbehauptung, die wir nicht belegen können | erledigt |
 | ~~Streichpreis Kissen~~ — **am 25.08. geklärt.** Senkung Anfang August 2026, also innerhalb der Frist. 89,50 € ist der korrekte Bezugspreis nach § 11 PAngV und wird mit Hinweis angezeigt. **Zu beobachten:** Ein Abverkauf darf nicht dauerhaft als „Ermäßigung" laufen (§ 5 UWG) | erledigt, mit Frist |
 | **Widersprüchliche Materialangabe BH**: „82 % Elastan / 18 % Nylon" gegen „95 % Baumwolle" | Produktbeschreibungen |
 | OEKO-TEX® und GOTS weggelassen, bis Zertifikate vorliegen | Box-Beschreibung |
-| Alle `CLAIM-CHECK`-Stellen | `src/lib/funnel-bh.ts`, `09-beauty-sleep-box.md` |
+| Alle `CLAIM-CHECK`-Stellen | `09-beauty-sleep-box.md`. Die Konvention stand ursprünglich in `src/lib/funnel-bh.ts`, dort war aber keine Stelle markiert — siehe [20-next-vorstufe.md](20-next-vorstufe.md) |
 
 ## SEO und GEO — Stand
 
@@ -565,7 +568,7 @@ Zweiter Hebel: **Otto konvertiert mit 6,4 %** — sechsmal so gut wie der eigene
 
 ## Nicht mehr aktiv
 
-- `src/` — die Next.js-Seite, seit dem 19.08. nur noch visuelle Vorlage
+- ~~`src/` — die Next.js-Seite~~ **am 18.09.2026 gelöscht.** Was darin stand und wo es heute lebt: [20-next-vorstufe.md](20-next-vorstufe.md). Die unveröffentlichten Blogtexte daraus: [19-blogtexte.md](19-blogtexte.md)
 - `shopify-theme-live/` — Abzug des alten Custom-Themes, nur Nachschlagewerk
 - `docs/melyla/archiv/` — verworfene Wege: Headless, Prompts für Shopifys Block-KI
 

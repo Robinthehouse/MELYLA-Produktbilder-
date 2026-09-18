@@ -1,5 +1,12 @@
 # Technikpapier — Warum das ZIP scheiterte und wie es richtig geht
 
+> **Archiv, Stand 18.09.2026.** Der hier beschriebene Weg ist verworfen — Jochen
+> hat den Headless-Ansatz abgelehnt, der Shop läuft als Liquid-Theme. Die
+> Verweise auf `../../src/…` zeigen zudem ins Leere: Die Next.js-Vorstufe wurde
+> am 18.09.2026 gelöscht, siehe [20-next-vorstufe.md](../20-next-vorstufe.md).
+> Das Dokument bleibt liegen, weil Abschnitt 1–3 erklärt, warum der ZIP-Upload
+> nicht funktionieren konnte.
+
 Zwei Zielgruppen: Abschnitt 1–3 sind fürs Gespräch mit Jochen (ohne Fachjargon), Abschnitt 4–7 sind
 die Umsetzungsanleitung für Robin.
 
