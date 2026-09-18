@@ -1,6 +1,6 @@
 # MELYLA — Projektstand
 
-Stand 15.09.2026 (zweiter Durchgang). Eine Seite: Was ist fertig, was ist offen, wo hakt es.
+Stand 18.09.2026 (Durchgang vor dem Start). Eine Seite: Was ist fertig, was ist offen, wo hakt es.
 
 ---
 
@@ -20,6 +20,60 @@ der Shop von 2021 läuft unverändert weiter.
 | HTML-Bausteine | BH, Kissen, Beauty Sleep Box, Warum MELYLA, Funktionsweise |
 | Werkzeuge | Vorlagenprüfer + Theme Check in der CI, lokale Vorschau auf Port 4010 |
 | Skill-Bibliothek | 12 Skills in `~/.claude/skills` (Shopify offiziell + Marketing) |
+
+## Durchgang vor dem Start — 18.09.2026
+
+**Verkaufte Stück: über 5.000.** Im Theme standen vier verschiedene Zahlen
+(1.000 · 1000+ · 6000+). Jetzt überall „Über 5.000 verkaufte BHs", auch in den
+Vorgabewerten der Abschnitte. Beleg für die Zahl gehört noch abgelegt, siehe
+`17-bewertungen.md`.
+
+**Bewertungszahlen zum dritten Mal richtiggestellt.** Startseite und BH-Seite
+trugen wieder 4,79 · 52 · 150+ · +400. Ursache: Jede Bearbeitung im
+Shopify-Editor schreibt die ganze Vorlage zurück, samt alter Zahlen in Feldern,
+die gar nicht angefasst wurden. Neu deshalb `bin/zahlen-pruefen.mjs` — rechnet
+aus den Rohdaten und meldet jede getippte Zahl, die nicht dazu passt. Läuft in
+der CI bei jedem Push.
+
+**Versanddauer war widersprüchlich.** Der Startseiten-Hero versprach „1-3 Tage",
+alle acht anderen Stellen und der Fußbereich „2–4 Werktage". Auf 2–4 Werktage
+vereinheitlicht.
+
+**Sternreihe über dem Schnitt** zeigte vier von fünf Sternen bei 4,78. Rundet
+jetzt kaufmännisch.
+
+**Bewertungsblöcke entzerrt** — auf Doppelpack- und Set-Seite. Dort standen zwei
+Bewertungsabschnitte direkt hintereinander und trugen dieselbe 4,78 zweimal.
+Beide bleiben, einer ist jeweils weiter nach unten gerückt.
+
+**Die Startseite sieht seit dem 17.09. anders aus als hier beschrieben.** Im
+Editor umgebaut: *MELYLA Scroll-Video* an Platz 1, der Hero nach hinten auf
+Platz 7. **Entfernt wurden dabei *MELYLA Stimmen* und *MELYLA Bewertungen*** —
+also genau die beiden Abschnitte, die ihre Zahlen rechnen. An ihrer Stelle steht
+jetzt eine zweite Sektion *MELYLA Kundenstimmen*, direkt hinter der ersten.
+
+Zwei Folgen, beide offen:
+
+- Auf der Startseite steht **keine einzige echte Bewertung** mehr. Die 79 Stimmen
+  aus der Datendatei erscheinen nur noch auf BH-, Kissen-, Doppelpack- und
+  Set-Seite. Auf der Startseite steht nur noch die Zahl.
+- Zwei fast gleiche Kundenstimmen-Abschnitte kleben aneinander (Platz 8 und 9),
+  beide mit demselben Schnitt in getippten Feldern.
+
+Nicht angefasst, weil das eine Layout-Entscheidung von Robin ist. Nur die Zahlen
+in beiden Abschnitten sind richtiggestellt.
+
+**Ersparnis-Zeile im Angebot rechnet jetzt.** Auf der Startseite stand beim
+Anti-Falten Duo „Du sparst 45,60 €" — eine Zahl, die zu keiner Preiskombination
+passt. Bleibt das Feld leer, rechnet der Abschnitt Ersparnis und Prozentsatz aus
+Preis und Vergleichspreis des verknüpften Produkts.
+
+**Offen vor dem Start:** Die beiden Angebotskarten *2× Schlaf BH* und
+*Anti-Falten Duo* zeigen auf kein Produkt — Preis steht als Handtext drin,
+„Jetzt kaufen" führt auf `/collections/all`. Die Produkte liegen als **Entwurf**
+in Shopify. Sobald sie auf *aktiv* stehen: im Editor unter *Dein Angebot* bei
+Produkt 2 und Produkt 3 auswählen. Dann ziehen Preis, Streichpreis, Varianten
+und der Kaufen-Knopf von allein mit.
 
 ## Die echten Adressen
 

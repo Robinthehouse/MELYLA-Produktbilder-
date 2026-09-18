@@ -114,6 +114,50 @@ Zahlen wieder.** Dann sind sie an denselben Stellen erneut nachzuziehen. Der
 gerechnete Schnitt in den Sektionen zieht von allein mit — die getippten Zahlen in
 Hero und Leisten nicht.
 
+## Dritter Durchgang — 18.09.2026
+
+Die Korrektur vom 16.09. war am 18.09. wieder weg. Nicht in allen Dateien, aber
+in den beiden wichtigsten: Startseite und BH-Seite trugen erneut „4,79", „aus 52
+Bewertungen", „aus  150+ Bewertungen" und in der Ankündigungsleiste „+400
+Bewertungen".
+
+**Die Ursache steht in der Versionsgeschichte.** Zwischen dem 16. und dem 17.09.
+liegen vierzehn Commits „Update from Shopify for theme melyla-shopify-theme/main".
+Wer im Editor irgendeinen Abschnitt anfasst, schreibt die **ganze Vorlage** zurück
+— samt der alten Zahl, die in einem anderen Feld derselben Datei noch stand. Das
+ist der dritte Umlauf: 16.09. korrigiert, 17.09. „Vom Editor überschriebene
+Korrekturen wiederhergestellt", 18.09. erneut.
+
+**Deshalb prüft das jetzt eine Maschine.** `bin/zahlen-pruefen.mjs` liest die
+Rohdaten, rechnet Anzahl und Schnitt je Produkt und meldet jede getippte Zahl im
+Theme, die dazu nicht passt. Der Prüfer läuft in der CI bei jedem Push:
+
+```
+node bin/zahlen-pruefen.mjs
+```
+
+Theme Check sieht davon nichts — eine falsche Zahl ist syntaktisch einwandfrei.
+
+**Die Sternreihe über dem Schnitt zeigte vier Sterne.** Sie verglich gegen die
+Vorkommastelle, bei 4,78 also gegen die 4. Jetzt wird kaufmännisch gerundet: fünf
+Sterne über der 4,78, wie es die Karten darunter auch tun.
+
+## Verkaufte Stück — 18.09.2026
+
+Im Theme standen vier verschiedene Zahlen nebeneinander: „Über 1.000 verkaufte
+BHs", „Über 1000+ verkaufte Schlaf BHs", „Über 1.000 verkauft" und auf der
+Startseite „Über 6000+ verkaufte BH´s".
+
+Nach Robins Angabe vom 18.09.2026 sind es **über 5.000 Stück** über alle Kanäle.
+Einheitlich als **„Über 5.000 verkaufte BHs"** im ganzen Theme, auch in den
+Vorgabewerten der Abschnitte, damit ein neu eingesetzter Block nicht wieder mit
+1.000 startet.
+
+**Noch zu hinterlegen:** Woraus die 5.000 stammen — Summe aus Shop, Amazon und
+Otto zu einem Stichtag. Eine Mengenangabe ist eine geschäftliche Angabe nach
+§ 5 UWG; sie muss im Streitfall belegbar sein. Ein Screenshot der Summe aus
+Billbee plus Seller Central genügt, gehört aber abgelegt.
+
 ## Amazon und Otto
 
 **Amazon lässt sich nicht crawlen.** Geprüft am 15.09.2026: sowohl
@@ -150,10 +194,17 @@ dieselbe Datei und tragen dann automatisch das richtige Siegel
 
 ## Noch offen
 
-- `AggregateRating` fehlt weiterhin. Jetzt wäre es erstmals zulässig, weil echte
-  Bewertungen auf der Seite stehen — erst aber die 4,79-Frage klären.
-- `sections/melyla-funnel-kundenstimmen.liquid` auf der Startseite ist durch
-  MELYLA Stimmen inhaltlich doppelt. Nicht angefasst, weil laut STAND.md seit
-  dem 23.08. für Änderungen gesperrt.
+- `AggregateRating` fehlt weiterhin. Die 4,79-Frage ist entschieden — es sind
+  4,78 aus 49 —, also wäre es jetzt zulässig und sollte vor dem Start rein.
+- **Auf der Startseite steht seit dem 17.09. keine echte Bewertung mehr.**
+  *MELYLA Stimmen* und *MELYLA Bewertungen* wurden im Editor entfernt, dafür
+  steht dort eine zweite Sektion *MELYLA Kundenstimmen* — zwei fast gleiche
+  Blöcke hintereinander, beide mit getippten Zahlen. Die 79 Stimmen erscheinen
+  nur noch auf den Produktseiten. Entscheidung offen.
+- Auf Doppelpack- und Set-Seite standen zwei Bewertungsabschnitte direkt
+  hintereinander; einer ist jeweils nach unten gerückt.
+- Die getippten Felder in *MELYLA Kundenstimmen*, *Trust* und Hero rechnen
+  nicht mit. Solange sie Textfelder sind, hält sie nur `bin/zahlen-pruefen.mjs`
+  zusammen. Sauber wäre: leeres Feld = gerechneter Wert aus der Datendatei.
 - Bild für MELYLA Stimmen auf der Startseite ist noch nicht gesetzt (Feld leer =
   Karussell über volle Breite). Material liegt in `exports/marktplatz/`.
