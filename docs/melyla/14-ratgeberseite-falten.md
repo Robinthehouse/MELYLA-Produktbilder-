@@ -14,8 +14,8 @@ Ranking zugleich.
 
 ## Was Robin tun muss
 
-1. **Zuerst** die vier Bilder aus `shopify-einfuegen/bilder/falte-*.webp` unter
-   **Inhalte → Dateien** hochladen — Dateinamen nicht ändern, siehe unten
+1. **Zuerst** die vier Illustrationen unter **Inhalte → Dateien** hochladen —
+   Dateinamen nicht ändern, sie stehen so im HTML (erledigt am 18.09.)
 2. In Shopify **Inhalte → Seiten → Seite hinzufügen**
 3. Titel: `Wie Falten entstehen — und was wirklich dagegen hilft`
 4. Adresse prüfen: sie muss **`falten-vermeiden`** lauten (im Feld *Suchmaschinen-Eintrag*).
@@ -35,31 +35,37 @@ je nach Schriftart als „C" mit Strich gezeichnet, keines hatte mit Falten zu t
 Ersetzt durch je ein Bildfeld in **derselben Größe** — 44 × 44 px, gleiche
 Rundung, gleiche lila Fläche dahinter.
 
-Die Bilder liegen zugeschnitten und auf 88 px gerechnet (doppelt für scharfe
-Darstellung auf Retina-Displays) in `shopify-einfuegen/bilder/`, je rund 1,5 KB:
+**Den Zuschnitt macht Shopify.** Die vier Illustrationen liegen als
+Hochformat-PNG unter *Inhalte → Dateien*. Statt sie von Hand zu beschneiden,
+hängt das HTML die Parameter direkt an die Adresse:
 
-| Karte | Datei | Zeigt |
+```
+…/mimikfalten-ausdruckslinien.png?width=88&height=88&crop=top
+```
+
+`width`/`height` geben die gelieferte Größe (88 px = doppelt für scharfe
+Darstellung auf Retina), `crop` bestimmt, welcher Ausschnitt des Hochformats
+übrig bleibt. Shopify rechnet das einmal und liefert danach aus dem Cache —
+und schickt modernen Browsern automatisch WebP statt PNG.
+
+| Karte | Datei in Shopify | Ausschnitt |
 |---|---|---|
-| Mimikfalten | `falte-mimik.webp` | Stirn und Augenpartie mit Ausdruckslinien |
-| Schlaffalten | `falte-schlaf.webp` | Gesicht in Seitenlage auf dem Kissen |
-| Lichtfalten | `falte-licht.webp` | Wange und Hals mit feinen Linien |
-| Erschlaffungsfalten | `falte-erschlaffung.webp` | Kinn- und Halspartie |
+| Mimikfalten | `mimikfalten-ausdruckslinien.png` | `crop=top` — Stirn und Augenpartie mit den Linien |
+| Schlaffalten | `schlaffalten-sleep-wrinkles.png` | `crop=center` |
+| Lichtfalten | `lichtfalten-photoaging-variante-2.png` | `crop=center` |
+| Erschlaffungsfalten | `erschlaffungsfalten-gravitational-aging.png` | `crop=center` |
 
-**Die Adressen stehen im HTML bereits fest.** Sie funktionieren, sobald die vier
-Dateien unter **Inhalte → Dateien** hochgeladen sind — **unter genau diesen
-Namen**, sonst zeigen die Felder ins Leere:
+**Warum nicht die zugeschnittenen Dateien?** Die gab es kurz (`falte-*.webp`,
+je 1,5 KB), aber hochgeladen wurden die Originale. Der Weg über die Parameter
+kommt auf dasselbe heraus, ohne dass irgendwo zwei Fassungen desselben Bildes
+liegen, die auseinanderlaufen können.
 
-```
-https://cdn.shopify.com/s/files/1/0535/6031/1982/files/falte-mimik.webp
-```
-
-Geprüft: Shopify-Dateiadressen tragen auch ohne das angehängte `?v=…`.
-
-Reihenfolge also: erst die vier Dateien hochladen, dann den Code aus
-`falten-vermeiden.html` in die Seite einsetzen.
+Wenn ein Ausschnitt nicht passt, ist es ein Wort im HTML: `crop=top`, `center`,
+`bottom`, `left` oder `right`. Für die Lichtfalten zeigt `bottom` die feinen
+Linien an Wange und Hals deutlicher, schneidet dafür die Augen ab.
 
 Das vierte Bild ist als einziges in Graustufen. Wenn es zwischen den drei warmen
-stören sollte, sag Bescheid — eine warme Tönung ist eine Sache von Minuten.
+stören sollte, sag Bescheid.
 
 ## Suchmaschinen-Eintrag
 
