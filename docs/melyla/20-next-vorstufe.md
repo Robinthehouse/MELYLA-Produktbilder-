@@ -79,7 +79,7 @@ Die übrigen Angaben, falls sie gebraucht werden:
 | Produkt | Material laut `src/lib/products.ts` |
 |---|---|
 | Anti-Falten Kissen | Memory-Foam-Kern, Kissenbezug aus 100 % Bio-Baumwolle |
-| Anti-Falten Schlafmaske | Seide außen, weiches Schaumstoff-Futter |
+| Anti-Falten Schlafmaske | ~~Seide außen, weiches Schaumstoff-Futter~~ — **falsch.** Die Shopify-Produktdaten sagen *Polyester 95 %, Elasthan 5 %*. „Seide" stand nur in `src/` und in der Box-Beschreibung; dort am 18.09. richtiggestellt |
 | Scrunchie 4er-Pack | 88 % Polyester, 12 % Elasthan |
 | ECO Reinigungsschwamm | Mikrofaser-Schwamm und Baumwolle |
 | ECO Abschminkpads | 100 % Bio-Baumwolle, GOTS-zertifiziert |
@@ -121,3 +121,26 @@ beschrieben vorher eine `create-next-app`-Vorlage.
 die beiden Theme-Ordner. `shopify-theme/preview/` bringt eigene Abhängigkeiten
 mit und ist von der Wurzel unabhängig; die drei Prüfer in `shopify-theme/bin/`
 laufen mit blankem Node ohne jedes Paket.
+
+## Die Faserangaben der übrigen Produkte — abgeglichen am 18.09.2026
+
+Gegen die Shopify-Produktdaten geprüft (`/products/<handle>.js`). Was live
+steht, ist plausibel und in sich stimmig — nur bei zwei Produkten wich die
+Angabe aus `src/` ab:
+
+| Produkt | Shopify (live) | `src/` sagte | |
+|---|---|---|---|
+| Anti-Falten Schlaf BH | ~~82 % Elastan, 18 % Nylon~~ | 95 % Baumwolle, 5 % Elasthan | **beides falsch**, richtig: 90 % Polyamid, 10 % Elasthan |
+| Anti-Falten Schlafmaske | Polyester 95 %, Elasthan 5 % | „Seide außen" | `src/` war falsch |
+| Anti-Falten Kissen (Bezug) | 100 % Bio-Baumwolle | dasselbe | stimmig |
+| Scrunchie 4er-Pack | Polyester 88 %, Elasthan 12 % | dasselbe | stimmig |
+| Kissenbezug grau | 60 % Baumwolle, 35 % Polyester, 5 % Elasthan | — | nur live |
+| Satin-Kissenbezug | 95 % Polyester, 5 % Elasthan | — | nur live |
+
+„Seide" kommt im Theme weiterhin vor — aber nur als **Abgrenzung zum
+Wettbewerb** („Das Seidenkissen schützt dein Gesicht, nicht dein Dekolleté").
+Das ist keine Materialangabe zu einem MELYLA-Produkt und bleibt so.
+
+Offen bleibt bei zwei Angaben die Belegfrage: „Bio-Baumwolle" beim Kissenbezug
+und „GOTS-zertifiziert" bei den Abschminkpads dürfen nur stehen, wenn das
+Zertifikat vorliegt — dieselbe Frage wie bei OEKO-TEX®.
