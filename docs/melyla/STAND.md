@@ -458,11 +458,10 @@ auf der Seite, ohne dass eine einzige Stimme zu sehen wäre. Das löst sich mit 
 
 ### Offen geblieben
 
-- **Materialangabe BH: „82 % Elastan, 18 % Nylon" an fünf Stellen.** Ein Gestrick mit 82 %
-  Elastan gibt es nicht — die Zahlen sind mit hoher Wahrscheinlichkeit **vertauscht**
-  (82 % Nylon / 18 % Elastan). Eine dritte Quelle nennt „95 % Baumwolle / 5 % Elasthan".
-  **Gegen das Etikett prüfen**, bevor die Seite live geht — eine falsche Materialangabe ist
-  nach TextilKennzVO abmahnfähig. Ich habe nichts geraten.
+- ~~**Materialangabe BH**~~ — **am 18.09.2026 geklärt.** Es war tatsächlich vertauscht.
+  Richtig ist **„Obermaterial: 90 % Polyamid, 10 % Elasthan"** (Robin, 18.09.). Im Theme und
+  in den Einfüge-Bausteinen überall richtiggestellt. **Offen: die Shopify-Produktbeschreibung
+  des BHs** — dort steht die alte Angabe noch, und sie ist das, was Kundinnen heute lesen.
 - **„30 Tage" gegen „30 Nächte"** — auf deinen Wunsch offengelassen, gehört an die
   Rückgabebedingungen im Shop gekoppelt. 44× „Tage", 25× „Nächte".
 - **Der Material-Tab des BHs nennt kein Material** — die Prozentangabe steht erst weiter
@@ -535,7 +534,7 @@ Seiten-Handle in Shopify auf `falten-vermeiden` aendern oder die fuenf Verweise 
 | **„Über 5.000 verkaufte BHs"** — Stand 18.09.2026 nach Robins Angabe über alle Kanäle. Die frühere Angabe „Über 800" beruhte auf dem Teilstand 08/2026 (Otto 353, Amazon Gr. M 197, Shop ~272, ohne Amazon S/L/XL). **Offen: Beleg ablegen** — Summe aus Billbee und Seller Central mit Stichtag | offen |
 | ~~„Nr. 1 Bestseller"~~ im Hero — **am 25.08. entfernt.** Eine Spitzenstellungsbehauptung, die wir nicht belegen können | erledigt |
 | ~~Streichpreis Kissen~~ — **am 25.08. geklärt.** Senkung Anfang August 2026, also innerhalb der Frist. 89,50 € ist der korrekte Bezugspreis nach § 11 PAngV und wird mit Hinweis angezeigt. **Zu beobachten:** Ein Abverkauf darf nicht dauerhaft als „Ermäßigung" laufen (§ 5 UWG) | erledigt, mit Frist |
-| **Widersprüchliche Materialangabe BH**: „82 % Elastan / 18 % Nylon" gegen „95 % Baumwolle" | Produktbeschreibungen |
+| ~~Widersprüchliche Materialangabe BH~~ — **am 18.09. geklärt**, richtig ist „Obermaterial: 90 % Polyamid, 10 % Elasthan". Im Theme erledigt; **in der Shopify-Produktbeschreibung noch nachzuziehen** | teils offen |
 | OEKO-TEX® und GOTS weggelassen, bis Zertifikate vorliegen | Box-Beschreibung |
 | Alle `CLAIM-CHECK`-Stellen | `09-beauty-sleep-box.md`. Die Konvention stand ursprünglich in `src/lib/funnel-bh.ts`, dort war aber keine Stelle markiert — siehe [20-next-vorstufe.md](20-next-vorstufe.md) |
 

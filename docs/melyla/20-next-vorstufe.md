@@ -33,7 +33,7 @@ KI-Agenten auf `node_modules/next/dist/docs/` schickte statt auf das Theme.
 
 ## Zwei Dinge, die mit der Datei fast verschwunden wären
 
-### Die Faserzusammensetzung des BH widerspricht sich — und ist vermutlich vertauscht
+### Die Faserzusammensetzung des BH war vertauscht — geklärt
 
 `src/lib/products.ts` sagte:
 
@@ -41,22 +41,35 @@ KI-Agenten auf `node_modules/next/dist/docs/` schickte statt auf das Theme.
 95 % Baumwolle, 5 % Elasthan — OEKO-TEX® zertifiziert
 ```
 
-Die **Shopify-Produktbeschreibung** sagt heute live:
+Die Shopify-Produktbeschreibung und das Theme sagten:
 
 ```
 Material: 82 % Elastan, 18 % Nylon
 ```
 
-Beides kann nicht stimmen. Und die Live-Angabe ist für sich genommen
-unplausibel: Ein Gewirk mit 82 % Elasthan gibt es praktisch nicht — üblich ist
-das **umgekehrte** Verhältnis, also rund 82 % Polyamid (Nylon) und 18 %
-Elasthan. Die beiden Zahlen dürften vertauscht sein.
+Beides war falsch. **Richtig ist (Robin, 18.09.2026):**
 
-Das ist kein Schönheitsfehler: Die Faserzusammensetzung ist nach der
-EU-Textilkennzeichnungsverordnung (Nr. 1007/2011) verpflichtend und muss
-zutreffen. **Beim Lieferanten erfragen und an einer Stelle richtigstellen.**
-Das Theme selbst nennt keine Zusammensetzung — der Satz steht in der
-Shopify-Produktbeschreibung, dort gehört er korrigiert.
+```
+Obermaterial: 90 % Polyamid, 10 % Elasthan
+```
+
+Die Live-Angabe war für sich genommen schon unplausibel — ein Gewirk mit 82 %
+Elasthan gibt es praktisch nicht; üblich ist genau das umgekehrte Verhältnis.
+Die beiden Zahlen waren vertauscht und zusätzlich falsch gerundet.
+
+**Richtiggestellt am 18.09.2026** an vier Stellen: `templates/product.melyla-bh.json`
+(Merkmal 3), `sections/melyla-funnel-produktdetails.liquid` (Vorgabewert und
+Kopfkommentar), `shopify-einfuegen/produktbeschreibung-bh.html` und
+`shopify-einfuegen/produktbeschreibung-beauty-sleep-box.html`.
+
+Geschrieben in den Bezeichnungen der EU-Textilkennzeichnungsverordnung
+(Nr. 1007/2011, Anhang I): dort heißt die Faser **Polyamid** und **Elasthan** —
+nicht „Polyamide" oder „Elastan". Die Zusammensetzung anzugeben ist Pflicht, und
+sie muss stimmen.
+
+**Noch offen:** Die **Shopify-Produktbeschreibung** des BHs trägt die alte Angabe
+weiter. Sie steht im Shopify-Admin, nicht im Theme — dort muss sie von Hand
+geändert werden. Das ist der Text, den Kundinnen heute lesen.
 
 Die OEKO-TEX®-Angabe aus `src/` ist ersatzlos weg. Laut `STAND.md` liegen die
 Zertifikate nicht vor; ohne Zertifikat darf das Siegel nicht genannt werden.
