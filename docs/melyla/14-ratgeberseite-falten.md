@@ -14,13 +14,52 @@ Ranking zugleich.
 
 ## Was Robin tun muss
 
-1. In Shopify **Inhalte → Seiten → Seite hinzufügen**
-2. Titel: `Wie Falten entstehen — und was wirklich dagegen hilft`
-3. Adresse prüfen: sie muss **`falten-vermeiden`** lauten (im Feld *Suchmaschinen-Eintrag*)
-4. Im Inhaltsfeld auf **`</>`**, den Code aus `falten-vermeiden.html` einfügen, speichern —
+1. **Zuerst** die vier Bilder aus `shopify-einfuegen/bilder/falte-*.webp` unter
+   **Inhalte → Dateien** hochladen — Dateinamen nicht ändern, siehe unten
+2. In Shopify **Inhalte → Seiten → Seite hinzufügen**
+3. Titel: `Wie Falten entstehen — und was wirklich dagegen hilft`
+4. Adresse prüfen: sie muss **`falten-vermeiden`** lauten (im Feld *Suchmaschinen-Eintrag*).
+   **Stand 18.09. stimmt sie nicht:** Die Seite ist angelegt und sichtbar, aber
+   weder `/pages/falten-vermeiden` noch `/pages/wie-falten-entstehen` antworten —
+   beide 404. Solange die Adresse nicht `falten-vermeiden` lautet, laufen die
+   Verweise aus den anderen Seiten ins Leere
+5. Im Inhaltsfeld auf **`</>`**, den Code aus `falten-vermeiden.html` einfügen, speichern —
    **nicht** zurück in die Textansicht schalten
-5. Suchmaschinen-Eintrag ausfüllen (siehe unten)
-6. Ins Menü aufnehmen, am besten unter einem Punkt *Ratgeber*
+6. Suchmaschinen-Eintrag ausfüllen (siehe unten)
+7. Ins Menü aufnehmen, am besten unter einem Punkt *Ratgeber*
+
+## Die vier Faltenarten tragen jetzt Bilder — 18.09.2026
+
+In den vier Karten standen Unicode-Zeichen als Symbole: ☪ ☰ ☼ ↓. Das erste wird
+je nach Schriftart als „C" mit Strich gezeichnet, keines hatte mit Falten zu tun.
+Ersetzt durch je ein Bildfeld in **derselben Größe** — 44 × 44 px, gleiche
+Rundung, gleiche lila Fläche dahinter.
+
+Die Bilder liegen zugeschnitten und auf 88 px gerechnet (doppelt für scharfe
+Darstellung auf Retina-Displays) in `shopify-einfuegen/bilder/`, je rund 1,5 KB:
+
+| Karte | Datei | Zeigt |
+|---|---|---|
+| Mimikfalten | `falte-mimik.webp` | Stirn und Augenpartie mit Ausdruckslinien |
+| Schlaffalten | `falte-schlaf.webp` | Gesicht in Seitenlage auf dem Kissen |
+| Lichtfalten | `falte-licht.webp` | Wange und Hals mit feinen Linien |
+| Erschlaffungsfalten | `falte-erschlaffung.webp` | Kinn- und Halspartie |
+
+**Die Adressen stehen im HTML bereits fest.** Sie funktionieren, sobald die vier
+Dateien unter **Inhalte → Dateien** hochgeladen sind — **unter genau diesen
+Namen**, sonst zeigen die Felder ins Leere:
+
+```
+https://cdn.shopify.com/s/files/1/0535/6031/1982/files/falte-mimik.webp
+```
+
+Geprüft: Shopify-Dateiadressen tragen auch ohne das angehängte `?v=…`.
+
+Reihenfolge also: erst die vier Dateien hochladen, dann den Code aus
+`falten-vermeiden.html` in die Seite einsetzen.
+
+Das vierte Bild ist als einziges in Graustufen. Wenn es zwischen den drei warmen
+stören sollte, sag Bescheid — eine warme Tönung ist eine Sache von Minuten.
 
 ## Suchmaschinen-Eintrag
 
