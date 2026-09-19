@@ -6,8 +6,9 @@ Stand 19.09.2026. Eine Seite: Was ist fertig, was ist offen, wo hakt es.
 
 ## Fertig
 
-**Theme** `Robinthehouse/melyla-shopify-theme`, über GitHub verbunden, **noch nicht veröffentlicht** —
-der Shop von 2021 läuft unverändert weiter.
+**Theme** `Robinthehouse/melyla-shopify-theme`, über GitHub verbunden und
+**veröffentlicht** — `melyla.de` läuft auf diesem Theme. Jeder Push auf `main` ist
+damit sofort im Shop, ohne Zwischenschritt.
 
 | | |
 |---|---|
@@ -15,11 +16,92 @@ der Shop von 2021 läuft unverändert weiter.
 | Seiten | Startseite (13 Abschnitte), BH, Beauty Sleep Box, Kissen, zwei Erklärseiten |
 | Bewegung | Scroll-Animationen in 17 von 18 Sektionen (Dawns eigene Technik) |
 | Hero | Zugespitzte Aussage, Trust-Zeile, echte Zahlungsart-Icons, Bild-Hintergrund als Option |
-| Kauf-Buttons | Alle verdrahtet, führen zum Angebotsabschnitt statt direkt in den Warenkorb |
+| Kauf-Buttons | Alle verdrahtet: die CTAs führen zum Angebotsabschnitt, dessen drei Buttons legen in den Warenkorb |
 | Formatierung | **237 von 268 Feldern** können fett, kursiv und Links |
 | HTML-Bausteine | BH, Kissen, Beauty Sleep Box, Warum MELYLA, Funktionsweise |
 | Werkzeuge | Vorlagenprüfer + Theme Check in der CI, lokale Vorschau auf Port 4010 |
 | Skill-Bibliothek | 12 Skills in `~/.claude/skills` (Shopify offiziell + Marketing) |
+
+## Tote Kauf-Buttons — 19.09.2026 abends
+
+**Im Shop hat kein einziger Kauf-Button funktioniert.** Dazu kein FAQ-Aufklapper, kein
+Größenberater, keine Feature-Karten. Sechs Sektionen gleichzeitig, auf jeder Seite.
+
+Ursache war eine einzige Zeile, dreimal neun Mal kopiert:
+
+```liquid
+class ProductSets{{ ai_gen_id }} extends HTMLElement {
+```
+
+`ai_gen_id` ist die Abschnitts-ID. Auf dem Storefront heißt die **immer**
+`template--25642652631307__angebot` — und `--` ist in einem JavaScript-Bezeichner ein
+Syntaxfehler. Der Browser parst das ganze Skript nicht mehr, also hängt kein einziger
+Klick-Handler. Belegt mit `node --check` über alle 45 Inline-Skripte der Startseite:
+sechs davon brachen ab.
+
+**Warum es nie auffiel:** Theme Check prüft Liquid, nicht das erzeugte JavaScript — für
+Liquid ist die Zeile einwandfrei. Und in der lokalen Vorschau heißt der Abschnitt schlicht
+`angebot`, ohne Bindestrich. Der Fehler existiert nur im echten Shop.
+
+**Behoben** in allen neun Sektionen: `js_id` ist dieselbe ID ohne Bindestriche und wird
+für Bezeichner benutzt, Elementname und CSS-Klassen behalten `ai_gen_id` — dort sind
+Bindestriche gültig, im Elementnamen sogar Pflicht. Dazu ein Wächter gegen doppeltes
+`customElements.define`, das der Editor beim Nachrendern auslöst.
+
+**`bin/skripte-pruefen.mjs` ist neu und läuft in der CI.** Er meldet jede Stelle, an der
+ein JS-Bezeichner an einer Abschnitts-ID hängt. Gegenprobe gegen den Stand von vorher:
+findet alle neun, danach keine.
+
+### Zweite Größe beim Doppelpack
+
+Das Produkt `2-x-melyla-anti-falten-bh` hat in Shopify nur **eine** Option mit S–XL. Die
+Kundin bekommt zwei BHs, konnte aber nur eine Größe wählen — während die Karte
+„Größen frei kombinierbar" versprach.
+
+Karte 2 hat jetzt zwei Felder: **Größe 1. BH** wählt die Variante, **Größe 2. BH** fährt
+als Bestellhinweis an der Warenkorbzeile mit. Beide Größen stehen damit im Warenkorb, in
+der Bestätigung und auf dem Lieferschein — **die Bestellabwicklung muss auf den Hinweis
+„Größe 2. BH" schauen, die Variante allein nennt nur die erste Größe.**
+
+Der Bestand je Größe des zweiten BHs wird dabei nicht einzeln geführt. Das Doppelpack hat
+ohnehin einen eigenen Bestand, es geht also nichts verloren, was vorher da gewesen wäre.
+Einschaltbar je Karte über „Zweite Größe abfragen".
+
+### Die Preisstaffel lief unbemerkt weg — vierter Rückfall
+
+Seit die Bundles echte Shopify-Produkte sind, kommen Preis und Vergleichspreis **aus den
+Produktdaten**. Die Ersatzfelder in der Vorlage greifen nicht mehr. In den Produkten stand
+aber kein Vergleichspreis — also zeigten Karte 2 und Karte 3 weder Streichpreis noch
+Prozent-Pille noch Spar-Band, und Karte 3 stand bei 99,00 € statt 79,00 €.
+
+`bin/preise-pruefen.mjs` meldete trotzdem „die Staffel stimmt": Er las die Ersatzfelder,
+die live niemand mehr sieht. Deshalb hat er jetzt einen zweiten Modus, der die echten
+Produkte liest:
+
+```bash
+node bin/preise-pruefen.mjs https://melyla.de
+```
+
+Er prüft Preis **und** Vergleichspreis jeder einzelnen Variante und meldet auch
+ausverkaufte. **Nach jeder Änderung im Shopify-Admin laufen lassen** — die Vorlagenprüfung
+allein sagt über den Shop nichts mehr aus.
+
+### Die Staffel, wie sie gilt
+
+| Karte | Produkt | Preis | Einzeln | Ersparnis |
+|---|---|---|---|---|
+| 1 | `melyla-anti-falten-schlaf-bh` | 49,50 € | — | — |
+| 2 | `2-x-melyla-anti-falten-bh` | 89,00 € | 99,00 € | 10,00 € (−10 %) |
+| 3 | `antifalten-set-kissen-bh` | 89,00 € | 99,00 € | 10,00 € (−10 %) |
+
+**Karte 2 und Karte 3 kosten beide 89,00 € — das ist so entschieden und kein Rückfall.**
+Zwei BHs einzeln sind 99,00 €, BH plus Kissen ebenfalls 99,00 €; beide Sets sparen also
+dieselben 10,00 €. Die frühere Vorgabe 79,00 € für Karte 3 gilt nicht mehr. Wer diese
+Gleichheit „repariert", macht sie kaputt — der Prüfer hat sie bis heute als Fehler
+gemeldet, diese Regel ist entfernt.
+
+Weil beide Sets gleich viel sparen, trägt Karte 3 nicht mehr **Bester Wert**, sondern
+**Komplett-Set**. Ein Superlativ ohne größeren Nachlass ist nach UWG nicht zu halten.
 
 ## Angebotsstaffel — dritter Rückfall, 19.09.2026 nachmittags
 
@@ -600,7 +682,11 @@ Seiten-Handle in Shopify auf `falten-vermeiden` aendern oder die fuenf Verweise 
 ## Offen — nur im Shopify-Admin
 
 - Im Abschnitt *MELYLA Angebot* die drei Produkte auswählen — setzt Links **und** Preise
-- **Zwei Bundle-Produkte anlegen:** `melyla-bh-doppelpack` (89,00 € / 99,00 €) und `melyla-bh-kissen-set` (79,00 € / 99,00 €), je Größen S–XL
+- ~~Zwei Bundle-Produkte anlegen~~ — **erledigt**, sie heißen `2-x-melyla-anti-falten-bh` und `antifalten-set-kissen-bh`
+- **Vergleichspreise eintragen, sonst zeigt keine Karte eine Ersparnis:**
+  - `2-x-melyla-anti-falten-bh`, alle vier Varianten: Preis 89,00 € bleibt, **Vergleichspreis 99,00 €**
+  - `antifalten-set-kissen-bh`, alle vier Varianten: **Preis 89,00 €** (steht auf 99,00 €), **Vergleichspreis 99,00 €**
+  - danach `node bin/preise-pruefen.mjs https://melyla.de` — er meldet heute genau diese zwölf Abweichungen
 - **Vor Veröffentlichung: Store auf „New customer accounts" umstellen.** Dawn 16 hat die alten Kundenkonto-Vorlagen entfernt — ohne Umstellung brechen die Kundenkonten.
 - **Vorlagen zuweisen geht noch nicht.** Das Dropdown im Seiten-Editor listet nur die Vorlagen
   des **veröffentlichten** Themes — unseres ist es nicht. Belegt am 24.08.: dort stehen
