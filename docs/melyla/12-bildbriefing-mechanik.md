@@ -424,22 +424,80 @@ Die Nahaufnahme am Morgen. **Kein Gesicht.**
 
 ## E3 — „Vorbeugung & Schutz"
 
-Die Gewohnheit: abends anziehen, und fertig. Ruhig, alltäglich, kein Produktwerbespot.
+**Neu gefasst am 19.09.2026.** Das alte Motiv zeigte eine deutlich ältere Frau im Schlafzimmer.
+Der Zielgruppenschnitt liegt bei **Anfang 40**, und der Grund fürs Vorbeugen soll sichtbar sein:
+**die Sonne**. Sie ist neben der Seitenlage der zweite Faktor, der das Dekolleté altern lässt —
+und der einzige, den man im Bild zeigen kann, ohne eine Wirkaussage zu treffen.
 
-**Startbild**
+Gezeigt wird deshalb: Frau Anfang 40, draußen im Sonnenlicht, **glattes, gepflegtes Dekolleté**,
+ein Teil der Haut liegt im Schatten (Hutkrempe, Olivenlaub, Leinentuch). Ruhig und alltäglich,
+kein Sonnenschutz-Werbespot. Kein Gesicht — Kinn oder Mund angeschnitten, mehr nicht.
 
-> Woman in her early 50s standing in a warmly lit bedroom in the evening, having just put on a
-> soft nude-coloured sleep bra, one hand resting near the shoulder strap. Seen from the side,
-> face turned away and partly cropped. Calm, unhurried bedtime atmosphere, bedside lamp, linen
-> bedding in the background. Natural unretouched skin, warm neutral tones, editorial lifestyle
-> photography, horizontal 4:3.
+**Achtung Wirkaussage:** Das Bild darf keinen Hautzustand versprechen, der durch das Produkt
+entstanden wäre. Es zeigt die Situation, gegen die vorgebeugt wird — nicht ein Ergebnis.
+
+**Vier erzeugte Motive** (Higgsfield `soul_2`, 4:3, 2K, `.webp` 1600 × 1200) in
+`public/images/ergebnis/`:
+
+| Datei | Motiv |
+|---|---|
+| `vorbeugung-schutz-a-hut.webp` | Terrasse, Strohhut wirft Schatten über Schulter und Brust — Sonne und Schutz im selben Bild |
+| `vorbeugung-schutz-b-leinenhemd.webp` | offenes Leinenhemd, direktes Nachmittagslicht, Olivenbaum und Terrakottatopf |
+| `vorbeugung-schutz-c-hand.webp` | Hand liegt am Schlüsselbein, Blattschatten auf der Haut |
+| `vorbeugung-schutz-d-olivenschatten.webp` | Olivenlaub wirft Schatten auf Dekolleté und Kleid, Modell liest am klarsten als Anfang 40 |
+
+Aussortiert wurde ein fünftes Motiv mit einem **erfundenen Marken-Etikett** auf dem Tuch —
+derselbe Fehler wie im letzten Durchgang, trotz `no label` im Prompt. Ergebnisse immer prüfen.
+
+**Startbild** (Fassung a, die anderen drei nur in Szene und Schattenquelle abweichend)
+
+> Woman in her early forties on a sunlit terrace in the late afternoon, wearing a wide-neck
+> cream linen dress, a straw hat casting a soft shadow across her upper chest. Her décolleté is
+> smooth, even and well cared for, healthy skin with fine natural texture and no deep lines.
+> Warm sunlight grazes the collarbones, half of the chest lies in the soft shade of the hat
+> brim. Seen slightly from the side, chest and shoulders in frame, face cropped just below the
+> nose so she is not identifiable. Blurred olive tree and warm stone wall in the background.
+> Warm neutral color palette, cream and linen tones, calm and unhurried, natural unretouched
+> skin, editorial lifestyle photography, matte film finish, subtle film grain, horizontal 4:3.
+> Plain fabric without any tags or prints.
 > no text, no watermark, no logo, no label, no brand name, no lettering
 
 **Bewegung**
 
-> Her hand smooths the shoulder strap once, slowly, then lowers back to her side exactly as it
-> started. Everything else stays still. Camera completely static. Seamless loop, first and last
-> frame identical. 5 seconds.
+> The shadow of the hat brim shifts a few millimetres across the skin, as if a light breeze
+> moved the hat, then settles back exactly where it started. One slow shallow breath. Nothing
+> else moves, the skin stays unchanged the whole time. Camera completely static. Seamless loop,
+> first and last frame identical. 5 seconds.
+
+### Ergebnis: Motiv a, als Loop fertig
+
+Robin hat **Motiv a (Strohhut)** gewählt. Daraus ist der Loop erzeugt, weil das Feld
+`card_3_video` in `sections/melyla-funnel-features.liquid` vom Typ `video` ist — ein Standbild
+lässt sich dort gar nicht auswählen.
+
+| Datei | Was es ist |
+|---|---|
+| `public/images/ergebnis/vorbeugung-schutz.mp4` | **Die Datei für die Kachel.** 1280 × 960, 10,3 s, stumm, 871 KB |
+| `public/images/ergebnis/vorbeugung-schutz-original-2k.mp4` | Master, 1920 × 1440, 5,2 s, 2,9 MB — für spätere Neuschnitte |
+
+**Der Loop läuft als Ping-Pong**, also vorwärts und rückwärts hintereinander. Grund: Erstes und
+letztes Bild der Generierung waren *nicht* deckungsgleich (SSIM 0,72) — die Kamera driftet
+leicht. Ein harter Loop hätte alle fünf Sekunden sichtbar gesprungen. Vorwärts plus rückwärts
+geht dagegen exakt auf, und bei dieser minimalen Bewegung sieht niemand, dass die Zeit
+zurückläuft. **Diesen Kniff für die anderen Kacheln mitnehmen**, wenn dort dasselbe Problem
+auftritt.
+
+Erzeugt mit **`minimax_h3`** (4:3, 5 s, Startbild = das Standbild), nicht mit `seedance_2_5` —
+das braucht mindestens den Plus-Tarif.
+
+**Der erste Anlauf wurde vom NSFW-Filter abgewiesen.** Der Prompt beschrieb die Haut des
+Dekolletés im Detail. Mit derselben Bewegung, aber neutral formuliert („a woman in a straw hat
+and a cream linen dress stands quietly on a terrace"), lief derselbe Job durch. Das Standbild
+war nie das Problem — nur der Prompt.
+
+**Noch zu tun:** `vorbeugung-schutz.mp4` in Shopify unter *Inhalte → Dateien* hochladen und im
+Theme-Editor in **MELYLA Feature-Videos**, Karte 3, auswählen. Das Theme kann Videos nicht per
+Push mitbringen.
 
 ---
 
