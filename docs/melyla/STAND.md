@@ -21,6 +21,36 @@ der Shop von 2021 läuft unverändert weiter.
 | Werkzeuge | Vorlagenprüfer + Theme Check in der CI, lokale Vorschau auf Port 4010 |
 | Skill-Bibliothek | 12 Skills in `~/.claude/skills` (Shopify offiziell + Marketing) |
 
+## Angebotsstaffel — dritter Rückfall, 19.09.2026 nachmittags
+
+**Es ist wieder passiert, keine zwei Stunden nach der Reparatur.** Karte 2 und Karte 3
+standen erneut beide bei 89,00 €, ohne Streichpreis, ohne Prozent-Pille, ohne Spar-Band.
+
+Verursacher diesmal: Editor-Commit `8ce65e2`. Er hat dieselben Felder mitgenommen wie
+`d49afe6` am 17.09. — plus die drei `card_N_hinweis`, die im JSON danach gar nicht mehr
+existierten. Wiederhergestellt mit `8d1257e`, gepusht und damit live.
+
+**Die Sektion selbst war nie betroffen.** `melyla-funnel-angebot.liquid` hält die
+Prozent-Pille, das Spar-Band und die Hinweiszeile unverändert. Der Editor schreibt nur
+Vorlagen zurück, keinen Sektionscode. Der Schaden entsteht ausschließlich in
+`templates/index.json`.
+
+**`bin/preise-pruefen.mjs` hat funktioniert** — er meldete alle vier Symptome, sauber
+benannt. Nur nützt das wenig: Ein Editor-Commit landet direkt auf `main` und damit
+sofort im Shop, die CI läuft erst danach. Der Prüfer findet den Rückfall, er verhindert
+ihn nicht.
+
+**Was den Kreislauf wirklich beenden würde**, ist keins der bisherigen Mittel:
+
+1. Die Bundles als echte Shopify-Produkte anlegen. Dann kommen Preis und Vergleichspreis
+   aus den Produktdaten statt aus getippten Ersatzfeldern, und der Editor hat nichts mehr
+   zurückzuschreiben. Das ist die eigentliche Lösung — die Ersatzfelder waren immer nur
+   ein Notbehelf, weil die Sets noch Entwürfe sind.
+2. Solange das nicht steht: **nach jeder Editor-Sitzung `node bin/preise-pruefen.mjs`
+   laufen lassen**, bevor irgendwas anderes passiert.
+
+Dreimal derselbe Rückfall in drei Tagen heißt: Der vierte kommt.
+
 ## Angebotsstaffel sichtbar gemacht — 19.09.2026
 
 Auf der Startseite konnte niemand erkennen, dass die Sets günstiger sind. Karte 2
@@ -199,6 +229,13 @@ Gegengeprüft: „straffer" kommt im gesamten Theme nicht mehr vor.
 
 **Videoprompts** für die drei Ergebnis-Karten stehen in `12-bildbriefing-mechanik.md`, Teil 3.
 Die Videofelder sind bereits vorhanden — Robin wählt nur die Dateien aus.
+
+**Karte 3 „Vorbeugung & Schutz" neu bebildert am 19.09.** Das alte Video zeigte eine deutlich
+ältere Frau; der Zielgruppenschnitt liegt bei Anfang 40. Neu: Frau Anfang 40 auf einer Terrasse,
+glattes gepflegtes Dekolleté, Strohhutschatten auf der Haut — **die Sonne als sichtbarer Grund
+fürs Vorbeugen.** Fertige Datei `public/images/ergebnis/vorbeugung-schutz.mp4` (871 KB),
+drei weitere Motive daneben als `.webp`. **Offen: hochladen unter *Inhalte → Dateien* und in
+der Kachel auswählen.**
 
 
 ## Gründergeschichte — neu erzählt am 25.08.
