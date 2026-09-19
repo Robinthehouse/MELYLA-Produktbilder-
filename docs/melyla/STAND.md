@@ -98,8 +98,9 @@ Theme-Editor dabei geschlossen halten. Als Notiz steht das auch in der Sektion s
 - **45 Inline-Skripte der Startseite, 0 mit Syntaxfehler** (vorher 6)
 - Kauf-Button auf allen drei Karten vorhanden
 - Karte 2 zeigt „Größe 1. BH" und „Größe 2. BH"
-- `POST /cart/add.js` mit beiden Größen antwortet: Variante M, Bestellhinweis
-  „Größe 2. BH: L", 89,00 €
+- `POST /cart/add.js` antwortet sauber: Variante L, 89,00 €, kein überflüssiger
+  Bestellhinweis. (Mit dem zweiten Feld, solange es an war, ebenso: Variante M plus
+  Hinweis „Größe 2. BH: L".)
 
 ### Zweite Größe beim Doppelpack
 
@@ -115,6 +116,15 @@ der Bestätigung und auf dem Lieferschein — **die Bestellabwicklung muss auf d
 Der Bestand je Größe des zweiten BHs wird dabei nicht einzeln geführt. Das Doppelpack hat
 ohnehin einen eigenen Bestand, es geht also nichts verloren, was vorher da gewesen wäre.
 Einschaltbar je Karte über „Zweite Größe abfragen".
+
+**Nachtrag, am selben Abend wieder abgeschaltet.** Robins Entscheidung: Die Kundin wählt
+einmal eine Größe, **beide BHs kommen in dieser Größe**. Karte 2 zeigt deshalb wieder ein
+einziges Auswahlfeld. Der Listenpunkt „Größen frei kombinierbar" musste damit weg — er
+wäre ein leeres Versprechen — und heißt jetzt „Beide BHs in deiner Größe".
+
+Die Sektion kann das zweite Feld weiterhin, je Karte über „Zweite Größe abfragen". Es ist
+nur nirgends eingeschaltet. Wer es je wieder anschaltet: die zweite Größe steht dann als
+Bestellhinweis an der Warenkorbzeile, nicht in der Variante.
 
 ### Die Preisstaffel lief unbemerkt weg — vierter Rückfall
 
