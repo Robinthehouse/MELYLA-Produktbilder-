@@ -52,6 +52,55 @@ Bindestriche gültig, im Elementnamen sogar Pflicht. Dazu ein Wächter gegen dop
 ein JS-Bezeichner an einer Abschnitts-ID hängt. Gegenprobe gegen den Stand von vorher:
 findet alle neun, danach keine.
 
+### Und dann kam die Reparatur nicht im Shop an
+
+Der Push ging durch, fünf der sechs Sektionen waren sofort live — die Angebotssektion
+nicht. Zweimal hintereinander. Im selben ausgelieferten HTML standen fünf neue Skripte
+und eines in der alten, kaputten Fassung.
+
+Das Protokoll der GitHub-Integration (Theme-Karte → neben „Zuletzt gespeichert" auf
+**Protokolle anzeigen**) nannte den Grund:
+
+```
+Fehler: sections/melyla-funnel-angebot.liquid, Validation failed:
+  Invalid schema: setting with id="card_1_hinweis" default can't be blank,
+  ... card_3_savings ... card_3_hinweis ...
+1 erfolgreich, 0 Warnungen, 2 fehlgeschlagen
+```
+
+**Ein `"default": ""` macht für Shopify das ganze Schema ungültig — und damit wird die
+komplette Datei beim Sync verworfen.** Im Shop bleibt die letzte gültige Fassung stehen,
+ohne dass irgendwo ein Fehler sichtbar wird: Im Repo ist die Datei unauffällig, Theme
+Check und CI laufen grün, der Editor zeigt nichts. Nur dieses Protokoll verrät es.
+
+Eingebracht haben die drei Werte `0d48ac9` von heute Mittag. **Seitdem kam aus dieser
+Datei nichts mehr im Shop an** — weder die Ersparnis-Anzeige von heute noch die Reparatur
+der Buttons. Wer keinen Vorgabewert will, lässt den Schlüssel `default` ganz weg.
+
+`bin/vorlagen-pruefen.mjs` meldet leere Vorgabewerte jetzt mit demselben Wortlaut wie
+Shopify. Gegenprobe gegen `0d48ac9`: findet alle drei.
+
+**Merksatz: Bleibt eine Änderung im Shop aus, obwohl sie auf GitHub liegt — zuerst ins
+Protokoll der GitHub-Integration schauen.** Nicht raten, nicht nochmal pushen.
+
+### Reihenfolge beim Ausrollen
+
+Danach fehlte am Doppelpack immer noch das zweite Größenfeld. Grund: Shopify hatte die
+**Vorlage** übernommen, während die **Sektion** noch die alte war — und dabei jedes Feld
+verworfen, dessen Einstellung das damalige Schema nicht kannte. Auf GitHub standen die
+Felder, in Shopifys Kopie nicht.
+
+**Also immer: erst die Sektionsdatei im Shop ankommen lassen, dann die Vorlage.** Und den
+Theme-Editor dabei geschlossen halten. Als Notiz steht das auch in der Sektion selbst.
+
+### Nachgewiesen am echten Shop
+
+- **45 Inline-Skripte der Startseite, 0 mit Syntaxfehler** (vorher 6)
+- Kauf-Button auf allen drei Karten vorhanden
+- Karte 2 zeigt „Größe 1. BH" und „Größe 2. BH"
+- `POST /cart/add.js` mit beiden Größen antwortet: Variante M, Bestellhinweis
+  „Größe 2. BH: L", 89,00 €
+
 ### Zweite Größe beim Doppelpack
 
 Das Produkt `2-x-melyla-anti-falten-bh` hat in Shopify nur **eine** Option mit S–XL. Die
