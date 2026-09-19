@@ -93,6 +93,32 @@ Felder, in Shopifys Kopie nicht.
 **Also immer: erst die Sektionsdatei im Shop ankommen lassen, dann die Vorlage.** Und den
 Theme-Editor dabei geschlossen halten. Als Notiz steht das auch in der Sektion selbst.
 
+### 13 tote Sprungmarken auf den Produktseiten
+
+Der Knopf der Sticky-Kaufleiste („Schlaf BH · 49,50 € · Jetzt sichern") tat nichts.
+Dieselbe Ursache wie bei den Kauf-Buttons, nur an anderer Stelle: eine hartkodierte
+Abschnitts-ID ohne den Vorsatz, den der Storefront vergibt.
+
+Im Vorlagen-JSON heißt der Abschnitt schlicht `main_product`, also steht dort
+`#shopify-section-main_product`. Ausgeliefert wird aber
+`shopify-section-template--25642652467467__main_product`. Die kurze Fassung gibt es auf
+der Seite nicht — der Sprung geht ins Leere, und im JSON sieht die Zeile völlig richtig aus.
+
+Betroffen waren **13 Links auf den vier Produktseiten**: vier Sticky-Leisten, sechs
+CTA-Buttons, zwei Sterne-Bewertungen im Hero und „Zum Größenberater".
+
+**`snippets/melyla-anker.liquid`** fängt solche Klicks ab und sucht den Abschnitt über die
+Endung `__<name>`. Eingebunden in `layout/theme.liquid`, gilt es auf jeder Seite — auch für
+Dawns `main_product`, dem wir keinen eigenen Anker geben können. Findet es nichts, bleibt
+der Link unangetastet.
+
+`bin/vorlagen-pruefen.mjs` prüft zusätzlich, dass jede Sprungmarke einen Abschnitt trifft,
+den es in **dieser** Vorlage wirklich gibt. Ein Tippfehler im Namen bliebe sonst unsichtbar.
+Gegenprobe mit `#shopify-section-bewertunge`: wird gemeldet.
+
+Am Shop nachgewiesen: auf BH- und Kissenseite lösen sich alle Marken auf echte
+Abschnitts-IDs auf.
+
 ### Nachgewiesen am echten Shop
 
 - **45 Inline-Skripte der Startseite, 0 mit Syntaxfehler** (vorher 6)
