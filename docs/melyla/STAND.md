@@ -1,6 +1,6 @@
 # MELYLA — Projektstand
 
-Stand 18.09.2026 (Durchgang vor dem Start). Eine Seite: Was ist fertig, was ist offen, wo hakt es.
+Stand 19.09.2026. Eine Seite: Was ist fertig, was ist offen, wo hakt es.
 
 ---
 
@@ -20,6 +20,68 @@ der Shop von 2021 läuft unverändert weiter.
 | HTML-Bausteine | BH, Kissen, Beauty Sleep Box, Warum MELYLA, Funktionsweise |
 | Werkzeuge | Vorlagenprüfer + Theme Check in der CI, lokale Vorschau auf Port 4010 |
 | Skill-Bibliothek | 12 Skills in `~/.claude/skills` (Shopify offiziell + Marketing) |
+
+## Angebotsstaffel sichtbar gemacht — 19.09.2026
+
+Auf der Startseite konnte niemand erkennen, dass die Sets günstiger sind. Karte 2
+und Karte 3 standen beide bei 89,00 € — ohne Streichpreis, ohne Prozentangabe,
+Karte 3 ohne jede Zusatzzeile.
+
+**Ursache war ein Rückfall, kein fehlendes Feature.** Commit `d49afe6` vom 17.09.
+(„Update from Shopify for theme“) hat in `templates/index.json` zwei Werte
+gelöscht, die am 15.09. schon einmal gesetzt waren:
+
+```
+"card_2_fallback_compare": "99,00 €"  →  ""
+"card_3_fallback_price":   "79,00 €"  →  "89,00 €"
+```
+
+Damit war der 10-€-Nachlass unsichtbar und das Band „Bester Wert“ auf Karte 3
+nicht mehr gedeckt. Es ist derselbe Mechanismus wie bei den Bewertungszahlen:
+Wer im Editor irgendetwas anfasst, schreibt die ganze Vorlage zurück. Die
+Staffel aus der Tabelle weiter unten (15.09.) ist wiederhergestellt.
+
+**Eine echte Lücke im Abschnitt war daneben.** Die Prozent-Pille wurde nur
+gerendert, wenn ein Shopify-Produkt verknüpft ist. Karte 2 und 3 haben keins —
+die Bundles liegen als Entwurf —, also blieb sie auch mit richtigem Streichpreis
+weg. `melyla-funnel-angebot.liquid` rechnet Nachlass und Ersparnis jetzt genauso
+aus den getippten Ersatzpreisen wie aus den Produktdaten, ein Rechenweg statt
+zwei.
+
+Neu auf den Karten:
+
+| | |
+|---|---|
+| Prozent-Pille | − 10 % und − 20 %, auch ohne verknüpftes Produkt |
+| Spar-Band | „Du sparst 10,00 € gegenüber dem Einzelkauf“, gerechnet, hervorgehoben |
+| Zusatzzeile | trägt nur noch den Stückpreis: „44,50 € statt 49,50 € pro Stück“ |
+| Hinweiszeile | neues Feld `card_N_hinweis`, auf Karte 2 „Über 5.000 verkaufte BHs“ |
+
+**Kein „Top Seller“.** Robin hatte ein solches Band gewünscht. „Nr. 1 Bestseller“
+wurde am 25.08. als Spitzenstellungsbehauptung aus dem Hero entfernt — „Top
+Seller“ wäre dieselbe Aussage in anderen Worten. Stattdessen die eigene
+Stückzahl, eine Tatsachenbehauptung. **Deren Beleg ist weiter offen**, siehe
+„Rechtlich, vor dem Livegang“; die Zahl steht damit jetzt an einer Stelle mehr.
+
+Das Spar-Band sagt ausdrücklich „gegenüber dem Einzelkauf“. Ein Streichpreis
+behauptet nach § 11 PAngV den früheren Preis *dieses* Produkts; bei einem Set
+ist es der Preis bei Einzelkauf. Ohne den Zusatz läse sich die Prozent-Pille als
+befristeter Nachlass.
+
+**Neu: `bin/preise-pruefen.mjs`**, das Gegenstück zu `zahlen-pruefen.mjs`. Es
+hält die Soll-Staffel und meldet abweichende Preise, einen fehlenden
+Vergleichspreis, zwei Karten zum selben Preis, einen Stückpreis, der nicht zum
+Setpreis passt, und ein Band „Bester Wert“ ohne den größten Nachlass. Läuft in
+der CI bei jedem Push. Gegen den echten Rückfall von `d49afe6` getestet: er
+meldet alle drei Symptome.
+
+Der Alt-Text von Karte 3 hieß noch „Produktbild MELYLA Beauty Sleep Box“ — die
+Box ist seit dem 15.09. zurückgestellt. Jetzt „Anti-Falten Schlaf BH und
+Anti-Falten Kissen“.
+
+**Unverändert offen:** Die beiden Bundle-Produkte sind in Shopify weiter
+Entwürfe. Bis sie verknüpft sind, zeigen Karte 2 und 3 kein Größen-Dropdown und
+„Jetzt kaufen“ führt auf `/collections/all`.
 
 ## Durchgang vor dem Start — 18.09.2026
 
