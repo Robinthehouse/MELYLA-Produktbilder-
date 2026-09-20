@@ -1,6 +1,6 @@
 # MELYLA — Projektstand
 
-Stand 19.09.2026. Eine Seite: Was ist fertig, was ist offen, wo hakt es.
+Stand 20.09.2026. Eine Seite: Was ist fertig, was ist offen, wo hakt es.
 
 ---
 
@@ -21,6 +21,51 @@ damit sofort im Shop, ohne Zwischenschritt.
 | HTML-Bausteine | BH, Kissen, Beauty Sleep Box, Warum MELYLA, Funktionsweise |
 | Werkzeuge | Vorlagenprüfer + Theme Check in der CI, lokale Vorschau auf Port 4010 |
 | Skill-Bibliothek | 12 Skills in `~/.claude/skills` (Shopify offiziell + Marketing) |
+
+## Scroll-Video stand still auf dem Handy — 20.09.2026
+
+**Shopify rechnet jedes über den Video-Wähler gewählte Video um und wirft die
+Keyframes dabei weg.** Das Scroll-Video braucht aber jedes Bild als Keyframe,
+sonst kann der Browser beim Scrollen nicht an jede Stelle springen.
+
+Gemessen an der Live-Seite:
+
+| | ausgeliefert | Original auf dem CDN |
+|---|---|---|
+| Desktop | 1288×720, **2 von 132 Keyframes** | 1600×894, **132 von 132** |
+| Mobil | 594×1080, 7,2 Mbps, **2 von 135** | HEVC 1440×2618, 17,6 Mbps, **5 von 135** |
+
+Die Desktop-Datei war also richtig kodiert — die Umrechnung hat sie zerstört.
+Am Rechner fiel das kaum auf, auf dem Handy stand das Bild still. Und weil die
+Bühne über die halbe Scrollstrecke klebt, wirkte die ganze Startseite
+eingefroren: Man wischt und nichts bewegt sich.
+
+**Der Ausweg ist die Direkt-Adresse.** Shopify liefert das unveränderte Original
+unter
+
+    https://cdn.shopify.com/videos/c/o/v/KENNUNG.mp4
+
+aus — das `o` steht für original. Gibt der Admin beim Kopieren einen Link mit
+`/vp/` heraus, ist das die umgerechnete Fassung; dann die Kennung daraus in die
+Form oben einsetzen. **Diese Form ist von Shopify nicht dokumentiert.** Die
+Sektion fängt das ab: Die Adresse steht als erste Quelle, die Quellen des
+Wählers bleiben darunter. Fällt die Adresse aus, nimmt der Browser von allein
+die nächste. Erkennungszeichen wäre dann, dass das Scrubben wieder ruckelt,
+ohne dass jemand etwas geändert hat.
+
+Das Muster läuft im Theme schon länger: `melyla-funnel-hero-video` hat das Feld
+`video_adresse` seit jeher.
+
+Neue Mobil-Datei in `exports/scroll-video/`: 810×1472, 2,7 MB, 135 von 135
+Keyframes. Daneben ein eigenes Vorschaubild im Hochformat — das Querformat
+wurde auf dem Handy hart beschnitten.
+
+**Offen, bewusst nicht angefasst:** Die Schrift über dem Video ist weiß
+(`heading_color`, `text_color`, `accent_color` alle `#ffffff`) bei
+Schleier-Stärke 0. Der BH wird vor weißem Studiohintergrund gefilmt, „Anti-Falten
+BH" ist dort kaum zu lesen. Robin will die Farbe so.
+
+---
 
 ## Tote Kauf-Buttons — 19.09.2026 abends
 
