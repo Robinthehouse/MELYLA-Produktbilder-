@@ -808,12 +808,15 @@ Set-Inhalt zurueckgesetzt.
 Die Ratgeberseite existiert also — aber unter einem anderen Handle als die Verweise im
 Theme, die weiter auf `/pages/falten-vermeiden` zeigen. **Die laufen ins Leere.**
 
-**Entschieden am 21.09.: Der Seiten-Handle wird in Shopify auf `falten-vermeiden` geaendert.**
-Die Seite ist am 18.09. entstanden und bei Google noch nicht im Index — geprueft am 19.09., es
-geht also keine Platzierung verloren. Danach muss der `shopify://`-Verweis in
-`templates/index.json`, Zeile 229, nachgezogen werden: der loest ueber den Handle auf, nicht
-ueber die Weiterleitung, und bricht im selben Moment. Schritt fuer Schritt in
-[23-livegang-checkliste.md](23-livegang-checkliste.md).
+**Erledigt am 21.09.** Der Seiten-Handle steht auf `falten-vermeiden`, die alte Adresse leitet
+mit 301 weiter, und ein vollstaendiger Durchlauf ueber alle Live-Seiten findet keinen toten
+Verweis darauf mehr.
+
+**Wissenswert fuer das naechste Mal:** Ein `shopify://pages/<handle>`-Verweis in einer Vorlage
+bricht beim Umbenennen **nicht**. Shopify schreibt die Vorlage selbst um — `templates/index.json`,
+Zeile 229 kam als „Update from Shopify"-Commit mit dem neuen Handle zurueck. Ein Push war nicht
+noetig. Fuer fest getippte Pfade wie `/pages/...` in einem Rich-Text-Feld gilt das **nicht**, die
+bleiben stehen.
 
 Am Rande: `bin/links-pruefen.mjs` hat den Link jahrelang nicht gemeldet, weil er in einem
 Rich-Text-Feld escaped steht und das Muster ein Anfuehrungszeichen dahinter verlangte. Am

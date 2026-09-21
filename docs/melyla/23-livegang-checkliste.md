@@ -32,10 +32,15 @@ lassen.
 Die Seite ist am 18.09. entstanden und bei Google noch **nicht** im Index —
 geprueft am 19.09. Es geht also keine Platzierung verloren.
 
-> **Wichtig:** Sag danach Bescheid. Auf der Startseite zeigt ein Verweis noch
-> per `shopify://` auf den alten Handle (`templates/index.json`, Zeile 229).
-> `shopify://`-Links loesen ueber den Handle auf, nicht ueber die Weiterleitung —
-> der bricht also im selben Moment und muss im Theme nachgezogen werden. Die
+> **Erledigt am 21.09.** Die Seite liegt unter `/pages/falten-vermeiden`, die
+> alte Adresse leitet mit 301 dorthin weiter, und alle Verweise aus den
+> Produktseiten stimmen.
+>
+> **Gelernt dabei:** Ein `shopify://pages/<handle>`-Verweis in einer Vorlage
+> bricht beim Umbenennen **nicht**. Shopify schreibt die Vorlage selbst um —
+> `templates/index.json`, Zeile 229 kam als „Update from Shopify"-Commit
+> zurueck, mit dem neuen Handle drin. Es war also kein Push noetig. Die
+> Befuerchtung stand vorher an dieser Stelle und war falsch. Die
 > Zeile liegt bereit, sie wird direkt nach dem Umbenennen gepusht.
 
 ### 1.2 Toter Produktlink auf der Funktionsweise-Seite
