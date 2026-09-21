@@ -22,6 +22,37 @@ damit sofort im Shop, ohne Zwischenschritt.
 | Werkzeuge | Vorlagenprüfer + Theme Check in der CI, lokale Vorschau auf Port 4010 |
 | Skill-Bibliothek | 12 Skills in `~/.claude/skills` (Shopify offiziell + Marketing) |
 
+## Lifestyle-Bilder — 21.09.2026
+
+Drei Higgsfield-Aufnahmen sind aufbereitet und liegen in
+`public/images/lifestyle/`. Aus je 4–5 MB PNG sind 190–365 KB WebP geworden,
+benannt nach dem Schema aus `public/images/products/`.
+
+**Es sind keine neuen Sektionsdateien entstanden.** Beide Bausteine gab es
+schon, sie haben nur gefehlt, was Bilder brauchen:
+
+- ***MELYLA Video-Karussell*** rendert seit jeher eine reine Bildkachel, wenn
+  der Video-Link leer bleibt — nur war die Kachel auf 9:16 festgenagelt, und
+  die Pfeile hießen für einen Screenreader „Vorheriges Video". Neu sind ein
+  **Kachelformat** (9:16, 3:4, 1:1), eine **Medienart**, die nur die
+  Pfeilbeschriftung umschaltet, und der **KI-Hinweis je Kachel**.
+- ***MELYLA Hero*** kann jetzt ein **zweites Hintergrundbild fürs Handy** —
+  dasselbe Muster wie bei den beiden Hintergrundvideos, weil ein Querformat
+  auf dem Handy die Mitte wegschneidet und ein Hochformat am Desktop fast nur
+  Schulter zeigt. Ist keins gesetzt, läuft alles wie vorher. Dazu der
+  **KI-Hinweis** unten rechts über dem Bild.
+
+Auf der Startseite steht ein neuer Abschnitt *Dekolleté im Alltag* zwischen
+den Stimmen und den Fragen — **bewusst ausgeblendet**, weil ein Push auf
+`main` sofort live ist und die Kacheln noch kein Bild haben.
+
+**Offen bei Robin:** Die drei Dateien unter *Inhalte → Dateien* hochladen, im
+Abschnitt auswählen, dann das Häkchen „Abschnitt ausblenden" entfernen.
+
+Warum der Streifen so weit unten sitzt und was an den Bildern **nicht**
+danebenstehen darf, steht in [21-ki-inhalte.md](21-ki-inhalte.md) — Stichwort
+§ 5 UWG und Anhang Nr. 23.
+
 ## Scroll-Video stand still auf dem Handy — 20.09.2026
 
 **Shopify rechnet jedes über den Video-Wähler gewählte Video um und wirft die

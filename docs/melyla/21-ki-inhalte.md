@@ -65,6 +65,36 @@ dem **2. August 2026**, sind also in Kraft. Gemeint sind vor allem Inhalte, die
 echt wirken sollen — und genau das trifft auf fotorealistische Aufnahmen von
 Menschen zu.
 
+### Nachtrag 21.09. — der Hinweis hängt jetzt am Bild, nicht nur im Fußbereich
+
+Für den Fußzeilen-Block gilt derselbe Einwand wie für die AGB: Wer oben ein
+Vollbild sieht, hat unten noch nicht gelesen. Die IT-Recht-Kanzlei formuliert
+die Anforderung als **„spätestens bei erster Wahrnehmung"** und **„vom übrigen
+Inhalt abgesetzt"**; die Wettbewerbszentrale empfiehlt in ihrem Leitfaden vom
+Februar 2026, im Zweifel zu kennzeichnen.
+
+Zwei Sektionen können den Hinweis deshalb jetzt selbst tragen — jeweils über
+ein Häkchen **„KI-Hinweis"** und ein Textfeld daneben (Vorgabe
+„KI-generiertes Bild"):
+
+| Sektion | Wo der Hinweis sitzt |
+|---|---|
+| *MELYLA Hero* | unten rechts über dem Hintergrundbild, nur bei „Bild als Hintergrund" |
+| *MELYLA Video-Karussell* | oben rechts auf jeder Kachel, die ein Bild trägt |
+
+Beide sind als kleine Pille auf `rgba(61, 38, 69, 0.86)` gesetzt — feste
+dunkle Fläche statt Textschatten, damit der Kontrast auf hellen wie dunklen
+Motiven derselbe bleibt. Im Karussell hängt der Hinweis zusätzlich per
+`aria-describedby` am Bild, damit ihn auch ein Screenreader mitnimmt; das
+verlangt die Kanzlei ausdrücklich („alternativ beschreibbar").
+
+**Das Häkchen ist nicht vorbelegt.** Es gehört gesetzt, sobald ein Bild einen
+fotorealistischen Menschen zeigt, der mit KI erzeugt wurde. Ein Produktfoto
+oder eine Grafik braucht es nicht.
+
+Der Fußzeilen-Block bleibt daneben stehen. Er deckt die Bilder ab, die keine
+eigene Kennzeichnung tragen.
+
 ## 3 · Was ein Hinweis nicht abdeckt
 
 Drei Stellen im Shop trägt der Satz aus Abschnitt 1 **nicht**. Sie sind keine
@@ -109,6 +139,34 @@ und hier nur der Vollständigkeit halber vermerkt.
 es nicht — deshalb steht es seit dem 25.08. nicht mehr im Theme. Das bleibt
 unabhängig von der Bildherkunft.
 
+### Die Lifestyle-Aufnahmen vom 21.09. — und wo sie nicht hindürfen
+
+Drei neue Motive aus Higgsfield liegen in `public/images/lifestyle/`:
+
+| Datei | Motiv |
+|---|---|
+| `MELYLA_Lifestyle_Editorial_Frau-Satin-Dekollete_3x4.webp` | Satinbluse, Kinn angeschnitten, warme Neutraltöne |
+| `MELYLA_Lifestyle_Editorial_Frau-Weisses-Top-Spiegel_3x4.webp` | weißes Top, Spiegelaufnahme, Torso |
+| `MELYLA_Lifestyle_Portrait_Frau-Kamerablick-Schwarz_3x4.webp` | Porträt mit Blick in die Kamera |
+
+Das dritte Motiv weicht bewusst vom Bildbriefing ab — dort stehen „keine
+Model-Blicke direkt in Kamera" und Zielgruppe Anfang 40. Robin hat es am
+21.09. trotzdem freigegeben. **Daran hängt eine Auflage, und die ist nicht
+Geschmack, sondern § 5 UWG:**
+
+> Makellos glatte, junge Haut darf nicht in Sichtweite einer Wirkaussage oder
+> des Vorher-Nachher-Reglers stehen. Sonst liest sie sich als Ergebnis, das
+> das Produkt nicht liefert — und genau das deckt der KI-Hinweis nicht ab.
+
+Deshalb sitzt der Lifestyle-Streifen auf der Startseite **hinter dem Angebot
+und den Stimmen**, nicht in der Nähe des Reglers auf Position 12.
+
+Und: **kein Name, kein Zitat, keine Sterne an diesen Bildern.** Sobald ein
+Vorname oder ein Erfahrungsbericht danebensteht, ist es eine erfundene
+Verbraucherbewertung — UWG Anhang Nr. 23, derselbe Punkt, der in
+[17-bewertungen.md](17-bewertungen.md) für die vier Kundenfotos markiert ist.
+Die Lifestyle-Bilder sind Stimmungsbilder, sonst nichts.
+
 ---
 
 ## 4 · Zwei Dinge in den AGB, die beim Lesen aufgefallen sind
@@ -148,6 +206,8 @@ Absätze **(3)**.
 |---|---|---|
 | Absatz (5) aus Abschnitt 1 einsetzen | Shopify-Admin → Richtlinien → AGB, unter „2. Vertragsschluss" | Robin |
 | Fußzeilen-Hinweis | erledigt, im Theme | — |
+| KI-Hinweis am Bild | erledigt, im Theme — Häkchen je Sektion setzen | Robin |
+| Die drei Lifestyle-Bilder hochladen und im Editor wählen | Inhalte → Dateien, dann *MELYLA Lifestyle* einblenden | Robin |
 | Vorher-Nachher entscheiden | Startseite und Set-Seite | Robin |
 | Rückgabegarantie an „30 Nächte testen" angleichen | AGB Ziffer 8 (1) | Robin |
 | E-Mail-Adresse in der Widerrufsbelehrung | AGB Ziffer 7 | Robin |
