@@ -17,6 +17,67 @@ Abgeschnitten mitten im Satz, mit zusammengelaufenen Woertern aus dem HTML.
 Die Blog-Uebersicht hatte gar keine Beschreibung, die Blog-Titel waren 76 bis
 93 Zeichen lang und wurden allesamt gekuerzt.
 
+## Stand 22.09.2026 — 6 von 34 stehen drin
+
+Live nachgemessen: Der Text unten wurde Zeichen fuer Zeichen mit dem
+verglichen, was der Shop ausliefert.
+
+**Drin:**
+
+- [x] `/`  *(laengere Fassung mit Versandhinweis — Absicht, nicht reparieren)*
+- [x] `/blogs/news`
+- [x] `/pages/funktionsweise`
+- [x] `/pages/melyla-anti-falten-kissen`
+- [x] `/products/anti-falten-kissen`
+- [x] `/products/melyla-anti-falten-schlaf-bh`
+
+**Offen — in dieser Reihenfolge abarbeiten:**
+
+*Zuerst die Seiten und Kategorien, die im Menue stehen:*
+
+- [ ] `/pages/warum-melyla`
+- [ ] `/pages/kontakt`
+- [ ] `/pages/ruckversand`
+- [ ] `/pages/widerruf-formular`
+- [ ] `/pages/falten-vermeiden`
+- [ ] `/collections/anti-falten-produkte`
+- [ ] `/collections/einfach-wechseln-unsere-kissenbezuge`
+- [ ] `/collections/neue-produkte`
+
+*Dann die restlichen Produkte:*
+
+- [ ] `/products/2-x-melyla-anti-falten-bh`
+- [ ] `/products/antifalten-set-kissen-bh`
+- [ ] `/products/anti-falten-schlaf-maske`
+- [ ] `/products/kissenbezug-fur-anti-falten-kissen-grau`
+- [ ] `/products/satin-kissenbezug-fur-das-melyla-anti-falten-kissen`
+- [ ] `/products/haar-gummie`
+- [ ] `/products/abschminkschwamme`
+- [ ] `/products/schwamm`
+
+*Zuletzt die Blogbeitraege — die haben den kleinsten Hebel, sind aber die Haelfte der Arbeit:*
+
+- [ ] `/blogs/news/wie-entstehen-falten-im-dekollete-uberhaupt`
+- [ ] `/blogs/news/anti-falten-kissen-die-geheimwaffe-gegen-falten-im-schlaf`
+- [ ] `/blogs/news/anti-falten-kissen-der-stille-helfer-nach-einer-schonheits-op`
+- [ ] `/blogs/news/warum-sie-zeit-fur-die-eingewohnung-des-melyla-anti-falten-kissens-benotigen`
+- [ ] `/blogs/news/neues-jahr-neue-vorsatze-warum-ein-anti-falten-kissen-jetzt-sinnvoll-ist`
+- [ ] `/blogs/news/der-anti-falten-bh-fur-jede-altersklasse-und-viele-lebenssituationen-geeignet`
+- [ ] `/blogs/news/der-perfekte-bh-brustvermessung-schnell-und-einfach`
+- [ ] `/blogs/news/faltenreduktion-leicht-gemacht-ein-uberblick-uber-verschiedene-methoden`
+- [ ] `/blogs/news/diy-anleitung-naturliche-maske-gegen-falten-im-dekollete-selbst-herstellen`
+- [ ] `/blogs/news/tipps-zur-verbesserung-des-gesamterscheinungsbildes-ihrer-bruste`
+- [ ] `/blogs/news/warum-wir-unsere-decollete-vor-der-sonne-schutzen-sollten`
+- [ ] `/blogs/news/%F0%9F%92%A7-hyaluronsaure`
+
+Gegenprobe, welche noch fehlen:
+
+```bash
+curl -s https://melyla.de/<pfad> | grep -o '<meta name="description" content="[^"]*"'
+```
+Ist die Beschreibung ueber 300 Zeichen lang, hat Shopify sie aus dem
+Fliesstext gebaut — dann fehlt sie noch.
+
 ## Wo es eingetragen wird
 
 Im Shopify-Admin bei jeder Seite, jedem Produkt, jeder Kategorie und jedem
@@ -96,7 +157,7 @@ Wie funktioniert das Anti-Falten Kissen?
 Zwei Mulden statt einer glatten Fläche: Das Gesicht liegt frei, statt im Stoff zu versinken. Aufbau, Maße und Wirkung des Kissens erklärt.
 ```
 
-### `/pages/wie-falten-entstehen-und-was-wirklich-dagegen-hilft`
+### `/pages/falten-vermeiden`
 
 **Titel** (53 Zeichen getippt, ergibt 53)
 
