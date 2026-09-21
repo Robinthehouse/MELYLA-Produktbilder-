@@ -805,9 +805,19 @@ Sechser-Box-Liste, waehrend Titel und Preis schon „BH + Kissen" zu 79 € zeig
 Set-Inhalt zurueckgesetzt.
 
 **Ebenfalls aufgefallen:** Der neue CTA zeigt auf `shopify://pages/wie-falten-entstehen-und-was-wirklich-dagegen-hilft`.
-Die Ratgeberseite existiert also — aber unter einem anderen Handle als die fuenf Verweise im
-Theme, die weiter auf `/pages/falten-vermeiden` zeigen. **Die laufen ins Leere.** Entweder den
-Seiten-Handle in Shopify auf `falten-vermeiden` aendern oder die fuenf Verweise nachziehen.
+Die Ratgeberseite existiert also — aber unter einem anderen Handle als die Verweise im
+Theme, die weiter auf `/pages/falten-vermeiden` zeigen. **Die laufen ins Leere.**
+
+**Entschieden am 21.09.: Der Seiten-Handle wird in Shopify auf `falten-vermeiden` geaendert.**
+Die Seite ist am 18.09. entstanden und bei Google noch nicht im Index — geprueft am 19.09., es
+geht also keine Platzierung verloren. Danach muss der `shopify://`-Verweis in
+`templates/index.json`, Zeile 229, nachgezogen werden: der loest ueber den Handle auf, nicht
+ueber die Weiterleitung, und bricht im selben Moment. Schritt fuer Schritt in
+[23-livegang-checkliste.md](23-livegang-checkliste.md).
+
+Am Rande: `bin/links-pruefen.mjs` hat den Link jahrelang nicht gemeldet, weil er in einem
+Rich-Text-Feld escaped steht und das Muster ein Anfuehrungszeichen dahinter verlangte. Am
+21.09. repariert — er prueft jetzt auch `shopify://`-Verweise.
 
 ## Offen — nur im Shopify-Admin
 
@@ -817,12 +827,15 @@ Seiten-Handle in Shopify auf `falten-vermeiden` aendern oder die fuenf Verweise 
   - `2-x-melyla-anti-falten-bh`, alle vier Varianten: Preis 89,00 € bleibt, **Vergleichspreis 99,00 €**
   - `antifalten-set-kissen-bh`, alle vier Varianten: **Preis 89,00 €** (steht auf 99,00 €), **Vergleichspreis 99,00 €**
   - danach `node bin/preise-pruefen.mjs https://melyla.de` — er meldet heute genau diese zwölf Abweichungen
-- **Vor Veröffentlichung: Store auf „New customer accounts" umstellen.** Dawn 16 hat die alten Kundenkonto-Vorlagen entfernt — ohne Umstellung brechen die Kundenkonten.
-- **Vorlagen zuweisen geht noch nicht.** Das Dropdown im Seiten-Editor listet nur die Vorlagen
-  des **veröffentlichten** Themes — unseres ist es nicht. Belegt am 24.08.: dort stehen
-  `landing-kissen` und `ueber-melyla`, die es bei uns gar nicht gibt, während keine unserer fünf
-  Vorlagen auftaucht. Betrifft `melyla-bh`, `melyla-kissen`, `bundle`, `funktionsweise-kissen`
-  gleichermaßen. Bis zur Veröffentlichung tragen die HTML-Bausteine die Seiten.
+- **Store auf „New customer accounts" umstellen.** Dawn 16 hat die alten Kundenkonto-Vorlagen entfernt — ohne Umstellung brechen die Kundenkonten. *Stand 21.09.: ob das erledigt ist, weiß nur der Admin — von außen nicht prüfbar. Bitte nachsehen.*
+- ~~**Vorlagen zuweisen geht noch nicht.**~~ Galt, solange das Theme nicht veröffentlicht war
+  (belegt am 24.08.). **Seit der Veröffentlichung geht es** — und bei den Produktseiten ist es
+  auch passiert, die tragen den vollen Funnel.
+  **Offen sind die beiden Erklärseiten:** `/pages/funktionsweise` und
+  `/pages/melyla-anti-falten-kissen` rendern am 21.09. nur den Abschnitt `main`, also die
+  Standard-Seitenvorlage. `page.funktionsweise.json` und `page.funktionsweise-kissen.json` sind
+  gebaut, aber keiner Seite zugewiesen; getragen werden die Seiten weiter von den
+  HTML-Bausteinen. Nebenwirkung: beide haben dadurch **zwei H1**.
 - Seite *Funktionsweise* umbenennen in *Wie funktioniert der Anti-Falten Schlaf BH?* —
   **nur den Titel, nicht die Adresse** `/pages/funktionsweise`, daran hängen vier Vorlagen
 - Beide Erklärseiten ins Menü aufnehmen
@@ -860,7 +873,45 @@ Seiten-Handle in Shopify auf `falten-vermeiden` aendern oder die fuenf Verweise 
 | `Product` mit Preis und Verfügbarkeit | **vorhanden** — Shopifys `structured_data` in Dawns Produktbereich |
 | `FAQPage` | **vorhanden** — unsere FAQ-Sektion gibt sie aus |
 | `Organization` | **vorhanden** — aus Dawns Header |
-| **`AggregateRating`** | **fehlt** — und darf erst rein, wenn echte Bewertungen auf der Seite stehen. Sonst verstößt es gegen Googles Richtlinien und gegen das UWG. Das ist der Grund, warum eure 4,79 Sterne heute **nicht** in den Suchergebnissen erscheinen |
+| **`AggregateRating`** | **seit 21.09. vorhanden.** Die Bedingung ist erfüllt: seit dem 16.09. stehen echte Einzelbewertungen mit Name, Datum, Text und Herkunftshinweis auf den Produktseiten. Ausgezeichnet werden genau die drei Seiten, die einen sichtbaren Bewertungskopf tragen — BH, Doppelpack, Kissen. Schnitt und Anzahl kommen aus denselben Variablen wie der sichtbare Kopf, es gibt weiterhin nur eine Rechnung |
+| `BreadcrumbList` | **seit 21.09. vorhanden** — in `sections/header.liquid`, für alle Seitentypen außer der Startseite |
+| `Review` (Einzelbewertungen) | **fehlt bewusst.** Die gezeigten Karten hängen an `min_sterne`, `anzahl` und `sortierung` aus der Vorlage — Werte, die ein Editor-Klick ändert. Die Sterne im Suchergebnis entstehen ohnehin allein aus `AggregateRating` |
+
+## Auffindbarkeit — Prüfung vom 19./21.09.
+
+Die Live-Seite wurde einmal vollständig durchgemessen: alle 34 Adressen aus den
+vier Sitemaps abgerufen, 2.077 interne Links auf ihren Statuscode geprüft, dazu
+robots.txt, Domainvarianten, strukturierte Daten, Meta-Angaben und Ladezeiten.
+
+**Es ist beim Livegang nichts kaputtgegangen.** Alle 34 Adressen antworten mit
+200, nichts steht auf `noindex`, die Canonicals stimmen, `www` und `http`
+leiten weiter, die `.myshopify.com`-Adresse antwortet 404. Google hat
+Startseite, Produkte, Erklärseiten, Kategorien und Blogbeiträge gelistet. Alte
+URLs gibt es nicht — der Shop lief die ganze Zeit auf derselben Domain und
+denselben Adressen, es braucht also auch keine 301-Liste.
+
+| Werkzeug | Stand |
+|---|---|
+| Google Search Console | Verifiziert — das `google-site-verification`-Tag liegt im `<head>`. **Genutzt wird sie nicht**, siehe Checkliste |
+| Bing Webmaster Tools | **Gar nicht eingerichtet**, kein `msvalidate.01` im `<head>`. Bing speist auch die Suche in ChatGPT und Copilot |
+| `sitemap.xml` | Von Shopify erzeugt und automatisch aktuell. Vier Teilkarten: Produkte, Seiten, Kategorien, Blog |
+| `robots.txt` | Shopify-Standard, `Allow: /`, Sitemap eingetragen. Keine eigene `robots.txt.liquid` nötig |
+
+**Am Theme erledigt, gepusht am 21.09.:** `AggregateRating`, `BreadcrumbList`,
+zwei latente Fehler im FAQ-Schema, ein H1 je Seite statt zwei auf der
+Startseite, `og:image` über https plus `twitter:image`, und die Lücke im
+Link-Prüfer.
+
+**Offen und nur im Admin lösbar** — zwei tote Links, die beiden nicht
+zugewiesenen Seitenvorlagen, 22 fehlende Meta-Beschreibungen, zwei verwaiste
+Seiten, Search Console und Bing. Alles in
+[23-livegang-checkliste.md](23-livegang-checkliste.md), die fertigen Texte in
+[22-meta-texte.md](22-meta-texte.md).
+
+**Wie lange Google braucht:** Neue und geänderte Seiten sind bei einer
+etablierten Domain meist nach wenigen Tagen bis zwei Wochen im Index, Sterne
+und Brotkrumen erscheinen in der Search Console nach 3 bis 14 Tagen. Bing ist
+ohne eingerichtete Webmaster Tools deutlich langsamer.
 
 ## Bekannter Fehler
 
