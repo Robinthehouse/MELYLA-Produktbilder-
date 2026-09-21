@@ -577,7 +577,7 @@ internen Link aus Vorlagen, Sektionsgruppen und HTML-Bausteinen mit seinem Statu
 | | Warum es noch nicht erledigt ist |
 |---|---|
 | **Problem-Sektion als Karussell** | Robins Wunsch, noch nicht umgesetzt |
-| **Kundenstimmen: Karussell und zweites Video** | **Blockiert** — Shopify verweigert Änderungen an dieser Datei seit dem 23.08. |
+| **Kundenstimmen: Karussell und zweites Video** | Blockade am 21.09. aufgelöst — Ursache war ein `"default"` an einem `url`-Feld, siehe „Gelöst: der bekannte Fehler vom 23.08.". Noch nicht nachgeprüft, ob Änderungen jetzt ankommen |
 | **Otto- und Amazon-Listings** | Wartet auf Material von Jochen, Gerüst steht in `10-marktplatz-listings.md` |
 
 ## Zwei Aussagen korrigiert — 25.08.
@@ -757,7 +757,7 @@ Karte 3 ist damit das stärkste Angebot und trägt zu Recht das Band „Bester W
 unsichtbar.
 
 **`product.bundle.json` trägt jetzt das Set „BH + Kissen".** Die Datei behält ihren Namen —
-ein umbenanntes Template wäre eine *neue* Datei, und genau die verweigert Shopify seit dem 23.08.
+ein umbenanntes Template wäre eine *neue* Datei, und die galt damals als von Shopify verweigert. Diese Annahme ist am 21.09. widerlegt worden — neue Dateien kommen an, siehe „Gelöst: der bekannte Fehler vom 23.08.".
 Von sechs Positionen im Set-Inhalt bleiben zwei. Der Wertanker rechnet sich aus den Blöcken:
 99,00 € einzeln gegen 79,00 € im Set.
 
@@ -1077,22 +1077,44 @@ etablierten Domain meist nach wenigen Tagen bis zwei Wochen im Index, Sterne
 und Brotkrumen erscheinen in der Search Console nach 3 bis 14 Tagen. Bing ist
 ohne eingerichtete Webmaster Tools deutlich langsamer.
 
-## Bekannter Fehler
+## Gelöst: der „bekannte Fehler" vom 23.08. — 21.09.2026
 
-**Shopify verweigert seit dem 23.08. still Änderungen an
-`melyla-funnel-kundenstimmen.liquid`.** Der Sync läuft ansonsten normal;
-Änderungen an bestehenden Dateien kommen an. Drei Erklärungsversuche haben nicht
-getroffen.
+Einen Monat lang stand hier, Shopify verweigere still Änderungen an
+`melyla-funnel-kundenstimmen.liquid` **und komplett neue Sektionsdateien**, die
+Ursache sei ungeklärt, drei Erklärungsversuche hätten nicht getroffen. Daraus
+war die Arbeitsweise „neue Funktionen kommen nur in bestehende Dateien"
+abgeleitet.
 
-**Der zweite Teil dieser Notiz war überholt und ist am 21.09. gestrichen
-worden.** Hier stand, Shopify nehme auch komplett neue Sektionsdateien nicht an,
-und daraus abgeleitet: neue Funktionen kommen nur in bestehende Dateien. Das
-stimmt nicht mehr. `sections/melyla-scroll-video.liquid` ist am **17.09.**
-neu entstanden (Commit `12776cd`) und läuft seitdem live auf der Startseite;
-`sections/melyla-hero-start.liquid` ist am 21.09. dazugekommen. Neue Dateien
-kommen also an — verweigert wird weiterhin nur die eine Kundenstimmen-Datei.
+Beides war falsch. **Die Ursache ist ein `"default"` an einem `url`-Feld im
+Schema.** Shopify weist die Datei dann still ab: kein Fehler im Repo, keiner in
+der CI, die Sektion fehlt im Editor unter *Abschnitt hinzufügen* — und bei einer
+bestehenden Datei bleibt die letzte gültige Fassung im Shop stehen.
 
-Ungeklärt bleibt die Ursache. Ein Blick in Themes → „Protokolle anzeigen" würde sie vermutlich zeigen.
+Die Beweiskette steht im eigenen Verlauf:
+
+| Datum | Was passierte |
+|---|---|
+| 22.08. (`fc012a4`) | `melyla-funnel-kundenstimmen.liquid` bekommt einen Vorgabewert auf `video_link` |
+| **23.08.** | Ab genau diesem Tag verweigert Shopify diese Datei |
+| 23.08. (`c7ef369`) | `melyla-funnel-hero-video.liquid` entsteht mit zwei `url`-Vorgabewerten — und war seither in keiner Vorlage einsetzbar |
+| 21.09. | Der neue `melyla-hero-start.liquid` erscheint aus demselben Grund nicht im Editor |
+
+Im ganzen Theme waren es genau diese drei Felder plus die zwei neuen. Alle fünf
+sind raus, das gemeinte Ziel steht jetzt im `info`-Text. Wo ein Rückfallziel
+gebraucht wird, steht es als `default`-Filter in Liquid — dort ist derselbe Wert
+unproblematisch.
+
+**`bin/vorlagen-pruefen.mjs` kennt die Regel jetzt** und meldet jedes `url`-Feld
+mit `default`. Sie steht neben der für leere Vorgabewerte: dieselbe Bauart von
+Fehler, im Repo unauffällig, in der CI grün, im Shop still verworfen.
+
+**Neue Sektionsdateien kommen sehr wohl an** — `melyla-scroll-video.liquid`
+(17.09.), `melyla-hero-start.liquid` und `melyla-ankuendigung.liquid` (21.09.)
+belegen es. Die Regel „neue Funktionen nur in bestehende Dateien" ist damit
+hinfällig.
+
+Damit sollte auch der Punkt **„Kundenstimmen: Karussell und zweites Video"**
+wieder bearbeitbar sein, der seit dem 23.08. als blockiert geführt wurde.
 
 ## Der größte Hebel bleibt
 
