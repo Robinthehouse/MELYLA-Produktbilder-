@@ -23,7 +23,7 @@ einfügen, **sofort speichern**. Nicht in die Textansicht zurückschalten.
 | `produktbeschreibung-set-bh-kissen.html` | Produkt *Anti-Falten Duo (BH + Kissen)* → Beschreibung |
 | `produktbeschreibung-set-2x-bh.html` | Produkt *2× Anti-Falten Schlaf BH* → Beschreibung |
 | `warum-melyla.html` | Seite *Warum MELYLA* → Inhalt (enthält seit 25.08. die Gründergeschichte) |
-| `falten-vermeiden.html` | Seite *Wie Falten entstehen* → Inhalt (Seite muss noch angelegt werden, Adresse `falten-vermeiden`) |
+| `falten-vermeiden.html` | Seite *Wie Falten entstehen* → Inhalt. **Seit 18.09. angelegt**, aber unter dem Handle `wie-falten-entstehen-und-was-wirklich-dagegen-hilft`. Der wird auf `falten-vermeiden` umgestellt, siehe [23-livegang-checkliste.md](../23-livegang-checkliste.md) |
 | `problem-passage.html` | Rückfalloption, falls ein Block nicht klappt |
 
 ## 2. Prompts an die Shopify-KI — **nicht mehr aktuell**
@@ -41,10 +41,21 @@ von Seiten und Produkten, nicht ins Theme.
 
 ## Produktlinks prüfen
 
-`warum-melyla.html` enthält zwei Buttons auf `/products/anti-falten-schlaf-bh` und
-`/products/beauty-sleep-box`. **Die Handles sind geraten** — ich kenne die des Shops nicht.
-Nach dem Einfügen einmal anklicken; wenn eine 404 kommt, den richtigen Pfad aus der Adresszeile
-des jeweiligen Produkts übernehmen.
+~~`warum-melyla.html` enthält zwei Buttons auf geratene Handles.~~ **Erledigt** — die Datei
+zeigt heute auf `/products/melyla-anti-falten-schlaf-bh` und `/collections/all`, beide
+antworten mit 200.
+
+Geprüft wird das nicht mehr von Hand, sondern mit
+
+```bash
+cd shopify-theme && node bin/links-pruefen.mjs https://melyla.de
+```
+
+Der Prüfer liest die Dateien in diesem Ordner mit. **Achtung:** Er prüft die Dateien im Repo,
+nicht das, was in Shopify eingesetzt ist. Auf `/pages/funktionsweise` steht live ein Link auf
+`/products/anti-falten-schlaf-bh` (404), der in keiner Datei hier vorkommt — dort ist also eine
+ältere Fassung eingesetzt. Nach jeder Änderung an einem Baustein muss er im Admin neu
+eingefügt werden.
 
 Dasselbe gilt für die beiden Querverweis-Abschnitte im Theme (BH-Seite → Kissen, Kissen-Seite → BH).
 Die stehen vorerst auf `/collections/all`; im Theme-Editor beim Abschnitt *Bild mit Text* das
