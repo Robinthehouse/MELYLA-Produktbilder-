@@ -1,6 +1,6 @@
 # MELYLA — Projektstand
 
-Stand 20.09.2026. Eine Seite: Was ist fertig, was ist offen, wo hakt es.
+Stand 21.09.2026. Eine Seite: Was ist fertig, was ist offen, wo hakt es.
 
 ---
 
@@ -21,6 +21,63 @@ damit sofort im Shop, ohne Zwischenschritt.
 | HTML-Bausteine | BH, Kissen, Beauty Sleep Box, Warum MELYLA, Funktionsweise |
 | Werkzeuge | Vorlagenprüfer + Theme Check in der CI, lokale Vorschau auf Port 4010 |
 | Skill-Bibliothek | 12 Skills in `~/.claude/skills` (Shopify offiziell + Marketing) |
+
+## Neuer Startseiten-Hero — 21.09.2026
+
+Die Startseite begann mit dem Scroll-Video. Hook, Bewertung, Kaufweg und
+Vertrauenssignale standen erst zehn Abschnitte weiter unten im *MELYLA Hero* —
+genau die Lücke, die weiter oben unter „Zwischen Hero und Angebot gab es keinen
+einzigen Kaufweg" steht.
+
+Neu ist **`sections/melyla-hero-start.liquid`** — *MELYLA Startseiten-Hero*:
+Text links, wischbares Bildkarussell rechts, darunter Bewertung, zwei Buttons,
+Vertrauenszeile und echte Zahlungsart-Icons. Der alte *MELYLA Hero* bleibt
+unverändert an seinem Platz weiter unten.
+
+| | |
+|---|---|
+| Aufbau | Zwei Spalten ab 750 px über `grid-template-areas`. Auf dem Handy rutscht das Karussell zwischen Überschrift und Fließtext — über Grid-Felder, nicht über `order`, damit Vorlese- und Sichtreihenfolge gleich bleiben |
+| Karussell | Wischen über Scroll-Snap, dazu Pfeile und Punkte. **Kein Autoplay** — nichts bewegt sich ungefragt, also braucht es auch keinen Pausenknopf |
+| Ladeverhalten | Erste Folie `eager` mit `fetchpriority="high"`, sie ist das LCP-Element der Seite. Jede Folie hat ein festes Seitenverhältnis, damit beim Laden nichts nachspringt |
+| Bilder | Bis zu sechs Blöcke, je mit Bildbeschreibung und eigenem KI-Hinweis |
+| Zahlungsarten | Aus `shop.enabled_payment_types`, nicht aus hinterlegten Logos — gezeigt wird nur, was im Checkout wirklich aktiv ist |
+
+**Was bewusst nicht im Preset steht:** „Über 5.000 verkaufte BHs" (der Beleg
+steht unter „Rechtlich, vor dem Livegang" noch aus) und „30 Nächte testen"
+(kollidiert mit AGB Ziffer 8 Abs. 1). Stattdessen „30 Tage
+Geld-zurück-Garantie". Die Bewertung steht auf **4,78 aus 49** und ist damit
+von `zahlen-pruefen.mjs` gedeckt.
+
+**Ein Kontrastfehler ist dabei aufgefallen und behoben:** die inaktiven
+Karussell-Punkte hätten auf `--mel-border` gestanden — 1,58:1 gegen den
+Seitengrund. Ein Bedienelement braucht nach WCAG 1.4.11 mindestens 3:1. Sie
+tragen jetzt die Fließtextfarbe (5,40:1) und unterscheiden sich vom aktiven
+Punkt zusätzlich in der Größe, nicht allein in der Farbe.
+
+### Das Bildporträt mit Kamerablick gehört nicht hinein
+
+`MELYLA_Lifestyle_Portrait_Frau-Kamerablick-Schwarz_3x4.webp` darf in diesem
+Abschnitt **nicht** eingesetzt werden. Die Regel aus
+[21-ki-inhalte.md](21-ki-inhalte.md) lautet „kein Name, kein Zitat, keine
+Sterne" neben diesem Bild — sonst liest es sich als erfundene
+Verbraucherbewertung (UWG Anhang Nr. 23). Der neue Hero zeigt die Sterne direkt
+daneben. Die drei Editorial-Motive sind unbedenklich.
+
+### Offen — nur von Hand im Admin
+
+1. Die drei WebPs aus `public/images/lifestyle/` unter *Inhalte → Dateien*
+   hochladen. Shopify liest `public/` nicht, das geht nicht über git.
+2. Im Theme-Editor *MELYLA Startseiten-Hero* auf Platz 1 einsetzen, die Bilder
+   je Folie wählen, **Häkchen „KI-Hinweis" setzen** und das Scroll-Video unter
+   „Problem" ziehen.
+3. Erst danach den Commit „Alter Hero traegt h2" pushen. Vorher hätte die
+   Startseite **gar keine** h1 — der neue Abschnitt trägt sie ab jetzt, der alte
+   gibt sie ab.
+
+`templates/index.json` ist bewusst **nicht** von Hand geändert worden: Die
+Bilder können nur im Admin gewählt werden, und ein Push mit leeren Folien hätte
+Platzhalter auf Platz 1 der Startseite gestellt. Das Preset bringt alle Texte
+schon mit, das Einsetzen im Editor ist damit ein Klick.
 
 ## Lifestyle-Bilder — 21.09.2026
 
@@ -951,12 +1008,18 @@ ohne eingerichtete Webmaster Tools deutlich langsamer.
 
 ## Bekannter Fehler
 
-**Shopify verweigert seit dem 23.08. still Änderungen an `melyla-funnel-kundenstimmen.liquid` — und
-komplett neue Sektionsdateien.** Der Sync läuft ansonsten normal; Änderungen an bestehenden Dateien
-kommen an. Drei Erklärungsversuche haben nicht getroffen.
+**Shopify verweigert seit dem 23.08. still Änderungen an
+`melyla-funnel-kundenstimmen.liquid`.** Der Sync läuft ansonsten normal;
+Änderungen an bestehenden Dateien kommen an. Drei Erklärungsversuche haben nicht
+getroffen.
 
-**Arbeitsweise daraus:** Neue Funktionen kommen in **bestehende** Dateien, nicht in neue. Der
-Bild-Hero ist so gelöst und funktioniert.
+**Der zweite Teil dieser Notiz war überholt und ist am 21.09. gestrichen
+worden.** Hier stand, Shopify nehme auch komplett neue Sektionsdateien nicht an,
+und daraus abgeleitet: neue Funktionen kommen nur in bestehende Dateien. Das
+stimmt nicht mehr. `sections/melyla-scroll-video.liquid` ist am **17.09.**
+neu entstanden (Commit `12776cd`) und läuft seitdem live auf der Startseite;
+`sections/melyla-hero-start.liquid` ist am 21.09. dazugekommen. Neue Dateien
+kommen also an — verweigert wird weiterhin nur die eine Kundenstimmen-Datei.
 
 Ungeklärt bleibt die Ursache. Ein Blick in Themes → „Protokolle anzeigen" würde sie vermutlich zeigen.
 
