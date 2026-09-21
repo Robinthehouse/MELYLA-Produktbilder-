@@ -207,9 +207,32 @@ Sonst merkt niemand, wenn eine Seite nicht indexiert wird.
 ```bash
 cd shopify-theme
 node bin/links-pruefen.mjs        https://melyla.de   # muss nach Punkt 1 gruen sein
+node bin/zahlen-pruefen.mjs       https://melyla.de   # Bewertungszahlen am Live-HTML
 node bin/auszeichnung-pruefen.mjs https://melyla.de   # Sterne gegen sichtbaren Text
 node bin/preise-pruefen.mjs       https://melyla.de   # nach Punkt 8
 ```
+
+## Nachtrag 21.09. — warum der Live-Modus dazukam
+
+Beim Umstellen der Vorlagen fiel auf einem Bildschirmfoto auf, dass auf
+`/pages/funktionsweise` **„52+ Bewertungen"** und **„4,79 Sterne"** standen und
+auf `/pages/warum-melyla` **„4,79 aus 52 Bewertungen zum Schlaf BH"**. Belegt
+sind fuer den BH 49 Bewertungen bei 4,78.
+
+Keine dieser Zahlen kam in einer Theme-Datei vor. Sie steckten in einem
+HTML-Baustein, der vor Monaten ins Inhaltsfeld eingesetzt und seitdem nie
+erneuert wurde — die Fassung in `docs/melyla/shopify-einfuegen/` war laengst
+richtig. `zahlen-pruefen.mjs` war deshalb gruen, waehrend der Shop falsche
+Zahlen auslieferte.
+
+**Die Regel daraus:** Wer einen Baustein in `shopify-einfuegen/` aendert, muss
+ihn im Admin **neu einsetzen**. Die Datei zu aendern reicht nicht. Und
+`node bin/zahlen-pruefen.mjs https://melyla.de` gehoert in jede Runde, in der
+etwas an Bewertungen oder Inhaltsfeldern angefasst wurde.
+
+Beides ist am 21.09. bereinigt: Die Funktionsweise-Seite laeuft jetzt auf ihrer
+Funnel-Vorlage, das Inhaltsfeld wird nicht mehr ausgeliefert. Bei
+*Warum MELYLA* wurde der Baustein neu eingesetzt.
 
 Extern: [Rich Results Test](https://search.google.com/test/rich-results) auf die
 drei Produktseiten — muss Sterne und Brotkrumen zeigen.
