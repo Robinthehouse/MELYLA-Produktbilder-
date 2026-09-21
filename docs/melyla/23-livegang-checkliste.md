@@ -90,9 +90,31 @@ im Satz ab. Die fertigen Texte fuer alle 34 Adressen stehen in
 **Admin → jeweilige Seite/Produkt/Kategorie/Beitrag → ganz unten
 „Suchmaschineneintrag bearbeiten".**
 
+### Stand 21.09.2026: 6 von 34 sind drin
+
+Eingetragen und live nachgemessen: **Startseite · Schlaf BH · Anti-Falten Kissen ·
+Funktionsweise · Kissen-Erklaerseite · Blog-Uebersicht.** Das sind die sechs mit
+dem groessten Hebel.
+
+Alle Titel liegen zwischen 45 und 58 Zeichen und werden vollstaendig angezeigt.
+Bei den Beschreibungen ebenso — mit **einer bewussten Ausnahme**: Auf der
+Startseite steht die laengere Fassung mit „Versandkostenfrei aus Deutschland"
+(176 Zeichen). Google kappt davon die letzten rund 21 Zeichen. Robins
+Entscheidung, kein Versehen — wer das spaeter im Suchergebnis sieht, muss es
+nicht „reparieren".
+
+**Die uebrigen 28 sind Fleissarbeit** und stehen fertig unten in
+[22-meta-texte.md](22-meta-texte.md). Nicht doppelt eintragen.
+
 ---
 
-## 4. Google Search Console
+## 4. Google Search Console ⏸
+
+> **⏸ UEBERGEBEN AN JOCHEN — Stand 21.09.2026.** Die Konten liegen bei ihm.
+> Robin geht die Einrichtung im naechsten gemeinsamen Termin mit ihm durch und
+> zeigt sie ihm dabei. **Bis dahin nichts einzeln anfangen** — ein halb
+> eingerichtetes Konto ist schlechter als gar keines, weil danach niemand mehr
+> weiss, was schon laeuft.
 
 Die Verifizierung steht bereits — im `<head>` liegt ein gueltiges
 `google-site-verification`-Tag. Es fehlt die Nutzung.
@@ -110,7 +132,13 @@ Die Verifizierung steht bereits — im `<head>` liegt ein gueltiges
    Tagen die Sterne auf, die seit dem 21.09. ausgezeichnet werden.
 5. **Verbesserungen → Breadcrumbs** — ebenfalls neu, gleicher Zeitraum.
 
-## 5. Bing Webmaster Tools
+## 5. Bing Webmaster Tools ⏸
+
+> **⏸ UEBERGEBEN AN JOCHEN — Stand 21.09.2026.** Die Konten liegen bei ihm.
+> Robin geht die Einrichtung im naechsten gemeinsamen Termin mit ihm durch und
+> zeigt sie ihm dabei. **Bis dahin nichts einzeln anfangen** — ein halb
+> eingerichtetes Konto ist schlechter als gar keines, weil danach niemand mehr
+> weiss, was schon laeuft.
 
 Bisher gar nicht eingerichtet — im `<head>` liegt kein `msvalidate.01`. Bing
 speist auch die Suche in ChatGPT und Copilot, das ist inzwischen mehr als eine
@@ -123,6 +151,18 @@ Nebenrolle.
 
 Bing arbeitet langsamer als Google. Ohne Einrichtung dauert es Wochen, mit
 Einrichtung sind die Adressen sofort bekannt.
+
+### Zwei Befunde, die beim Termin gebraucht werden
+
+Beides am 21.09. nachgesehen, damit im Gespraech nicht danach gesucht werden muss:
+
+- **Das `google-site-verification`-Tag steht nicht im Theme.** Shopify spritzt es
+  ueber `content_for_header` ein. Wer im Repo danach sucht, findet nichts und
+  haelt die Verifizierung faelschlich fuer fehlend — sie ist da.
+- **Fuer Bing hat Shopify kein Eingabefeld.** Klappt der Import aus der Search
+  Console nicht, muss das `msvalidate.01`-Tag von Hand ins Theme, in
+  `layout/theme.liquid` direkt hinter die Canonical-Zeile (Zeile 8). Dafuer
+  reicht der `content`-Wert von Jochen; der Rest ist ein Einzeiler plus Push.
 
 ---
 

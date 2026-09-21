@@ -851,11 +851,13 @@ Rich-Text-Feld escaped steht und das Muster ein Anfuehrungszeichen dahinter verl
 
 | | Wofür es gebraucht wird |
 |---|---|
-| **Amazon-Top-Bewertungen** | Ersetzen die erfundenen Beispielstimmen. Blockiert außerdem die Sternebewertung in Google |
+| **Amazon-Top-Bewertungen** | Ersetzen die erfundenen Beispielstimmen. ~~Blockiert außerdem die Sternebewertung in Google~~ — **stimmt seit 21.09. nicht mehr**, `aggregateRating` ist live und speist sich aus den 79 echten Shop-Bewertungen. Amazon-Stimmen bleiben wünschenswert, blockieren aber nichts |
 | **Amazon-Verkaufsdaten** | Belegen „über 1.000 verkauft" |
 | **Retourengründe je Produkt** | Wichtigster Input für die Marktplatz-Listings |
 | **Aktuelle Otto-/Amazon-Listings** | Ausgangslage für die Überarbeitung |
 | **Rechnungskauf im Checkout** | Der 44-%-Hebel, seit dem 13.08. offen |
+| **Google Search Console** ⏸ | Das Konto liegt bei Jochen. Ohne sie merkt niemand, wenn eine Seite nicht indexiert wird. **Am 21.09. an ihn übergeben** — Robin geht die Einrichtung im nächsten gemeinsamen Termin mit ihm durch und zeigt sie ihm dabei. Schritt für Schritt in [23-livegang-checkliste.md](23-livegang-checkliste.md), Abschnitt 4 |
+| **Bing Webmaster Tools** ⏸ | Ebenfalls bei Jochen, bisher gar nicht eingerichtet. Bing speist auch die Suche in ChatGPT und Copilot. Gleicher Termin, Abschnitt 5 der Checkliste. Achtung: Für Bing hat Shopify kein Eingabefeld — ohne Import aus der Search Console muss das Tag von Hand ins Theme |
 
 ## Rechtlich, vor dem Livegang
 
