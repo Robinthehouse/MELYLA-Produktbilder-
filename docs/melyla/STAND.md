@@ -22,6 +22,77 @@ damit sofort im Shop, ohne Zwischenschritt.
 | Werkzeuge | Vorlagenprüfer + Theme Check in der CI, lokale Vorschau auf Port 4010 |
 | Skill-Bibliothek | 12 Skills in `~/.claude/skills` (Shopify offiziell + Marketing) |
 
+## Ankündigungsleiste neu gebaut — 21.09.2026
+
+Über dem Shop lief die **unveränderte Dawn-Leiste**. Vier Dinge machten sie
+unprofessionell, alle im Code nachweisbar:
+
+- Die Botschaft trug Dawns Klasse `h5` — Montserrat SemiBold auf der
+  Überschriften-Skala, dazu `letter-spacing: 0.1rem`. Eine Leiste, die schreit.
+- `min-height: 3.8rem` plus `1rem` Innenabstand ≈ **58 px**. Üblich sind 30–50 px.
+- Dawn rendert die **Schieberegler-Pfeile** fest ein, je 44 px breit, bei nur
+  60 % Leistenbreite. Das war das „›" neben dem Text.
+- `scheme-5` (`#8151a3`) als Vollfläche über dem hellen Header — ein Block
+  statt eines feinen Streifens.
+
+**Und sie saß an der falschen Stelle.** In `header-group.json` stand die
+Reihenfolge `["header", "announcement_bar"]` — die Leiste lief also *unter* dem
+Header. Am ausgelieferten HTML nachgemessen, nicht vermutet.
+
+**Inhaltlich** standen vier Botschaften drin, davon zwei mit demselben
+Versprechen in beiden strittigen Fassungen: „↩ 30 Nächte testen, Geld zurück"
+und „30 Tage Testschlafen". Dazu „Barbara das Magazin No.61", während die Quelle
+überall sonst „BARBARA Magazin — Ausgabe Nr. 61" heißt. Kein einziger Link.
+Emoji statt Symbole.
+
+### Was jetzt dort steht
+
+`sections/melyla-ankuendigung.liquid`, gebaut aus dem Entwurf, der seit Langem
+unbenutzt in `docs/melyla/shopify-einfuegen/ankuendigungsleiste-code.liquid` lag.
+
+| | |
+|---|---|
+| Höhe | rund **36 px**, Inter 13 px, normale Sperrung, keine Überschriftenklasse |
+| Farbe | `#3d2645` mit weißer Schrift (13,4:1), Symbole und Trennpunkte `#b08ac8` (4,7:1) |
+| Desktop | drei Angaben nebeneinander, **keine Pfeile**, nichts wechselt |
+| Handy | eine Angabe zur Zeit, alle 4 s. Ohne Skript steht dauerhaft die erste da |
+| Position | **über** dem Header, bündig |
+
+**Zugänglichkeit besser als bei Dawn.** Dawn hängt `aria-live="polite"` an den
+Slider und liest jede rotierende Botschaft neu vor. Hier stehen alle Angaben
+immer im DOM; auf dem Handy werden die anderen nur per CSS ausgeblendet. Ein
+Screenreader bekommt alle drei auf einmal und wird nie unterbrochen.
+
+### Die drei Angaben
+
+| Symbol | Text | Link |
+|---|---|---|
+| Versand | Gratis Versand aus Deutschland | `/policies/shipping-policy` |
+| Rückgabe | 30 Nächte testen, Geld zurück | — |
+| Auszeichnung | Bekannt aus BARBARA Nr. 61 | — |
+
+**Genau ein Link**, wie es die Recherche zu Ankündigungsleisten empfiehlt —
+mehrere Ziele zersplittern die Aufmerksamkeit. Er geht auf die
+Versandrichtlinie, weil die von **jeder** Seite aus stimmt. Ursprünglich sollte
+BARBARA verlinkt werden; die Presse-Sektion existiert aber nur auf der Startseite
+und der BH-Seite, ein shopweiter Link dorthin liefe von überall sonst ins Leere.
+
+**Der Rückgabe-Punkt bleibt bewusst unverlinkt.** AGB Ziffer 8 (1) verlangt noch
+„vollständig und originalverpackt … ungebraucht" — wer 30 Nächte trägt, erfüllt
+das nicht (`21-ki-inhalte.md`). Das Versprechen einen Klick neben seinen
+Widerspruch zu legen, wäre die schlechtere Lösung. Link nachrüsten, sobald
+Ziffer 8 angeglichen ist.
+
+**„30 Nächte" ist hier gesetzt**, nicht im ganzen Shop. Der Punkt aus „Offen
+geblieben" (44× „Tage", 25× „Nächte") bleibt offen.
+
+**Keine Bewertungszahl in der Leiste.** Falls sie später doch hineinsoll: nicht
+tippen, sondern `melyla-bewertungen-liste.liquid` um einen Modus erweitern, der
+nur Schnitt und Anzahl ausgibt. Sonst ist es die vierte Stelle, an der eine Zahl
+zurückfallen kann.
+
+---
+
 ## Neuer Startseiten-Hero — 21.09.2026
 
 Die Startseite begann mit dem Scroll-Video. Hook, Bewertung, Kaufweg und

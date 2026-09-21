@@ -1,3 +1,16 @@
+{%- comment -%}
+  ABGELOEST — dieser Entwurf lebt seit dem 21.09.2026 als echte Theme-Sektion:
+  shopify-theme/sections/melyla-ankuendigung.liquid
+
+  Er bleibt hier stehen, weil er die Gestaltungsentscheidungen begruendet:
+  schmaler Streifen statt Block, 13px statt Ueberschriftengroesse, drei Angaben
+  nebeneinander am Desktop, eine zur Zeit auf dem Handy. Die Theme-Fassung hat
+  zusaetzlich Symbole statt Emoji, "enabled_on: header", die js_id-Absicherung
+  und verzichtet auf aria-live.
+
+  NICHT mehr im Shopify-Admin einsetzen. Aenderungen gehoeren in die Sektion.
+{%- endcomment -%}
+
 {%- liquid
   assign bg = section.settings.bg_color | default: '#3D2645'
   assign fg = section.settings.text_color | default: '#FFFFFF'
