@@ -22,6 +22,77 @@ damit sofort im Shop, ohne Zwischenschritt.
 | Werkzeuge | Vorlagenprüfer + Theme Check in der CI, lokale Vorschau auf Port 4010 |
 | Skill-Bibliothek | 12 Skills in `~/.claude/skills` (Shopify offiziell + Marketing) |
 
+## Lösung-Passage als Scroll-Erzählung — 21.09.2026
+
+Die Lösung-Passage waren drei Bild-Text-Reihen untereinander. Sie *behauptete*
+die Mechanik, sie zeigte sie nicht — dabei ist die Mechanik eine Bewegung: Man
+dreht sich auf die Seite, und der Mittelsteg hält die Brüste auf Abstand.
+
+Neu ist die Sektion **`melyla-funnel-loesung-scroll`** (*MELYLA Lösung
+(Scroll)*). Jedes Kapitel klebt im Bild, während man daran vorbeiscrollt;
+Überschrift, Text und die drei Häkchen fahren nacheinander ein. Liegt ein Clip
+im Kapitel, folgt er dem Scrollen vor und zurück. Kapitel 1 steht auf **hin und
+zurück**: runterscrollen dreht sie auf die Seite, hochscrollen dreht sie
+zurück.
+
+**Die alte Sektion bleibt liegen und ist unverändert.** Sie ist der Rückweg,
+bis die neue im Shop bestanden hat. `templates/index.json` ist bewusst nicht
+von Hand angefasst — Bilder lassen sich nur im Admin wählen, und ein Push mit
+leeren Feldern stellte Platzhalter auf die Startseite. Das Preset bringt alle
+drei Kapitel mit den heutigen Texten samt Fettungen mit; Einsetzen im Editor
+ist ein Klick plus drei Bildauswahlen.
+
+### Warum drei kurze Clips und nicht ein langer
+
+Ein durchgehendes Scroll-Video über die ganze Passage schied aus. Gemessen an
+`exports/scroll-video/melyla-scroll-mobil-1170.mp4`:
+
+| | |
+|---|---|
+| Laufzeit | 4,5 s |
+| Größe | 5,56 MB |
+| Bilder | 135, **jedes ein Keyframe** |
+| Ergebnis | rund **1240 KB je Sekunde** |
+
+Jedes Bild muss ein Keyframe sein, sonst kann der Browser beim Scrollen nicht
+an jede Stelle springen — siehe „Scroll-Video stand still auf dem Handy" weiter
+unten. 25 Sekunden durchgehend wären also **rund 31 MB**, die geladen sein
+müssen, bevor sich überhaupt etwas rührt. Drei Clips im Kachelformat liegen bei
+je 1,5–2 MB, und **es lädt nur das Kapitel, das gerade dran ist** — nachgemessen
+im Browser: das sichtbare Kapitel steht auf `preload=auto`, das übernächste
+noch auf `none`.
+
+### Zwei Dinge, die beim Messen auffielen
+
+**Das Handy-Layout hätte abgeschnitten.** Eine geklebte Fläche, die höher ist
+als das Fenster, hängt mit der Oberkante fest — ihr unteres Ende bekommt
+niemand mehr zu sehen. Auf 375 × 667 (iPhone SE) blieb der ersten Fassung
+**genau ein Pixel Luft**; eine Zeile mehr im Text, und der letzte Haken wäre
+unsichtbar gewesen, ohne dass es jemandem aufgefallen wäre.
+
+Jetzt *muss* die Bühne nicht passen, sie *passt*: Sie ist auf Fensterhöhe
+festgelegt, der Text nimmt sich, was er braucht, das Bild gibt den Rest her.
+Mit absichtlich verdoppeltem Text schrumpfte das Bild von 251 auf 86 px — der
+Text stand vollständig. Am Rechner bleibt es beim Nebeneinander.
+
+**Der Video-Wähler ist in Blöcken verboten.** Eine `video`-Einstellung in einem
+Block lässt Shopify die ganze Sektion still aus dem Editor weg;
+`bin/vorlagen-pruefen.mjs` hat das abgefangen. Erlaubt wäre dort nur
+`video_url`, und das nimmt bloß YouTube und Vimeo — für eine MP4, an der
+gescrubbt wird, also nutzlos. Darum trägt hier allein die Video-Adresse, und
+fällt sie aus, bleibt das Bild stehen.
+
+### Was noch fehlt
+
+Die Clips. Die Bildbriefings dafür stehen in
+[24-bildbriefing-model.md](24-bildbriefing-model.md) — dieselben Elements
+(`melyla-model`, `melyla-bh`) liefern die Standbilder **und** die Startbilder
+der Clips. Bis dahin läuft die Sektion mit den drei vorhandenen Bildern.
+
+**Vor dem Livegang auf einem echten iPhone in Safari prüfen.** Der Standstill
+des Startseiten-Videos am 20.09. war am Rechner unsichtbar und nur auf dem
+Handy da.
+
 ## Ankündigungsleiste neu gebaut — 21.09.2026
 
 Über dem Shop lief die **unveränderte Dawn-Leiste**. Vier Dinge machten sie
