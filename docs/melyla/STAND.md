@@ -1086,8 +1086,8 @@ Rich-Text-Feld escaped steht und das Muster ein Anfuehrungszeichen dahinter verl
 | **Retourengründe je Produkt** | Wichtigster Input für die Marktplatz-Listings |
 | **Aktuelle Otto-/Amazon-Listings** | Ausgangslage für die Überarbeitung |
 | **Rechnungskauf im Checkout** | Der 44-%-Hebel, seit dem 13.08. offen |
-| **Google Search Console** ⏸ | Das Konto liegt bei Jochen. Ohne sie merkt niemand, wenn eine Seite nicht indexiert wird. **Am 21.09. an ihn übergeben** — Robin geht die Einrichtung im nächsten gemeinsamen Termin mit ihm durch und zeigt sie ihm dabei. Schritt für Schritt in [23-livegang-checkliste.md](23-livegang-checkliste.md), Abschnitt 4 |
-| **Bing Webmaster Tools** ⏸ | Ebenfalls bei Jochen, bisher gar nicht eingerichtet. Bing speist auch die Suche in ChatGPT und Copilot. Gleicher Termin, Abschnitt 5 der Checkliste. Achtung: Für Bing hat Shopify kein Eingabefeld — ohne Import aus der Search Console muss das Tag von Hand ins Theme |
+| ~~**Google Search Console**~~ ✅ | **Am 22.09. mit Jochen eingerichtet.** Domain-Property, Sitemap eingereicht, sechs Kernseiten zur Indexierung angemeldet. Protokoll: [25-suchmaschinen-einrichtung.md](25-suchmaschinen-einrichtung.md) |
+| ~~**Bing Webmaster Tools**~~ ✅ | **Am 22.09. mit Jochen eingerichtet**, Sitemap-Status *Erfolg* mit 35 URLs, 0 Fehler. Das Konto bestand bereits seit 05.02.2021 — „gar nicht eingerichtet“ stimmte nie |
 
 ## Rechtlich, vor dem Livegang
 
@@ -1127,9 +1127,9 @@ denselben Adressen, es braucht also auch keine 301-Liste.
 
 | Werkzeug | Stand |
 |---|---|
-| Google Search Console | Verifiziert — das `google-site-verification`-Tag liegt im `<head>`. **Genutzt wird sie nicht**, siehe Checkliste |
-| Bing Webmaster Tools | **Gar nicht eingerichtet**, kein `msvalidate.01` im `<head>`. Bing speist auch die Suche in ChatGPT und Copilot |
-| `sitemap.xml` | Von Shopify erzeugt und automatisch aktuell. Vier Teilkarten: Produkte, Seiten, Kategorien, Blog |
+| Google Search Console | Verifiziert, und **seit 22.09. auch genutzt**: Domain-Property, Sitemap eingereicht, sechs Kernseiten angemeldet |
+| Bing Webmaster Tools | **Eingerichtet, Sitemap auf *Erfolg*** — 35 URLs, 0 Fehler. Konto besteht seit 05.02.2021, Bing crawlt aktiv. Speist auch die Suche in ChatGPT und Copilot |
+| `sitemap.xml` | Von Shopify erzeugt und automatisch aktuell. **Fünf** Teilkarten: Produkte, Seiten, Kategorien, Blog und `sitemap_agentic_discovery.xml` (verweist auf `/agents.md`) |
 | `robots.txt` | Shopify-Standard, `Allow: /`, Sitemap eingetragen. Keine eigene `robots.txt.liquid` nötig |
 
 **Am Theme erledigt, gepusht am 21.09.:** `AggregateRating`, `BreadcrumbList`,
@@ -1139,9 +1139,18 @@ Link-Prüfer.
 
 **Offen und nur im Admin lösbar** — zwei tote Links, die beiden nicht
 zugewiesenen Seitenvorlagen, 22 fehlende Meta-Beschreibungen, zwei verwaiste
-Seiten, Search Console und Bing. Alles in
+Seiten. ~~Search Console und Bing~~ **am 22.09. erledigt**, siehe
+[25-suchmaschinen-einrichtung.md](25-suchmaschinen-einrichtung.md). Der Rest in
 [23-livegang-checkliste.md](23-livegang-checkliste.md), die fertigen Texte in
 [22-meta-texte.md](22-meta-texte.md).
+
+**Nachtrag 22.09.2026 — vor dem Termin mit Jochen nachgemessen.** Die Sitemap
+hat inzwischen **fünf** Teilkarten und **35** Adressen, eine mehr als am 19.09.;
+alle antworten mit 200. Zwei Angaben oben waren überholt: Bing ist seit dem
+21.09. verifiziert, und Shopify liefert jetzt `llms.txt` und `agents.md` aus.
+Beide sind rein transaktional — UCP/MCP-Endpunkte und Shop-Pay-Checkout —, über
+Marke, Problem oder Produkte steht dort kein Wort. Ein Theme kann diese Route
+nicht überschreiben; `robots.txt.liquid` ginge, `llms.txt` nicht.
 
 **Wie lange Google braucht:** Neue und geänderte Seiten sind bei einer
 etablierten Domain meist nach wenigen Tagen bis zwei Wochen im Index, Sterne

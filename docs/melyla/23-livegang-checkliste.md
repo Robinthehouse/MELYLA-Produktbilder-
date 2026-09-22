@@ -108,13 +108,12 @@ nicht „reparieren".
 
 ---
 
-## 4. Google Search Console ⏸
+## 4. Google Search Console ✅
 
-> **⏸ UEBERGEBEN AN JOCHEN — Stand 21.09.2026.** Die Konten liegen bei ihm.
-> Robin geht die Einrichtung im naechsten gemeinsamen Termin mit ihm durch und
-> zeigt sie ihm dabei. **Bis dahin nichts einzeln anfangen** — ein halb
-> eingerichtetes Konto ist schlechter als gar keines, weil danach niemand mehr
-> weiss, was schon laeuft.
+> **✅ AM 22.09.2026 MIT JOCHEN EINGERICHTET.** Domain-Property bestaetigt,
+> `https://melyla.de/sitemap.xml` eingereicht, Indexierung fuer die sechs
+> Kernseiten beantragt. Die Berichte liefen an diesem Tag noch an. Protokoll
+> mit allen Befunden: [25-suchmaschinen-einrichtung.md](25-suchmaschinen-einrichtung.md).
 
 Die Verifizierung steht bereits — im `<head>` liegt ein gueltiges
 `google-site-verification`-Tag. Es fehlt die Nutzung.
@@ -132,22 +131,29 @@ Die Verifizierung steht bereits — im `<head>` liegt ein gueltiges
    Tagen die Sterne auf, die seit dem 21.09. ausgezeichnet werden.
 5. **Verbesserungen → Breadcrumbs** — ebenfalls neu, gleicher Zeitraum.
 
-## 5. Bing Webmaster Tools ⏸
+## 5. Bing Webmaster Tools ✅
 
-> **⏸ UEBERGEBEN AN JOCHEN — Stand 21.09.2026.** Die Konten liegen bei ihm.
-> Robin geht die Einrichtung im naechsten gemeinsamen Termin mit ihm durch und
-> zeigt sie ihm dabei. **Bis dahin nichts einzeln anfangen** — ein halb
-> eingerichtetes Konto ist schlechter als gar keines, weil danach niemand mehr
-> weiss, was schon laeuft.
+> **✅ AM 22.09.2026 MIT JOCHEN EINGERICHTET.** Sitemap-Status *Erfolg*, 35
+> entdeckte URLs, 0 Fehler, 0 Warnungen. Dabei kam heraus: das Konto besteht
+> seit **05.02.2021** und Bing crawlt die Seite aktiv — „gar nicht eingerichtet"
+> stimmte nie. Protokoll:
+> [25-suchmaschinen-einrichtung.md](25-suchmaschinen-einrichtung.md).
 
-Bisher gar nicht eingerichtet — im `<head>` liegt kein `msvalidate.01`. Bing
+Verifiziert seit dem 21.09. — `msvalidate.01` liegt im `<head>` (Commit
+`abbc637`, am 22.09. live nachgesehen). Genutzt wird es noch nicht. Bing
 speist auch die Suche in ChatGPT und Copilot, das ist inzwischen mehr als eine
 Nebenrolle.
 
 1. `bing.com/webmasters` → **Importieren aus der Google Search Console**. Das
    ist der kuerzeste Weg: Verifizierung und Sitemap kommen mit.
-2. Geht der Import nicht, das `msvalidate.01`-Tag anfordern und Bescheid
-   sagen — es kommt neben das Google-Tag in `layout/theme.liquid`.
+2. Geht der Import nicht, die Site von Hand hinzufuegen und ueber das
+   Meta-Tag verifizieren — das Tag liegt bereits im `<head>`, es ist nichts
+   anzufordern und nichts zu pushen. Danach `sitemap.xml` manuell eintragen.
+3. **URL-Einreichung** fuer dieselben sechs Kernseiten wie bei Google. Das
+   Tageskontingent ist grosszuegig, das geht schneller als abzuwarten.
+4. **IndexNow entfaellt.** Es braucht eine Schluesseldatei im
+   Wurzelverzeichnis (`melyla.de/<key>.txt`), und Shopify laesst dort keine
+   eigenen Dateien zu. Die manuelle URL-Einreichung ersetzt es vollstaendig.
 
 Bing arbeitet langsamer als Google. Ohne Einrichtung dauert es Wochen, mit
 Einrichtung sind die Adressen sofort bekannt.
@@ -159,10 +165,10 @@ Beides am 21.09. nachgesehen, damit im Gespraech nicht danach gesucht werden mus
 - **Das `google-site-verification`-Tag steht nicht im Theme.** Shopify spritzt es
   ueber `content_for_header` ein. Wer im Repo danach sucht, findet nichts und
   haelt die Verifizierung faelschlich fuer fehlend — sie ist da.
-- **Fuer Bing hat Shopify kein Eingabefeld.** Klappt der Import aus der Search
-  Console nicht, muss das `msvalidate.01`-Tag von Hand ins Theme, in
-  `layout/theme.liquid` direkt hinter die Canonical-Zeile (Zeile 8). Dafuer
-  reicht der `content`-Wert von Jochen; der Rest ist ein Einzeiler plus Push.
+- **Fuer Bing hat Shopify kein Eingabefeld** — das Tag musste von Hand ins
+  Theme. ~~Steht aus.~~ **Am 21.09. erledigt**: `msvalidate.01` steht in
+  `layout/theme.liquid`, Zeile 4, ueber Commit `abbc637`. Fuer den Termin ist
+  an dieser Stelle nichts mehr zu tun.
 
 ---
 
