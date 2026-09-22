@@ -17,7 +17,18 @@ Abgeschnitten mitten im Satz, mit zusammengelaufenen Woertern aus dem HTML.
 Die Blog-Uebersicht hatte gar keine Beschreibung, die Blog-Titel waren 76 bis
 93 Zeichen lang und wurden allesamt gekuerzt.
 
-## Stand 22.09.2026 — 6 von 34 stehen drin
+## Stand 22.09.2026 — Beschreibungen fast fertig, Titel offen
+
+**Beschreibungen: 28 von 34 exakt.** Offen sind fuenf, einer davon ein
+Tippfehler, der live steht. **Titel: 11 von 34** — die 23 uebrigen stehen mit
+Soll und Ist in [24-meta-titel-restliste.md](24-meta-titel-restliste.md).
+
+Der Kasten *Suchmaschineneintrag bearbeiten* hat zwei Felder. Das untere
+(Beschreibung) ist leer und faellt auf, das obere (Seitentitel) ist vorbelegt
+und sieht aus, als waere es richtig. Genau deshalb sind die Titel
+liegengeblieben — beim naechsten Mal beide Felder pruefen.
+
+## Frueherer Stand — 6 von 34
 
 Live nachgemessen: Der Text unten wurde Zeichen fuer Zeichen mit dem
 verglichen, was der Shop ausliefert.
