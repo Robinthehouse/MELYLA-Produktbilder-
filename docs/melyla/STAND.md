@@ -100,19 +100,20 @@ Versand aus Deutschland, in der Regel 2–4 Werktage, kostenlos und CO₂-neutra
 ### Die beiden Schwamm-Seiten — nur im Admin, kein Baustein
 
 `/products/schwamm` sagt **fünfmal** „umweltfreundlich" und einmal
-„nachhaltige Methode"; `/products/abschminkschwaemme` einmal
-„umweltfreundlich". Auch das fällt unter die EmpCo-Richtlinie: pauschale
-Umweltbegriffe ohne belastbaren Nachweis.
+„nachhaltige Methode"; `/products/abschminkschwamme` einmal „nachhaltige
+Alternative" und einmal „umweltfreundlich" — **acht Stellen auf zwei Seiten.**
+Auch das fällt unter die EmpCo-Richtlinie: pauschale Umweltbegriffe ohne
+belastbaren Nachweis.
 
 **Der Ausweg ist eine Tatsache statt einer Wertung.** „Wiederverwendbar" ist
 nachprüfbar, „umweltfreundlich" ist eine Bewertung, die belegt sein müsste:
 
 ```
-umweltfreundliche runde Baumwollpads   →  wiederverwendbare runde Baumwollpads
-Diese umweltfreundlichen Alternativen  →  Diese wiederverwendbaren Alternativen
-eine nachhaltige Methode               →  eine Methode ohne Einwegpads
-sowohl umweltfreundlich als auch       →  spart Einwegpads und ist
-  hautschonend                             hautschonend
+umweltfreundlich*  →  wiederverwendbar*   (gleiche Endung, 5x auf /schwamm)
+eine nachhaltige Methode      →  eine schonende Methode
+eine nachhaltige Alternative  →  eine wiederverwendbare Alternative
+was sowohl umweltfreundlich als auch hautschonend ist
+                              →  was sie langlebig und hautschonend macht
 ```
 
 ### Danach nachmessen
