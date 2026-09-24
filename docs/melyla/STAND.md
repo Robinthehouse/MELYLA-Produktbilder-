@@ -1,8 +1,146 @@
 # MELYLA — Projektstand
 
-Stand 21.09.2026. Eine Seite: Was ist fertig, was ist offen, wo hakt es.
+Stand 24.09.2026. Eine Seite: Was ist fertig, was ist offen, wo hakt es.
 
 ---
+
+## Audit von Laufwerk.Cloud — 23.09.2026
+
+Ein Kollege hat über Laufwerk.Cloud ein 360-Grad-Audit erstellen lassen: 67 Seiten,
+Gesamtnote **58 von 100**. Eingeordnet — Befund für Befund, mit unserem eigenen
+Urteil — in [27-audit-laufwerk.md](27-audit-laufwerk.md).
+
+**Zwei Fristen daraus:**
+
+| Frist | Was |
+|---|---|
+| **27.09.2026** | „Versand CO₂-neutral" streichen oder belegen — danach ohne unabhängigen Nachweis unzulässig |
+| **30.09.2026** | `/pages/widerruf-formular` kündigt ein Formular an und enthält keines; der Widerrufsbutton ist seit dem 19.06.2026 Pflicht |
+
+Beides liegt im Admin. Der wichtigste Befund darüber hinaus steht nicht im Audit,
+sondern fiel beim Abgleich auf: **Der Shop betreibt zwei Bewertungssysteme.** Live
+steht auf der BH-Seite Judge.mes „4,79 aus 52" — rechnerisch genau unsere 49
+Bewertungen plus die drei, die wir wegen Inhaber-Adressen bewusst draußen haben.
+Das braucht eine Entscheidung, siehe Abschnitt 8 der Audit-Datei.
+
+Was das Audit als **gut** bestätigt: Cookie-Abfrage 88, Tracking-Hygiene 82
+(vor der Einwilligung lädt nichts), KI-Crawler-Zugang 90, Zitierbarkeit 84, und
+die echten Google-Felddaten sind grün (LCP 1,47 s, INP 139 ms, CLS 0,00). Die oft
+zitierten „4,8 Sekunden" sind ein Laborwert für ein gedrosseltes Handy.
+
+---
+
+## „CO₂-neutral" ist raus — 24.09.2026, vor der Frist
+
+Die **EmpCo-Richtlinie (EU) 2024/825** gilt ab dem **27.09.2026**. Sie verbietet
+Aussagen, etwas sei klimaneutral, **wenn sie auf Kompensation beruht** — also auf
+Klimaprojekten außerhalb der eigenen Lieferkette. Verstöße gelten **per se als
+unlauter, ohne Einzelfallprüfung**; auch versehentliche sind abmahnfähig.
+
+**Zwölf Fundstellen, alle entfernt:** zweimal `melyla-funnel-faq.liquid`
+(Kommentar und `default`), `answer_8` in fünf Vorlagen, vier
+`produktbeschreibung-*.html` und `warum-melyla.html:87`. Der Satz lautet jetzt
+schlicht „Versand aus Deutschland, in der Regel 2–4 Werktage. Der Versand ist
+kostenlos."
+
+**Noch offen — nur im Admin:** Die vier HTML-Bausteine müssen in den
+Beschreibungsfeldern **neu eingesetzt** werden. Die Datei zu ändern reicht nicht;
+am 21.09. klebte genau deshalb ein alter Stand auf zwei Seiten.
+
+### DHL hat das alte GoGreen selbst abgeschafft
+
+Das ändert die Frage an Jochen. **GoGreen** (Kompensation über Wind in Ägypten,
+Wasserkraft in Vietnam) wurde zum **31.08.2026 eingestellt** und durch **GoGreen
+Plus** ersetzt: Reduktion im eigenen Netz über E-Fahrzeuge, Güterzüge und
+Photovoltaik, zugeteilt über ein zertifiziertes Book-and-Claim-Verfahren. Das ist
+*Insetting*, nicht Offsetting — und damit die Kategorie, die zulässig bleibt.
+
+> Die Frage ist also nicht „zahlt Jochen dafür", sondern **„ist er schon auf
+> GoGreen Plus umgestellt"**. Robin klärt das im Telefonat.
+
+**Auch mit GoGreen Plus bleibt „CO₂-neutral" verboten.** Es trägt eine
+*Reduktions*aussage, keine *Neutralitäts*aussage. Wenn Jochen bestätigt, lautet
+die Formulierung „Versand mit DHL GoGreen Plus" plus einem Satz, der die
+**Maßnahme** nennt statt ein Ergebnis zu behaupten. DHLs eigene Werbezahl „bis zu
+95 % weniger CO₂e" bleibt draußen — „bis zu" ist eine Spitzenaussage.
+
+Einzige verbliebene Fundstelle im Repo ist das Wort „Nachhaltig" im Wortlaut
+einer echten Kundenbewertung. Fremdtext, keine eigene Werbeaussage.
+
+## Angebotsstaffel: Karte 3 im Rabatt — 24.09.2026
+
+Der Preisprüfer meldete vier Abweichungen, Karte 3 auf 69,50 € statt 89,00 €.
+**Kein Rückfall** — Robin hat am 24.09. bestätigt, dass ein Rabatt läuft.
+Streichpreis 99,00 € ist korrekt: Das Set stand in den letzten 30 Tagen nie auf
+89,00 €, die Senkung ging direkt von 99,00 € auf 69,50 €. Damit ist § 11 PAngV
+gewahrt.
+
+`bin/preise-pruefen.mjs` kann jetzt **befristete Aktionen**. Sie überschreiben
+`SOLL`, solange sie laufen; nach dem Stichtag meldet der Prüfer von selbst, dass
+der Preis zurück muss — niemand muss daran denken. Der Grund steht als Kommentar
+im Prüfer: Ein Abverkauf darf nicht dauerhaft als Ermäßigung laufen (§ 5 UWG),
+dieselbe Frist, die hier schon für den Kissenpreis steht.
+
+| | |
+|---|---|
+| Fehlendes Enddatum | **Erinnerung**, kein Abbruch — sonst blockiert es jeden Push |
+| Abgelaufene Aktion | **Abbruch.** Der Soll-Preis fällt auf 89,00 € zurück |
+| Ersatzfelder der Vorlage | werden gegen `SOLL` geprüft, nicht gegen die Aktion. Ein Rabatt lebt in den Shopify-Produktdaten, nicht in einer Vorlage, die beim Push sofort live geht |
+
+> **Offen: das Enddatum.** Solange es fehlt, meldet der Prüfer es bei jedem Lauf.
+
+## Werkzeuge für Texte — 24.09.2026
+
+Gesucht war ein Top-Repo für Shopify-Funnel und Produkttexte. **Das gibt es
+nicht.** Unter `github.com/topics/conversion-copywriting` liegen sieben Repos,
+sechs mit 0 oder 1 Stern; das einzige mit Zugkraft ist auf Chinesisch und
+arbeitet mit Angstappell und Preis-Anker — die Kategorie, die hier am 25.08.
+bewusst entfernt wurde.
+
+Stattdessen drei Lücken geschlossen:
+
+**Achter Prüfer: `bin/texte-pruefen.mjs`.** Misst als einziger die
+Formulierung. `FLOSKEL` ist eine Wortliste (hochwertig, innovativ,
+Premium-Qualität, „perfekt für", „besticht durch" …) und bricht ab; `LANG`
+meldet Sätze über 25 Wörtern und Ketten aus drei `-ung`-Nomen, bricht aber
+nur mit `--streng` ab. Läuft in der CI.
+
+Er fand beim ersten Lauf fünf Floskeln. Zwei davon waren eigener Text —
+„Hochwertiges Material trifft auf durchdachte Formgebung" stand unter der
+Überschrift *Jedes Detail hat seinen Grund*, ohne ein Detail zu nennen.
+Ersetzt durch „Kein Bügel, kein Haken im Rücken, flache Nähte — jede dieser
+Entscheidungen stammt aus einer Nacht, in der etwas gestört hat."
+
+Die dritte ist **Fremdtext und bleibt stehen**: der Redaktionstext des BARBARA
+Magazins in `melyla-funnel-presse` enthält „innovative". Ein Zitat zu glätten
+und weiter als Redaktionsempfehlung auszuzeichnen wäre schwerer als die
+Floskel. Sie steht mit Begründung in `bin/texte-ausnahmen.txt`.
+
+> **Offen für Robin:** Ist das der wörtliche Text aus Ausgabe Nr. 61? Wenn
+> nein, darf er dort nicht unter „Redaktionsempfehlung" stehen (§ 5 UWG).
+
+**`.agents/product-marketing.md` angelegt.** Die Skills `copywriting`, `cro`,
+`offers` und `emails` lesen diese Datei zuerst — sie fehlte, also fing jeder
+Text bei Zielgruppe, Einwänden und Ton wieder bei null an. Sie zieht
+Positionierung, Mechanismus, Kundensprache und Belege aus dem Bestand zusammen.
+**Die Zielgruppe steht darin als offen**, mit allen drei Hypothesen; die
+Datenquelle, die das entscheidet, liegt seit dem 12.08. bei Jochen.
+`.gitignore` schloss `.agents/` komplett aus — für diese eine Datei
+ausgenommen, der Rest bleibt draussen.
+
+**Shopify-Skills auf das offizielle Plugin umgestellt.**
+`shopify-ai-toolkit@claude-plugins-official`
+([Shopify/Shopify-AI-Toolkit](https://github.com/Shopify/Shopify-AI-Toolkit),
+MIT, seit 09.04.2026 offen): 22 Skills, Schema-Validierung, aktualisiert sich
+selbst. Die drei handkopierten Skills vom 23.08. blieben dagegen stehen.
+
+**Nur einer der drei war wirklich abgelöst.** `shopify-liquid-themes` ja;
+`liquid-theme-a11y` und `liquid-theme-standards` nicht — das Plugin widmet WCAG
+eine einzige Zeile, und BEM und Design-Tokens kommen dort nur in `shopify-pos-ui`
+vor, einer anderen Plattform. Beide bleiben von Hand gepflegt.
+
+Die Telemetrie des Plugins ist abgeschaltet (`~/.config/shopify-ai-toolkit/opt-out`);
+es schickt sonst Anfragen und Code an shopify.dev.
 
 ## Fertig
 

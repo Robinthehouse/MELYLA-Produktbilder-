@@ -36,6 +36,8 @@ Genau so sind die Bewertungszahlen dreimal zurückgefallen.
 cd shopify-theme
 node bin/vorlagen-pruefen.mjs                         # Sektionen und Schemata
 node bin/skripte-pruefen.mjs                          # JS-Bezeichner aus Abschnitts-IDs
+node bin/buttons-pruefen.mjs                         # Button-Einstellungen und Kontraste
+node bin/texte-pruefen.mjs                            # Floskeln, Satzlaenge, Nominalstil
 node bin/zahlen-pruefen.mjs                           # getippte Zahlen gegen die Bewertungsdaten
 node bin/zahlen-pruefen.mjs       https://melyla.de   # dasselbe zusätzlich am Live-HTML
 node bin/links-pruefen.mjs        https://melyla.de   # interne Links
@@ -55,6 +57,39 @@ auf zwei Seiten „52+ Bewertungen" und „4,79 Sterne" — Zahlen, die in keine
 Theme-Datei vorkamen, weil dort ein alter Einsetz-Stand klebte. Wer einen
 Baustein in `docs/melyla/shopify-einfuegen/` ändert, muss ihn im Admin **neu
 einsetzen**; die Datei zu ändern reicht nicht.
+
+`buttons-pruefen.mjs` prueft dreierlei: dass jede Sektion mit CTA die
+vollstaendige Button-Gruppe im Schema hat, dass kein Aufruf mehr eine geteilte
+Farbeinstellung (`accent_color` und Verwandte) als Buttonfarbe durchreicht, und
+dass jedes Paar aus Flaeche und Schrift 4,5:1 erreicht — in den Schema-Vorgaben
+**und** in den gespeicherten Werten der Vorlagen. Am 23.09.2026 standen dort ein
+Button mit weisser Schrift auf Gold (2,0:1) und einer mit weisser Flaeche und
+weisser Schrift. Im Quelltext sah beides unauffaellig aus.
+
+Die Buttonfarben liegen zentral unter **Theme-Einstellungen → MELYLA Buttons**.
+Jede Sektion kann sie ueberschreiben; leere Felder erben die Theme-Vorgabe.
+
+`texte-pruefen.mjs` misst als einziger Prüfer die Formulierung. Zwei Stufen:
+**FLOSKEL** ist eine Wortliste (hochwertig, innovativ, Premium-Qualität,
+„perfekt für“, „besticht durch“ …) und bricht ab; **LANG** meldet Sätze über
+25 Wörtern und Ketten aus drei `-ung`-Nomen, bricht aber nur mit `--streng` ab.
+Geprüft werden `templates/*.json`, die `default`-Werte der Schemata und die
+HTML-Bausteine — nicht `label`, `info` und `content`, das ist Bedienoberfläche.
+
+**Bewusst behaltene Stellen gehören in `bin/texte-ausnahmen.txt`**, mit
+Begründung als Kommentar darüber. Dort steht heute genau eine: der
+Redaktionstext des BARBARA Magazins. Fremdtext wird nicht umgeschrieben — ein
+Zitat zu glätten und weiter als Redaktionsempfehlung auszuzeichnen wäre
+schwerer als die Floskel, die es enthält.
+
+`preise-pruefen.mjs` kennt **befristete Aktionen** (`AKTIONEN` im Kopf der
+Datei). Sie überschreiben die Soll-Staffel, solange sie laufen; nach dem Stichtag
+meldet der Prüfer von selbst, dass der Preis zurück muss. Ein fehlendes Enddatum
+ist eine Erinnerung, eine abgelaufene Aktion ein Abbruch. **Wer einen
+Aktionspreis in `SOLL` einträgt, macht es kaputt** — dann läuft der Rabatt
+dauerhaft als Ermäßigung weiter (§ 5 UWG). Die Ersatzfelder der Vorlagen werden
+bewusst gegen `SOLL` geprüft, nicht gegen die Aktion: Ein Rabatt lebt in den
+Shopify-Produktdaten, nicht in einer Vorlage, die beim Push sofort live geht.
 
 `auszeichnung-pruefen.mjs` vergleicht das `aggregateRating` im JSON-LD mit der
 sichtbaren Kopfzahl. Google zeigt Sterne nur für Werte, die auf derselben Seite

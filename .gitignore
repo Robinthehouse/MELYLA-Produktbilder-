@@ -42,8 +42,12 @@ next-env.d.ts
 
 # Claude Code
 .claude/
-.agents/
+.agents/*
 skills-lock.json
+
+# Ausnahme: die Positionierung ist kein Werkzeug, sondern Inhalt. Sie gehoert
+# ins Repo - copywriting, cro, offers und emails lesen sie zuerst.
+!.agents/product-marketing.md
 
 # Shopify-Theme: eigenes Repository fuer die GitHub-Verbindung
 shopify-theme/

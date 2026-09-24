@@ -216,6 +216,12 @@ Empfehlung: einschalten, wenn die Kategorien im Menue bleiben sollen.
 | Beleg fuer „ueber 5.000 verkaufte BHs" ablegen — Summe aus Billbee und Seller Central mit Stichtag | STAND.md 804 |
 | AGB-Ziffer 8 gegen die Werbung „30 Naechte testen" | 21-ki-inhalte.md 118–128 |
 | Widerrufsbelehrung nennt keine gueltige E-Mail — verlaengert die Frist nach § 356 Abs. 3 BGB | 21-ki-inhalte.md 130–137 |
+| **Frist 27.09.2026:** „Versand CO₂-neutral" streichen oder belegen | 27-audit-laufwerk.md, Abschnitt 2 |
+| **Frist 30.09.2026:** Widerrufsformular in Betrieb nehmen — die Seite kuendigt eines an und enthaelt keines | 27-audit-laufwerk.md, Abschnitt 2 |
+| Datenschutzerklaerung nennt Google Analytics (laeuft nicht) und verschweigt acht Dienste, die laufen | 27-audit-laufwerk.md, Abschnitt 4 |
+| Impressum „§ 5 TMG" → „§ 5 DDG", eine Telefonnummer festlegen, Versandkosten vereinheitlichen | 27-audit-laufwerk.md, Abschnitt 4 |
+| GTIN fuer die BH-Groessen S, L und XL nachtragen — nur M hat eine | 27-audit-laufwerk.md, Abschnitt 4 |
+| **Entscheidung:** zwei Bewertungssysteme im Haus (unsere Sektionen und Judge.me) | 27-audit-laufwerk.md, Abschnitt 8 |
 
 ---
 
@@ -225,7 +231,7 @@ Gepusht am 21.09., live gegengeprueft:
 
 | | |
 |---|---|
-| **Sterne fuer Google** | `aggregateRating` aus den 79 echten Bewertungen, auf den drei Seiten mit sichtbarem Bewertungskopf. `bin/auszeichnung-pruefen.mjs` vergleicht Auszeichnung und sichtbaren Text am ausgelieferten HTML |
+| **Sterne fuer Google** | `aggregateRating` steht auf den Produktseiten und `bin/auszeichnung-pruefen.mjs` vergleicht Auszeichnung und sichtbaren Text am ausgelieferten HTML. **Geaendert am 24.09.:** Das Theme gibt keine eigene Auszeichnung mehr aus, weil Judge.me eine zweite dazugelegt hat — siehe 27-audit-laufwerk.md, Abschnitt 5.1 |
 | **Brotkrumen** | `BreadcrumbList` auf allen Seitentypen ausser der Startseite, sichtbare Leiste auf Seiten und Blogartikeln |
 | **FAQ-Schema** | Zwei latente Fehler entschaerft, die bei einer geleerten Frage das ganze Schema ungueltig gemacht haetten |
 | **Ein H1 je Seite** | Das Logo im Header ist kein H1 mehr. Startseite von zwei auf eins |
