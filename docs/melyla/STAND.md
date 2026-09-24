@@ -1,6 +1,37 @@
 # MELYLA — Projektstand
 
-Stand 24.09.2026. Eine Seite: Was ist fertig, was ist offen, wo hakt es.
+Stand 25.09.2026. Eine Seite: Was ist fertig, was ist offen, wo hakt es.
+
+---
+
+## Textrunde — 25.09.2026
+
+Startseite und BH-Seite Passage für Passage durchgesehen. Vier Fragen: Aussage, Einstieg,
+Kürze, Richtigkeit. Das Verfahren liegt jetzt als Skill in `.claude/skills/melyla-textcheck/`.
+
+**Zurückgefallen und wieder raus:** „Sichtbare Veränderung nach 4 Wochen / messbare
+Ergebnisse“ und „maximaler Tragekomfort und wirksame Faltenvorbeugung“. Beides war am 25.08.
+entfernt und kam über den Editor zurück.
+
+**Neu geschrieben:** Problem-Karten (u. a. „Leise – aber jeden Tag“ → „Irgendwann bleibt die
+Linie“), Checkliste von fünf auf drei Stichpunkte, Lösungs-Einleitung, Zwischen-Hero („Dekolleté
+Falten reduzieren“ widersprach „Vorhandene Falten glättet kein Textil“), „Sanfte Unterstützung“
+(widersprach „stützt nicht“), Angebotstext ohne „die meisten Kundinnen“, FAQ ohne „viele über 55“.
+Überall „30 Nächte testen“ statt gemischt 30 Tage/30 Nächte, „Entworfen in Deutschland“ statt englisch.
+
+**Größen folgen jetzt den Shop-Varianten:** S 65–75 · M 75–85 · L 85–95 · XL ab 95 cm.
+Vorher sagte die Tabelle 60–70 / 70–80 / 80–90 / 90–100 und die Auswahl darunter etwas anderes.
+Zwischen zwei Größen: die kleinere.
+
+**Vorher/Nachher ist aus** (Startseite, BH-Seite war schon aus). Die Bilder sind selbst erstellte
+Beispiele. Unter „Kundinnen berichten …“ lesen sie sich als echtes Ergebnis (§ 5 UWG). Der Abschnitt
+ist nur deaktiviert und kann mit echten Kundinnenfotos zurück.
+
+**Offen im Admin (Robin):**
+- **Judge.me auf Deutsch:** Apps → Judge.me → Settings → Sprache → Deutsch. Die deutschen Texte sind
+  hinterlegt, aber `locale = en` überstimmt sie. Darum steht „Customer Reviews / Write a review“ auf der BH-Seite.
+- **Bausteine neu einsetzen** (Größen geändert): `produktbeschreibung-bh.html`, `-set-2x-bh.html`,
+  `-set-bh-kissen.html`, `-beauty-sleep-box.html`.
 
 ---
 

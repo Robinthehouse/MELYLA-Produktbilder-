@@ -70,7 +70,7 @@ da ist und abends nicht war. Erfundene Personas gehören nicht in Texte.
 | „Bringt so ein Textil überhaupt etwas?" | Der Mechanismus (Abschnitt 2), nicht eine Prozentzahl |
 | „Glättet das meine Falten?" | **Nein — und das sagen wir zuerst:** „Vorhandene Falten glättet kein Textil." |
 | „Schlafe ich damit überhaupt?" | Kein Bügel, kein Haken im Rücken, flache Nähte, Racerback |
-| „Welche Größe?" | Nach **Unterbrustumfang**, nicht Körbchen. Im Zweifel die größere |
+| „Welche Größe?" | Nach **Unterbrustumfang**, nicht Körbchen: S 65–75, M 75–85, L 85–95, XL ab 95 cm — wie die Varianten im Shop. Zwischen zwei Größen die kleinere, der BH muss eng anliegen (umgestellt 25.09.2026) |
 | „Und wenn es nicht passt?" | 30 Nächte getragen testen, sonst Geld zurück |
 | „Fällt er groß aus?" | Aus einer echten Bewertung: „Fällt nur etwas groß aus." Deckt sich mit der Größenberatung |
 
