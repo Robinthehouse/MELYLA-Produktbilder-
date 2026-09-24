@@ -43,9 +43,9 @@ unlauter, ohne Einzelfallprüfung**; auch versehentliche sind abmahnfähig.
 schlicht „Versand aus Deutschland, in der Regel 2–4 Werktage. Der Versand ist
 kostenlos."
 
-**Noch offen — nur im Admin:** Die vier HTML-Bausteine müssen in den
-Beschreibungsfeldern **neu eingesetzt** werden. Die Datei zu ändern reicht nicht;
-am 21.09. klebte genau deshalb ein alter Stand auf zwei Seiten.
+**Noch offen — nur im Admin:** Sechs Stellen stehen weiter live, davon zwei,
+die niemand auf dem Zettel hatte. Die Arbeitsliste steht direkt unten unter
+„Sechs Umweltaussagen stehen noch live".
 
 ### DHL hat das alte GoGreen selbst abgeschafft
 
@@ -66,6 +66,78 @@ die Formulierung „Versand mit DHL GoGreen Plus" plus einem Satz, der die
 
 Einzige verbliebene Fundstelle im Repo ist das Wort „Nachhaltig" im Wortlaut
 einer echten Kundenbewertung. Fremdtext, keine eigene Werbeaussage.
+
+## Sechs Umweltaussagen stehen noch live — 24.09.2026, Frist 27.09.
+
+Der Theme-Teil ist seit dem Push sauber. **Die Inhaltsfelder im Admin sind es
+nicht** — dort ändert ein Push nichts. Am 24.09. alle 36 Adressen aus der
+Sitemap durchgegangen; sechs Stellen stehen noch. Zwei davon kannte niemand:
+Die Schwamm-Seiten haben **keinen Baustein im Repo**, das ist reiner
+Admin-Text.
+
+### Produktbeschreibung — Baustein neu einsetzen
+
+Vier Seiten. Der Baustein in `shopify-einfuegen/` ist schon richtig; er muss
+nur ins Beschreibungsfeld **neu eingesetzt** werden.
+
+| Seite | Baustein |
+|---|---|
+| `/products/anti-falten-kissen` | `produktbeschreibung-kissen.html` |
+| `/products/antifalten-set-kissen-bh` | `produktbeschreibung-set-bh-kissen.html` |
+| `/products/2-x-melyla-anti-falten-bh` | `produktbeschreibung-set-2x-bh.html` |
+| `/pages/warum-melyla` | `warum-melyla.html` |
+
+Wer es lieber von Hand ändert, sucht genau das:
+
+```
+Gratis aus Deutschland, in der Regel 2–4 Werktage, CO₂-neutral.
+→  Gratis aus Deutschland, in der Regel 2–4 Werktage.
+
+Versand aus Deutschland, in der Regel 2–4 Werktage, kostenlos und CO₂-neutral.
+→  Versand aus Deutschland, in der Regel 2–4 Werktage, kostenlos.
+```
+
+### Die beiden Schwamm-Seiten — nur im Admin, kein Baustein
+
+`/products/schwamm` sagt **fünfmal** „umweltfreundlich" und einmal
+„nachhaltige Methode"; `/products/abschminkschwaemme` einmal
+„umweltfreundlich". Auch das fällt unter die EmpCo-Richtlinie: pauschale
+Umweltbegriffe ohne belastbaren Nachweis.
+
+**Der Ausweg ist eine Tatsache statt einer Wertung.** „Wiederverwendbar" ist
+nachprüfbar, „umweltfreundlich" ist eine Bewertung, die belegt sein müsste:
+
+```
+umweltfreundliche runde Baumwollpads   →  wiederverwendbare runde Baumwollpads
+Diese umweltfreundlichen Alternativen  →  Diese wiederverwendbaren Alternativen
+eine nachhaltige Methode               →  eine Methode ohne Einwegpads
+sowohl umweltfreundlich als auch       →  spart Einwegpads und ist
+  hautschonend                             hautschonend
+```
+
+### Danach nachmessen
+
+```bash
+python3 - <<'ENDE'
+import urllib.request, re, gzip
+def hole(u):
+    d = urllib.request.urlopen(urllib.request.Request(
+        u, headers={'User-Agent': 'Mozilla/5.0'}), timeout=30).read()
+    return (gzip.decompress(d) if d[:2] == b'\x1f\x8b' else d).decode('utf-8', 'replace')
+karten = [m for m in re.findall(r'<loc>([^<]+)</loc>', hole('https://melyla.de/sitemap.xml'))
+          if 'sitemap_' in m]
+adressen = [a for k in karten for a in
+            re.findall(r'<loc>([^<]+)</loc>', hole(k.replace('&amp;', '&')))
+            if not a.endswith('.jpg')]
+muster = re.compile(r'CO.?.?-neutral|klimaneutral|umweltfreundlich|nachhaltig', re.I)
+treffer = [(a, m) for a in adressen for m in set(muster.findall(hole(a)))]
+print(f'{len(adressen)} Adressen, {len(treffer)} Fundstelle(n)')
+for a, m in treffer: print(' ', m, a)
+ENDE
+```
+
+Muss leer sein. **Der Theme-Prüfer sieht davon nichts** — dieselbe Lücke wie am
+21.09. bei den Bewertungszahlen.
 
 ## Angebotsstaffel: Karte 3 im Rabatt — 24.09.2026
 
